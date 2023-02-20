@@ -1,0 +1,30 @@
+site_name: THM Writeups | Vasanth Vanan
+repo_url: https://github.com/VasanthVanan/tryhackme-writeups
+theme:
+  font:
+    text: Roboto
+  name: material
+  palette:
+    primary: deep purple
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/github 
+nav:
+  - Easy Challenges:
+    - easy/index.md
+    - Page 1: easy/page-1.md
+  - Medium Challenges:
+    - medium/index.md
+  - Hard Challenges:
+    - hard/index.md
+  - Insane Challenges:
+    - insane/index.md
+
+
+markdown_extensions:
+  - toc:
+      permalink: true
