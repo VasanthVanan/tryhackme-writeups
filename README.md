@@ -3,7 +3,7 @@ comprehensive collection of walkthroughs for various TryHackMe cybersecurity cha
 
 This is a project built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. 
 
-## Packages Used
+## Packages
 
 This project uses the following Python packages:
 
@@ -29,5 +29,5 @@ For more information on setting up a MkDocs project, please refer:
 
 - [MkDocs documentation](https://www.mkdocs.org/#getting-started)
 - [Creating Your Site](https://squidfunk.github.io/mkdocs-material/creating-your-site/)
-- [Setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/)
+- [Page Setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/)
 - [References](https://squidfunk.github.io/mkdocs-material/reference/)
