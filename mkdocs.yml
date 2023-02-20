@@ -4,8 +4,7 @@ theme:
   font:
     text: Roboto
   name: material
-  palette:
-    primary: deep purple
+  primary: indigo
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -15,8 +14,7 @@ theme:
     repo: fontawesome/brands/github 
 nav:
   - Easy Challenges:
-    - easy/index.md
-    - Page 1: easy/page-1.md
+    - ColddBox Easy: easy/colddbox.md
   - Medium Challenges:
     - medium/index.md
   - Hard Challenges:
@@ -24,7 +22,19 @@ nav:
   - Insane Challenges:
     - insane/index.md
 
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - toc:
       permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+
