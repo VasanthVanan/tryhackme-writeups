@@ -15,6 +15,7 @@ theme:
 nav:
   - Easy Challenges:
     - ColddBox Easy: easy/colddbox.md
+    - ARcHanG3l: easy/ARcHanG3l.md
   - Medium Challenges:
     - medium/index.md
   - Hard Challenges:
@@ -37,4 +38,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - tables
-
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
