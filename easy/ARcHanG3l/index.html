@@ -1113,7 +1113,7 @@ function updateHTML() {
     const keys = Object.keys(data);
     const values = Object.values(data);
 
-    for(var z=0; z < keys.length; z++){
+    for(var z=0; z < keys.length; z++){ 
 
         if(keys[z] === "ports"){
             const ports = data.ports.split(';');
@@ -1127,11 +1127,11 @@ function updateHTML() {
             try{
             document.getElementById(keys[z]).innerHTML = values[z];
             }
-            catch(error){
-                console.log(values[z]);
-            }
-        }
-    }
+            catch(error){ 
+                console.log(values[z]); 
+            } 
+        } 
+    } 
 
     // replace the values with your specific filenames and number of images and img tags
     const numImgTags = document.getElementsByTagName('img').length;
