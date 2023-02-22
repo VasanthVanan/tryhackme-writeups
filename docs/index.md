@@ -8,6 +8,8 @@ This page contains my writeups for various TryHackMe CTFs, organized by difficul
 - [Hard CTFs](hard/index.md)
 - [Insane CTFs](insane/index.md)
 
+Note: certain sections are currently under development and may not yet be fully functional. It is normal to receive 404 errors as I work to update the site.
+
 <br>
 <center>
 # Find me here
