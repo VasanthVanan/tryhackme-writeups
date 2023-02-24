@@ -1,4 +1,6 @@
 
+[TryHackMe Link](https://tryhackme.com/room/colddboxeasy){ .md-button }
+
 !!! example "Description"
 
     <p id="desc" style="font-size:15px"></p>
@@ -141,10 +143,10 @@ I decided to brute force the usernames and passwords using wpscan's built-in fea
 [i] No Config Backups Found.
 
 [+] Performing password attack on Wp Login against 3 user/s
-[SUCCESS] - c0ldd / 9876543210                                                                                        
+[SUCCESS] - c0ldd / {--REDACTED--}                                                                                        
 ^Cying philip / beanie Time: 00:09:52 <========                                 > (8839 / 40665) 21.73%  ETA: 00:35:35
 [!] Valid Combinations Found:
- | Username: c0ldd, Password: 9876543210
+ | Username: c0ldd, Password: {--REDACTED--}
 
 [!] No WPScan API Token given, as a result vulnerability data has not been output.(8844 / 40665) 21.74%  ETA: 00:35:34
 [!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
@@ -159,7 +161,7 @@ I decided to brute force the usernames and passwords using wpscan's built-in fea
 ```
 ## <b>Initial Access</b>
 
-Quickly, I directed to ```/wp-login.php``` to verify login with the harvested credentials -- {++c0ld:9876543210++}
+Quickly, I directed to ```/wp-login.php``` to verify login with the harvested credentials -- {++c0ld:REDACTED++}
 
 <img id="image1" />
 

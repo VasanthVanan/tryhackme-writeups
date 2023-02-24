@@ -10,6 +10,8 @@
       
       
       
+        <link rel="next" href="../ARcHanG3l/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
@@ -402,6 +404,48 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARcHanG3l/" class="md-nav__link">
+        ARcHanG3l
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToolsRUs/" class="md-nav__link">
+        ToolsRUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVE-2021-29447/" class="md-nav__link">
+        Wordpress CVE
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -653,6 +697,7 @@
 
   <h1>ColddBox Easy</h1>
 
+<p><a class="md-button" href="https://tryhackme.com/room/colddboxeasy">TryHackMe Link</a></p>
 <div class="admonition example">
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
@@ -917,10 +962,10 @@ Interesting<span class="w"> </span>Finding<span class="o">(</span>s<span class="
 <span class="o">[</span>i<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>Config<span class="w"> </span>Backups<span class="w"> </span>Found.
 
 <span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Performing<span class="w"> </span>password<span class="w"> </span>attack<span class="w"> </span>on<span class="w"> </span>Wp<span class="w"> </span>Login<span class="w"> </span>against<span class="w"> </span><span class="m">3</span><span class="w"> </span>user/s
-<span class="hll"><span class="o">[</span>SUCCESS<span class="o">]</span><span class="w"> </span>-<span class="w"> </span>c0ldd<span class="w"> </span>/<span class="w"> </span><span class="m">9876543210</span><span class="w">                                                                                        </span>
+<span class="hll"><span class="o">[</span>SUCCESS<span class="o">]</span><span class="w"> </span>-<span class="w"> </span>c0ldd<span class="w"> </span>/<span class="w"> </span><del class="critic">REDACTED</del><span class="w">                                                                                        </span>
 </span>^Cying<span class="w"> </span>philip<span class="w"> </span>/<span class="w"> </span>beanie<span class="w"> </span>Time:<span class="w"> </span><span class="m">00</span>:09:52<span class="w"> </span>&lt;<span class="o">========</span><span class="w">                                 </span>&gt;<span class="w"> </span><span class="o">(</span><span class="m">8839</span><span class="w"> </span>/<span class="w"> </span><span class="m">40665</span><span class="o">)</span><span class="w"> </span><span class="m">21</span>.73%<span class="w">  </span>ETA:<span class="w"> </span><span class="m">00</span>:35:35
 <span class="hll"><span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Valid<span class="w"> </span>Combinations<span class="w"> </span>Found:
-</span><span class="hll"><span class="w"> </span><span class="p">|</span><span class="w"> </span>Username:<span class="w"> </span>c0ldd,<span class="w"> </span>Password:<span class="w"> </span><span class="m">9876543210</span>
+</span><span class="hll"><span class="w"> </span><span class="p">|</span><span class="w"> </span>Username:<span class="w"> </span>c0ldd,<span class="w"> </span>Password:<span class="w"> </span><del class="critic">REDACTED</del>
 </span>
 <span class="o">[</span>!<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>WPScan<span class="w"> </span>API<span class="w"> </span>Token<span class="w"> </span>given,<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>result<span class="w"> </span>vulnerability<span class="w"> </span>data<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>output.<span class="o">(</span><span class="m">8844</span><span class="w"> </span>/<span class="w"> </span><span class="m">40665</span><span class="o">)</span><span class="w"> </span><span class="m">21</span>.74%<span class="w">  </span>ETA:<span class="w"> </span><span class="m">00</span>:35:34
 <span class="o">[</span>!<span class="o">]</span><span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>free<span class="w"> </span>API<span class="w"> </span>token<span class="w"> </span>with<span class="w"> </span><span class="m">25</span><span class="w"> </span>daily<span class="w"> </span>requests<span class="w"> </span>by<span class="w"> </span>registering<span class="w"> </span>at<span class="w"> </span>https://wpscan.com/register
@@ -934,7 +979,7 @@ Interesting<span class="w"> </span>Finding<span class="o">(</span>s<span class="
 <span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Elapsed<span class="w"> </span>time:<span class="w"> </span><span class="m">00</span>:09:59
 </code></pre></div></td></tr></table></div>
 <h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
-<p>Quickly, I directed to <code>/wp-login.php</code> to verify login with the harvested credentials -- <ins class="critic">c0ld:9876543210</ins></p>
+<p>Quickly, I directed to <code>/wp-login.php</code> to verify login with the harvested credentials -- <ins class="critic">c0ld:{--REDACTED--}</ins></p>
 <p><img id="image1" /></p>
 <p>After successfully logging in using the credentials for <code>c0ldd</code>, I edited the 404.php file in the appearance tab of the themes section to add a reverse shell. This allowed me to get my initial foothold into the web server. </p>
 <p><img id="image2" /></p>

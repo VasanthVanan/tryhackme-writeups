@@ -16,6 +16,8 @@ nav:
   - Easy Challenges:
     - ColddBox Easy: easy/colddbox.md
     - ARcHanG3l: easy/ARcHanG3l.md
+    - ToolsRUs: easy/ToolsRUs.md
+    - Wordpress CVE: easy/CVE-2021-29447.md
   - Medium Challenges:
     - medium/index.md
   - Hard Challenges:
@@ -39,5 +41,6 @@ markdown_extensions:
   - pymdownx.tilde
   - tables
   - def_list
+  - attr_list
   - pymdownx.tasklist:
       custom_checkbox: true
