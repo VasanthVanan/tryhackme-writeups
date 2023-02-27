@@ -149,7 +149,8 @@ cat root/*
 cat: root/snap: Is a directory
 ```
 
-Peace-out!
+!!! success ""
+    <span>Peace-out!</span>
 
 <script>
 

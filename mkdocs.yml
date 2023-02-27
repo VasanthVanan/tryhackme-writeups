@@ -10,14 +10,19 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.footer
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github 
 nav:
+  - Home: index.md
   - Easy Challenges:
     - ColddBox Easy: easy/colddbox.md
     - ARcHanG3l: easy/ARcHanG3l.md
     - ToolsRUs: easy/ToolsRUs.md
     - Wordpress CVE: easy/CVE-2021-29447.md
+    - "Tech_Supp0rt:1": easy/Tech_Supp0rt.md
+    - All in One: easy/AllInOne.md
   - Medium Challenges:
     - medium/index.md
   - Hard Challenges:
@@ -27,6 +32,25 @@ nav:
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/vasanth__vanan
+      name: Vasanth Vanan on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/VasanthVanan
+      name: Vasanth Vanan on Github
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/vasanthavanan/
+      name: Vasanth Vanan on Linkedin
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/vasanth_vanan/
+      name: Vasanth Vanan on Instagram
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@vasanthavanan
+      name: Vasanth Vanan on Medium
+  generator: false
 
 markdown_extensions:
   - toc:
@@ -42,5 +66,7 @@ markdown_extensions:
   - tables
   - def_list
   - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.tasklist:
       custom_checkbox: true
