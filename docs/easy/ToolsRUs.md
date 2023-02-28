@@ -22,7 +22,7 @@ In this section, I will discuss about gaining access to a system by exploiting v
 
 
 * Nmap Report:
-  ```sh linenums="1" hl_lines="6 11 14 18"
+  ```s linenums="1" hl_lines="6 11 14 18"
     # Nmap 7.93 scan initiated Wed Feb 22 10:11:28 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.4.144
     Nmap scan report for 10.10.4.144
     Host is up (0.15s latency).
@@ -77,7 +77,7 @@ I then shifted my focus to the HTTP server running on port 80, where I discovere
 
 Utilizing a dirsearch Python script, I was able to locate potentially hidden pages and directories that could provide further clues and entry points.
 
-```sh linenums="1" hl_lines="21-23"
+```s linenums="1" hl_lines="21-23"
     Target: http://10.10.4.144/
 
     [10:13:58] Starting: 
@@ -142,10 +142,10 @@ Also, I made a listener, before I accessed {++http://10.10.4.144:1234/shell/++} 
 
 Surprisingly, I was granted `root` access, rather than the expected `www-data` shell. Easy-Peasy
 
-```sh
+```s
 root@ip-10-10-4-144:/# cat root/*
 cat root/*
-{--REDACTED--}
+[REDACTED]
 cat: root/snap: Is a directory
 ```
 

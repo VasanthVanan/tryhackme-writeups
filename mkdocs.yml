@@ -21,8 +21,10 @@ nav:
     - ARcHanG3l: easy/ARcHanG3l.md
     - ToolsRUs: easy/ToolsRUs.md
     - Wordpress CVE: easy/CVE-2021-29447.md
-    - "Tech_Supp0rt:1": easy/Tech_Supp0rt.md
+    - Tech_Supp0rt-1: easy/Tech_Supp0rt.md
     - All in One: easy/AllInOne.md
+    - Plotted-TMS: easy/plottedtms.md
+    - Poster: easy/poster.md
   - Medium Challenges:
     - medium/index.md
   - Hard Challenges:
