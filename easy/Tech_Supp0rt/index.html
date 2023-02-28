@@ -463,14 +463,14 @@
         
           <li class="md-nav__item">
   <a href="#gaining-user-access" class="md-nav__link">
-    Gaining User access
+    Gaining user access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
+    Gaining root access
   </a>
   
 </li>
@@ -745,14 +745,14 @@
         
           <li class="md-nav__item">
   <a href="#gaining-user-access" class="md-nav__link">
-    Gaining User access
+    Gaining user access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
+    Gaining root access
   </a>
   
 </li>
@@ -1077,7 +1077,7 @@
 <p><span>Note: You need to crack the password of admin using the magic function in CyberChef</span></p>
 </div>
 <h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<h3 id="gaining-user-access"><b>Gaining User access</b><a class="headerlink" href="#gaining-user-access" title="Permanent link">&para;</a></h3>
+<h3 id="gaining-user-access"><b>Gaining user access</b><a class="headerlink" href="#gaining-user-access" title="Permanent link">&para;</a></h3>
 <p>To elevate my access privileges, I attempted to establish a reverse shell from this point using the nc command. Unfortunately, my efforts didn't work well, and I was looking other alternatives.</p>
 <p>At this point, I decided to enumerate the server's users further. I ran <code>/etc/passwd</code> and discovered the usernames.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1224,7 +1224,7 @@ _<span class="n">apt</span><span class="o">:</span><span class="n">x</span><span
 <p><span>Typically, when you obtain some credentials, it's recommended to attempt to reuse them across all accessible services.</span></p>
 </div>
 <p>By utilizing the obtained password for mysql, I reused to ssh on the <code>scam-site</code> user, and I was able to elevate my privileges.</p>
-<h3 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<h3 id="gaining-root-access"><b>Gaining root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
 <p>From this point, the process became straightforward. I executed <strong>linpeas.sh</strong> to determine the current user's administrative powers. This was one of the following results:</p>
 <p><img id="image6" /></p>
 <p>I then visited <a href="https://gtfobins.github.io">gtfobins</a> to determine if any relevant entries existed. Once I identified the <code>iconv</code>, I executed the sudo command to gain root access.</p>
