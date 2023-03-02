@@ -209,7 +209,7 @@ I successfully gained a reverse shell for the **`www-data`** user.
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access (plot_admin)</b>
+### <b>Gaining user access (plot_admin)</b>
 
 Next, I sent a linpeas script to the system and executed it and these were the following results:
 
@@ -229,7 +229,7 @@ This was a  security risk as anyone could delete the content from the folder and
 
 <img id="image5" />
 
-### <b>Gaining Root access</b>
+### <b>Gaining root access</b>
 
 From there, I escalated my privilege to plot_admin by overwriting the backup.sh with a reverse shell. 
 

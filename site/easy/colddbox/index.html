@@ -407,14 +407,14 @@
         
           <li class="md-nav__item">
   <a href="#gaining-user-access" class="md-nav__link">
-    Gaining User access
+    Gaining user access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
+    Gaining root access
   </a>
   
 </li>
@@ -511,6 +511,20 @@
     <li class="md-nav__item">
       <a href="../plottedtms/" class="md-nav__link">
         Plotted-TMS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poster/" class="md-nav__link">
+        Poster
       </a>
     </li>
   
@@ -731,14 +745,14 @@
         
           <li class="md-nav__item">
   <a href="#gaining-user-access" class="md-nav__link">
-    Gaining User access
+    Gaining user access
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#gaining-root-access" class="md-nav__link">
-    Gaining Root access
+    Gaining root access
   </a>
   
 </li>
@@ -1058,11 +1072,11 @@
 <p><img id="image3" />
 <img id="image4" /></p>
 <h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<h3 id="gaining-user-access"><b>Gaining User access</b><a class="headerlink" href="#gaining-user-access" title="Permanent link">&para;</a></h3>
+<h3 id="gaining-user-access"><b>Gaining user access</b><a class="headerlink" href="#gaining-user-access" title="Permanent link">&para;</a></h3>
 <p>As www-data, I didn't initially have access to any juicy information. However, I was able to run linpeas.sh, which helped me to find some credentials that were left in the wp-config.php file. </p>
 <p><img id="image5" /></p>
 <p>I copied the username and password and attempted to access the <code>3306</code> port that was running on <code>127.0.0.1</code> but had no luck. Finally, I tried using the same credentials to log in to the <code>c0ldd</code> account. This was a success, and I was able to escalate my privilege from <code>www-data</code> to <code>c0ldd</code>.</p>
-<h3 id="gaining-root-access"><b>Gaining Root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<h3 id="gaining-root-access"><b>Gaining root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
 <p>As <code>c0ldd</code>, I ran sudo -l as I already knew his password. The output showed that Vim could be run as sudo.</p>
 <p><img id="image6" /></p>
 <p>With this knowledge, I was able to execute the command </p>

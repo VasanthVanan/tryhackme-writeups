@@ -197,7 +197,7 @@ When **`/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php`** wa
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access (Elyana)</b>
+### <b>Gaining user access (Elyana)</b>
 
 !!! warning ""
 
@@ -241,7 +241,7 @@ When **`/wordpress/wp-content/plugins/reflex-gallery/lib/gallery-class.php`** wa
             <span>**Note:** This method actually runs as a root. But, this is one of the possibility to get user.txt from www-data.</span>
 
 
-### <b>Gaining Root access</b>
+### <b>Gaining root access</b>
 
 You can escalate your privilege to root in different ways:
 

@@ -203,7 +203,7 @@ I identified a possible RCE attack. Executing the following command led to my in
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access</b>
+### <b>Gaining user access</b>
 
 To elevate my access privileges, I attempted to establish a reverse shell from this point using the nc command. Unfortunately, my efforts didn't work well, and I was looking other alternatives.
 
@@ -293,7 +293,7 @@ define( 'DB_COLLATE', '' );
 
 By utilizing the obtained password for mysql, I reused to ssh on the `scam-site` user, and I was able to elevate my privileges.
 
-### <b>Gaining Root access</b>
+### <b>Gaining root access</b>
 
 From this point, the process became straightforward. I executed **linpeas.sh** to determine the current user's administrative powers. This was one of the following results:
 

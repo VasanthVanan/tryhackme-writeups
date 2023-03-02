@@ -262,7 +262,7 @@ which enabled me to gain initial access. Using this access, I successfully locat
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access (Horizontal)</b>
+### <b>Gaining user access (Horizontal)</b>
 
 Afterwards, I was able to escalate my privileges horizontally for the user ``archangel``. By running the ``linpeas.sh`` script, I discovered that there was a cron job running with the following configuration:
 
@@ -286,7 +286,7 @@ As a result of this change, I was able to successfully execute a reverse shell a
 - [x] Flag 4: User Flag
 - [ ] Flag 5: Root Flag
 
-### <b>Gaining Root access (Vertical)</b>
+### <b>Gaining root access (Vertical)</b>
 
 Upon gaining access to the ```archangel``` account, I was keen to identify any binaries with SUID permissions since I lacked passwords for any of the users. Consequently, I ran the following command:
 

@@ -176,7 +176,7 @@ I opened a listener on another tab and then opened the 404.php file in my browse
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access</b>
+### <b>Gaining user access</b>
 
 As www-data, I didn't initially have access to any juicy information. However, I was able to run linpeas.sh, which helped me to find some credentials that were left in the wp-config.php file. 
 
@@ -184,7 +184,7 @@ As www-data, I didn't initially have access to any juicy information. However, I
 
  I copied the username and password and attempted to access the `3306` port that was running on `127.0.0.1` but had no luck. Finally, I tried using the same credentials to log in to the `c0ldd` account. This was a success, and I was able to escalate my privilege from `www-data` to `c0ldd`.
 
-### <b>Gaining Root access</b>
+### <b>Gaining root access</b>
 
 As `c0ldd`, I ran sudo -l as I already knew his password. The output showed that Vim could be run as sudo.
 

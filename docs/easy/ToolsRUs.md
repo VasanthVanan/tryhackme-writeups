@@ -138,7 +138,7 @@ This allowed me to reuse the credentials that I had previously harvested. With a
 Also, I made a listener, before I accessed {++http://10.10.4.144:1234/shell/++} giving me the shell.
 
 
-## <b>Gaining Root access</b>
+## <b>Gaining root access</b>
 
 Surprisingly, I was granted `root` access, rather than the expected `www-data` shell. Easy-Peasy
 

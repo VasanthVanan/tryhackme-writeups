@@ -210,13 +210,13 @@ Once the exploit was successful, I stabilized the system by establishing a rever
 
 ## <b>Privilege Escalation</b>
 
-### <b>Gaining User access (Dark)</b>
+### <b>Gaining user access (Dark)</b>
 
 To escalate privileges, I explored the files in both user accounts Alison and Dark. I discovered that Dark had credentials for his own account. 
 
 <img id="image2" />
 
-### <b>Gaining User access (Alison)</b>
+### <b>Gaining user access (Alison)</b>
 
 After accessing dark's account using SSH, I ran the linpeas.sh script to determine the security posture of the `dark` user. Meanwhile, I learned that `dark` and others had write access to **`/var/www/html/config.php.`**
 
@@ -235,7 +235,7 @@ Upon investigating, I discovered the credentials for **alison** and, through his
 
 <img id="image4" />
 
-### <b>Gaining Root access</b>
+### <b>Gaining root access</b>
 
 Subsequently, upon accessing alison's account, I enumerated the sudo powers of alison using the command **sudo -l**
 
