@@ -18,7 +18,7 @@
 
 
 * Nmap Report:
-  ```s linenums="1" hl_lines="6 10"
+  ```s linenums="1" hl_lines="6 7"
   # Nmap 7.93 scan initiated Wed Mar  1 20:02:56 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.199.134
     Nmap scan report for 10.10.199.134
     Host is up (0.15s latency).
