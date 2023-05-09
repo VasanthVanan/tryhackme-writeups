@@ -32,8 +32,8 @@ nav:
     - medium/index.md
   - Hard Challenges:
     - hard/index.md
-  - Insane Challenges:
-    - insane/index.md
+  #- Insane Challenges:
+  #  - insane/index.md
 
 extra_css:
   - stylesheets/extra.css
