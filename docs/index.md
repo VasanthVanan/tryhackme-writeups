@@ -10,7 +10,6 @@ This page contains my writeups for various TryHackMe CTFs, organized by difficul
 - [Easy CTFs](easy/colddbox.md)
 - [Medium CTFs](medium/index.md)
 - [Hard CTFs](hard/index.md)
-- [Insane CTFs](insane/index.md)
 
 
 !!! note ""
