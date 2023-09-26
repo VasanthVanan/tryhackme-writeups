@@ -5,6 +5,8 @@ comprehensive collection of walkthroughs for various TryHackMe cybersecurity cha
 
 This is a project built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. 
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Packages
 
 This project uses the following Python packages:
@@ -16,6 +18,8 @@ This project uses the following Python packages:
 
 These packages were installed using `pip`. 
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 ## Setup
 
 To set up this project locally, you'll need to have Python and pip installed on your system. Then, you can follow these steps:
@@ -25,6 +29,7 @@ To set up this project locally, you'll need to have Python and pip installed on 
 3. Run `pip install -r requirements.txt` to install the required packages
 4. Run `mkdocs serve` to start the development server and preview the documentation
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Resources
 For more information on setting up a MkDocs project, please refer:
