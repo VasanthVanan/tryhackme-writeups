@@ -92,6 +92,9 @@ Next, I thought they might be associated with a JavaScript function that had to 
 
 Eventually, I discovered that the two keywords were credentials for the SSH service at port 22, which made it easy for me to gain access without having to mess up for initial foothold.
 
+!!! info "Pentesting Practice"
+    <span>Typically, when you obtain some credentials, it's recommended to attempt to reuse them across all accessible services.</span>
+
 <img id="image5" />
 
 Once I logged in to SSH, I traversed the user's home folders and found a strange ZIP file named **P0kemon** on the desktop. I suspected that one of the flags might be inside. However, to my surprise, the flag was encoded in HEX in the following file location. 
