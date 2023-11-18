@@ -33,6 +33,7 @@ nav:
     - CMSpit: medium/cmspit.md
     - Biohazard: medium/biohazard.md
     - Dejavu: medium/dejavu.md
+    - Debug: medium/debug.md
   - Hard Challenges:
     - hard/index.md
   #- Insane Challenges:
