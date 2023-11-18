@@ -146,7 +146,7 @@ Injecting the serialized payload into the `debug` parameter, the object was dese
 Assuming that `file.php` was already created, I accessed the file while listening on my end, immediately got a reverse shell. 
 
 ```
-http://10.10.155.251/file.php
+http://10.10.155.251/shell.php
 ```
 
 <img id="image7" />
