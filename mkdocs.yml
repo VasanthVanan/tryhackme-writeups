@@ -34,6 +34,7 @@ nav:
     - Biohazard: medium/biohazard.md
     - Dejavu: medium/dejavu.md
     - Debug: medium/debug.md
+    - CMess: medium/cmess.md
   - Hard Challenges:
     - hard/index.md
   #- Insane Challenges:
