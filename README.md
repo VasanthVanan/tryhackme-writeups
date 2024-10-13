@@ -1,7 +1,7 @@
 # tryhackme-writeups
 comprehensive collection of walkthroughs for various TryHackMe cybersecurity challenges.
 
-🌱 Access the website here: https://vasanthvanan.github.io/tryhackme-writeups/
+🌱 Access the website here: https://thm.vasanthavanan.in
 
 This is a project built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. 
 
