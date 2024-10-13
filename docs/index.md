@@ -7,9 +7,9 @@ toc: false
 This page contains my writeups for various TryHackMe CTFs, organized by difficulty levels. 
 <br>Click on the links below to navigate to each section:
 
-- [Easy CTFs](easy/colddbox.md)
-- [Medium CTFs](medium/road.md)
-- [Hard CTFs](hard/index.md)
+- [THM Easy CTFs](easy/colddbox.md)
+- [THM Medium CTFs](medium/road.md)
+ 
 
 
 !!! note ""

@@ -1,4 +1,4 @@
-site_name: THM Writeups | Vasanth Vanan
+site_name: CTF Writeups | Vasanth Vanan
 repo_url: https://github.com/VasanthVanan/tryhackme-writeups
 theme:
   font:
@@ -16,7 +16,7 @@ theme:
     repo: fontawesome/brands/github 
 nav:
   - Home: index.md
-  - Easy Challenges:
+  - THM (Easy):
     - ColddBox Easy: easy/colddbox.md
     - ARcHanG3l: easy/ARcHanG3l.md
     - ToolsRUs: easy/ToolsRUs.md
@@ -28,15 +28,15 @@ nav:
     - H4cked: easy/h4cked.md
     - Smag Grotto: easy/SmagGrotto.md
     - Gotta Catch'em All!: easy/pokemon.md
-  - Medium Challenges:
+  - THM (Medium):
     - Road: medium/road.md
     - CMSpit: medium/cmspit.md
     - Biohazard: medium/biohazard.md
     - Dejavu: medium/dejavu.md
     - Debug: medium/debug.md
     - CMess: medium/cmess.md
-  - Hard Challenges:
-    - hard/index.md
+  #- Hard Challenges:
+  # - hard/index.md
   #- Insane Challenges:
   #  - insane/index.md
 
